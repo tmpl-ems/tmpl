@@ -13,12 +13,12 @@
 
 .btn1 {
   composes: button;
-  background: $persian-green;
-  color: $light-white;
+  background: $main-brand-color;
+  color: $main-text-color;
 }
 
 .btn1:hover {
-  background: $dark-black;
+  background: $secondary-text-color;
 }
 
 .btn2 {
@@ -26,17 +26,17 @@
 }
 
 .btn2:hover {
-  background: $light-white;
-  color: $dark-black;
+  background: $main-text-color;
+  color: $secondary-text-color;
 }
 
 .btn3 {
   composes: button;
-  color: $dark-black;
-  background: $light-white;
+  color: $secondary-text-color;
+  background: $main-brand-color;
 }
 
 .btn3:hover {
-  background: $dark-black;
-  color: $light-white;
+  background: $secondary-text-color;
+  color: $main-brand-color;
 }
