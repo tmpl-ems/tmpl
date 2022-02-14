@@ -3,15 +3,23 @@ import PropTypes from 'prop-types';
 
 import { section, title } from './section.module.scss';
 import Container from '../container/container';
+import Title from '../title/title';
 
-const Section = ({ head, children, titleLevel, isHidden = false }) => {
+// head - принимает текст заголовка секции
+// titleLevel - можно задать тот уровень заголовка, который нужен для секции (h1, h2, h3 и т.д.)
+// titleHidden - оставляет заголовок, но делает его невидимым
+
+const Section = ({ head, titleLevel, titleHidden = false, children }) => {
   return (
-    <section className={section}>
+    <section className={section} style={{ paddingTop: '100px' }}>
       <Container>
         {head && (
-          <h2 className={`${title} ${isHidden && 'visually-hidden'}`}>
+          <Title
+            tagName={titleLevel}
+            className={`${title} ${titleHidden && 'visually-hidden'}`}
+          >
             {head}
-          </h2>
+          </Title>
         )}
         {children}
       </Container>
@@ -22,8 +30,8 @@ const Section = ({ head, children, titleLevel, isHidden = false }) => {
 export default Section;
 
 Section.propTypes = {
-  head: PropTypes.string.isRequired,
+  head: PropTypes.string,
   children: PropTypes.node,
   titleLevel: PropTypes.string,
-  isHidden: PropTypes.bool,
+  titleHidden: PropTypes.bool,
 };
