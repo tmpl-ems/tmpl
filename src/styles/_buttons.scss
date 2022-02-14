@@ -1,0 +1,42 @@
+.button {
+  padding: 16px 40px;
+  border-radius: 16px;
+  height: 65px;
+  border: none;
+  font-family: Comfortaa;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.83;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn1 {
+  composes: button;
+  background: $persian-green;
+  color: $light-white;
+}
+
+.btn1:hover {
+  background: $dark-black;
+}
+
+.btn2 {
+  composes: btn1;
+}
+
+.btn2:hover {
+  background: $light-white;
+  color: $dark-black;
+}
+
+.btn3 {
+  composes: button;
+  color: $dark-black;
+  background: $light-white;
+}
+
+.btn3:hover {
+  background: $dark-black;
+  color: $light-white;
+}
