@@ -23,6 +23,9 @@ const Results = () => {
   // забираем значение ширины экрана, которое высчитывается в компоненте Layout и реализуем рендеринг по условию
   const pageFormat = useContext(PageFormatContext);
   const isTablet = pageFormat === format.tablet;
+  const isDesktop = pageFormat === format.desktop;
+
+  const isBackground = isTablet || isDesktop;
 
   return (
     <Section
@@ -30,7 +33,7 @@ const Results = () => {
       titleHidden={false}
       titleLevel="h4"
     >
-      <div className={isTablet && s.background}> </div>
+      <div className={isBackground && s.background}> </div>
       <Swiper
         cssMode={true}
         navigation={true}

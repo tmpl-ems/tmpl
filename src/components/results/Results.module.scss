@@ -23,3 +23,26 @@
     background-size: 335px, 280px, 415px;
   }
 }
+
+//PC
+
+@media (min-width: 1280px) {
+  .background {
+    top: -60px;
+    height: 120%;
+    background-image: url('../../images/result/result-girl-up-desktop.png'),
+      url('../../images/result/result-girl-down-desktop.png'),
+      url('../../images/result/result-man-desktop.png');
+    background-position: top -10px right 0px, top 450px right 0px,
+      top 25px right 690px;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('../../images/result/result-girl-up-desktop-x2.png'),
+        url('../../images/result/result-girl-down-desktop-x2.png'),
+        url('../../images/result/result-man-desktop-x2.png');
+      background-size: 335px, 280px, 415px;
+    }
+  }
+}

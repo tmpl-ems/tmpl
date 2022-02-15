@@ -78,6 +78,8 @@
   }
 
   .cardTitle {
+    font-size: 18px;
+    line-height: 20px;
     margin-bottom: 6px;
   }
 
@@ -86,10 +88,24 @@
   }
 
   .imageItem p {
+    font-size: 18px;
+    line-height: 20px;
     margin-bottom: 8px;
   }
 
   .imageItem img {
     max-width: 132px;
+  }
+}
+
+//PC
+
+@media (min-width: 1280px) {
+  .slider {
+    padding: 24px;
+  }
+
+  .imageItem img {
+    max-width: 189px;
   }
 }

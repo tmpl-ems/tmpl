@@ -23,16 +23,16 @@ const ResultCard = () => {
           <li className={s.imageItem}>
             <p>До</p>
             <img
-              srcset={`${resultAfter_1x} 1x, ${resultAfter_2x} 2x`}
-              src={resultAfter_1x}
+              srcSet={`${resultBefore_1x} 1x, ${resultBefore_2x} 2x`}
+              src={resultBefore_1x}
               alt="woman before training"
             />
           </li>
           <li className={s.imageItem}>
             <p>После</p>
             <img
-              srcset={`${resultBefore_1x} 1x, ${resultBefore_2x} 2x`}
-              src={resultBefore_1x}
+              srcSet={`${resultAfter_1x} 1x, ${resultAfter_2x} 2x`}
+              src={resultAfter_1x}
               alt="woman after training"
             />
           </li>
