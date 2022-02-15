@@ -1,23 +1,33 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import * as s from './button.module.scss';
 
-const Button = ({ type = 'button', classType = 1, children }) => {
+const data = {
+  ru: {
+    text: 'Записаться',
+  },
+  ukr: {
+    text: 'Записатися',
+  },
+};
+
+const Button = ({ type = 'button', classType = 1, text }) => {
   const getClass = classType => {
-    switch (classType) {
-      case 1:
-        return s[`type${classType}`];
-      case 2:
-        return s[`type${classType}`];
-      default:
-        return s[`type1`];
-    }
+    const classKey = Object.keys(s).filter(key => key.includes(classType))[0];
+    return s[classKey] ?? s.btn1;
   };
 
   return (
     <button type={type} className={getClass(classType)}>
-      {children}
+      {text ? text : data.ru.text}
     </button>
   );
+};
+
+Button.propTypes = {
+  type: PropTypes.string,
+  classType: PropTypes.number,
+  text: PropTypes.string,
 };
 
 export default Button;

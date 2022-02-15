@@ -1,25 +1,50 @@
+@import 'styles/vars';
+
 .button {
-  padding: 20px;
-  font-size: 20px;
-  font-family: Arial;
+  padding: 16px 40px;
+  border-radius: 16px;
+  height: 65px;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.83;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
-.type1 {
+.btn1 {
   composes: button;
-  background-color: green;
+  background-color: $main-brand-color;
+  color: $secondary-text-color;
 
   &:hover,
   &:focus {
-    background-color: red;
+    background-color: $secondary-text-color;
+    color: $main-text-color;
   }
 }
 
-.type2 {
+.btn2 {
   composes: button;
-  background-color: blue;
+  background-color: $secondary-text-color;
+  color: $main-text-color;
 
   &:hover,
   &:focus {
-    background-color: yellow;
+    background-color: $main-text-color;
+    color: $secondary-text-color;
+  }
+}
+
+.btn3 {
+  composes: button;
+  color: $secondary-text-color;
+  background-color: $main-brand-color;
+
+  &:hover,
+  &:focus {
+    background-color: $main-text-color;
+    color: $secondary-text-color;
   }
 }
