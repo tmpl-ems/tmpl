@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { PageFormatContext, format } from 'context/pageFormatContext';
 
 const breakPoints = {
   response: 479,
@@ -8,33 +9,33 @@ const breakPoints = {
 };
 
 const Layout = ({ children }) => {
-  const [pageFormat, setPageFormat] = useState('response');
+  const [pageFormat, setPageFormat] = useState(format.response);
 
   useEffect(() => {
     const onHandleResize = () => {
       const viewport = window.innerWidth;
-      if (viewport < breakPoints.mobile && pageFormat !== 'response') {
-        setPageFormat('response');
+      if (viewport < breakPoints.mobile && pageFormat !== format.response) {
+        setPageFormat(format.response);
         return;
       }
       if (
         viewport >= breakPoints.mobile &&
         viewport < breakPoints.tablet &&
-        pageFormat !== 'mobile'
+        pageFormat !== format.mobile
       ) {
-        setPageFormat('mobile');
+        setPageFormat(format.mobile);
         return;
       }
       if (
         viewport >= breakPoints.tablet &&
         viewport < breakPoints.desktop &&
-        pageFormat !== 'tablet'
+        pageFormat !== format.tablet
       ) {
-        setPageFormat('tablet');
+        setPageFormat(format.tablet);
         return;
       }
-      if (viewport >= breakPoints.desktop && pageFormat !== 'desktop') {
-        setPageFormat('desktop');
+      if (viewport >= breakPoints.desktop && pageFormat !== format.desktop) {
+        setPageFormat(format.desktop);
         return;
       }
     };
@@ -42,7 +43,11 @@ const Layout = ({ children }) => {
     onHandleResize();
   }, [pageFormat]);
 
-  return <>{children}</>;
+  return (
+    <PageFormatContext.Provider value={pageFormat}>
+      {children}
+    </PageFormatContext.Provider>
+  );
 };
 
 export default Layout;
