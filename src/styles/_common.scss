@@ -22,6 +22,10 @@ a {
   display: block;
 }
 
+body {
+  font-family: $main-font;
+}
+
 .link {
   text-decoration: none;
   color: inherit;
