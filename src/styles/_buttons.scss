@@ -1,0 +1,42 @@
+.button {
+  padding: 16px 40px;
+  border-radius: 16px;
+  height: 65px;
+  border: none;
+  font-family: Comfortaa;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.83;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn1 {
+  composes: button;
+  background: $main-brand-color;
+  color: $main-text-color;
+}
+
+.btn1:hover {
+  background: $secondary-text-color;
+}
+
+.btn2 {
+  composes: btn1;
+}
+
+.btn2:hover {
+  background: $main-text-color;
+  color: $secondary-text-color;
+}
+
+.btn3 {
+  composes: button;
+  color: $secondary-text-color;
+  background: $main-brand-color;
+}
+
+.btn3:hover {
+  background: $secondary-text-color;
+  color: $main-brand-color;
+}

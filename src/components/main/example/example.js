@@ -1,5 +1,6 @@
 import React from 'react';
 import Section from 'components/common/section/Section';
+import Button from 'components/button/button';
 
 // Пример использования СВГ
 import LogoIcon from 'images/svg/logo.svg';
@@ -23,6 +24,7 @@ const Example = () => {
     <Section head={data.ru.title} titleHidden={false} titleLevel="h4">
       <p>{data.ru.content}</p>
       <LogoIcon width="200" height="200" />
+      <Button />
     </Section>
   );
 };
