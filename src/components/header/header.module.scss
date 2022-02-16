@@ -1,0 +1,36 @@
+@import 'styles/vars.scss';
+@import 'styles/mixins.scss';
+
+button {
+  display: block;
+}
+.header {
+  background-color: $background-color;
+}
+.headerContainer {
+  @include flexBlock;
+  @media screen and (min-width: 1280px) {
+    align-items: baseline;
+  }
+}
+.logoLink {
+  width: 74px;
+  height: 66px;
+  margin: 20px 0 5px;
+}
+.navMobileBlock {
+  @include flexBlock;
+}
+
+.burgerOpenBtn {
+  width: 30px;
+  height: 16px;
+  margin-left: 24px;
+  background: $background-color;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  @media screen and (min-width: 768px) {
+    margin-left: 40px;
+  }
+}
