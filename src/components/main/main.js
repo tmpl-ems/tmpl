@@ -1,10 +1,11 @@
 import React from 'react';
-import Example from './example/example';
+
+import How from './how/how';
 
 const Main = () => {
   return (
     <main>
-      <Example />
+      <How />
     </main>
   );
 };
