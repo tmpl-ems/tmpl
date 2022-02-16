@@ -3,7 +3,7 @@ import * as s from './Results.module.scss';
 
 // Если в нашем компоненте нужно выполнить или нет рендеринг в зависимости от ширины экрана, берём испортируем контекст и формат. А такэе useContext
 import { PageFormatContext, format } from 'context/pageFormatContext';
-import Section from 'components/common/section/Section';
+import Section from 'components/common/section/section';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
