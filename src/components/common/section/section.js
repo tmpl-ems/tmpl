@@ -1,13 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  section,
-  title,
-  heroTitle,
-  dark,
-  lightTitle,
-} from './section.module.scss';
+import { section, title, dark, lightTitle } from './section.module.scss';
 import Container from '../container/container';
 import Title from '../title/title';
 
@@ -15,6 +9,7 @@ import Title from '../title/title';
 // titleLevel - можно задать тот уровень заголовка, который нужен для секции (h1, h2, h3 и т.д.)
 // titleHidden - оставляет заголовок, но делает его невидимым
 // pt и pb - необязательные параметры, которые указываются для кастомизации нижнего и верхнего падинга секции
+// darkBackground - true - если нужно сделать фон черным, а цвет заголовка белым
 
 const Section = ({
   head,
@@ -24,7 +19,6 @@ const Section = ({
   pt,
   pb,
   darkBackground = false,
-  hero = false,
 }) => {
   return (
     <section
@@ -37,7 +31,7 @@ const Section = ({
             tagName={titleLevel}
             className={`${title} ${titleHidden && 'visually-hidden'} ${
               darkBackground && lightTitle
-            } ${hero && heroTitle}`}
+            }`}
           >
             {head}
           </Title>

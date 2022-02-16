@@ -18,12 +18,11 @@ const MyComponent = () => {
 
   return (
     <Section
-      head="Это заголовок моей секции"
+      head="Заголовок моей секции"
       titleLevel="h2"
       pt={pad.pt}
       pb={pad.pb}
       darkBackground={true}
-      hero={true}
     >
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt

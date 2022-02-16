@@ -31,15 +31,6 @@
   color: $secondary-text-color;
 }
 
-.hero-title {
-  composes: title;
-  font-weight: 500;
-  font-size: 48px;
-  line-height: 1.33;
-  letter-spacing: 0.01em;
-  color: $main-brand-color;
-}
-
 .dark {
   background-color: $main-text-color;
 }
