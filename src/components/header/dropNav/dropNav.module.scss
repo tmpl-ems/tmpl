@@ -1,0 +1,86 @@
+@import 'styles/fonts.scss';
+@import 'styles/vars.scss';
+@import 'styles/common.scss';
+
+@mixin flexBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+button {
+  display: block;
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  overflow-y: scroll;
+  background: $backdrop-color;
+  backdrop-filter: blur(6px);
+}
+.container {
+  padding: 20px;
+  margin: 0;
+}
+.navBlock {
+  @include flexBlock;
+  flex-direction: column;
+  justify-content: start;
+}
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  //outline: none;
+  border: none;
+  @include flexBlock;
+  justify-content: center;
+  background: $main-text-color;
+  color: $secondary-text-color;
+  cursor: pointer;
+}
+.logoLink {
+  display: block;
+  width: 100px;
+  height: 89px;
+  margin-bottom: 40px;
+}
+
+.navList {
+  @include flexBlock;
+  flex-direction: column;
+  justify-content: start;
+  padding: 0;
+  list-style: none;
+  @media screen and (min-width: 1280px) {
+    @include flexBlock;
+  }
+}
+.navItem {
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  @media screen and (min-width: 1280px) {
+    margin: 0 20px 0 0;
+  }
+}
+.navLink {
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 22px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $secondary-text-color;
+  cursor: pointer;
+  &:hover {
+    color: $main-brand-color;
+  }
+}

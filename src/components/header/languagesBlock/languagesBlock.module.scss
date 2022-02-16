@@ -1,0 +1,37 @@
+@import 'styles/fonts.scss';
+@import 'styles/vars.scss';
+@import 'styles/common.scss';
+
+@mixin flexBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.languagesBlock {
+  @include flexBlock;
+  align-items: baseline;
+}
+.ruBtn,
+.uaBtn {
+  background: $background-color;
+  outline: none;
+  border: none;
+
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: $inactive-color;
+  cursor: pointer;
+  &:hover {
+    color: $main-brand-color;
+  }
+}
+.languageBetweenEl {
+  display: block;
+  color: $inactive-color;
+}

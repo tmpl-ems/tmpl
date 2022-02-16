@@ -1,0 +1,49 @@
+@import 'styles/fonts.scss';
+@import 'styles/vars.scss';
+@import 'styles/common.scss';
+
+@mixin flexBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.navList {
+  @include flexBlock;
+  flex-direction: column;
+  justify-content: start;
+  padding: 0;
+  list-style: none;
+  @media screen and (min-width: 1280px) {
+    @include flexBlock;
+  }
+}
+.navItem {
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  @media screen and (min-width: 1280px) {
+    margin: 0 20px 0 0;
+  }
+}
+.navLink {
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 22px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $secondary-text-color;
+  cursor: pointer;
+  &:hover {
+    color: $main-brand-color;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    line-height: 27px;
+  }
+  @media screen and (min-width: 1280px) {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}

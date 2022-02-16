@@ -1,0 +1,70 @@
+@import 'styles/fonts.scss';
+@import 'styles/vars.scss';
+@import 'styles/common.scss';
+
+@mixin flexBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  display: block;
+}
+.header {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+.headerContainer {
+  @include flexBlock;
+  padding: 20px 0 0;
+  margin: 0;
+}
+.logoLink {
+  width: 74px;
+  height: 66px;
+}
+.navMobileBlock {
+  @include flexBlock;
+}
+.languagesBlock {
+  @include flexBlock;
+  align-items: baseline;
+}
+.ruBtn,
+.uaBtn {
+  background: $background-color;
+  outline: none;
+  border: none;
+
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: $inactive-color;
+  cursor: pointer;
+  &:hover {
+    color: $main-brand-color;
+  }
+}
+.languageBetweenEl {
+  display: block;
+  color: $inactive-color;
+}
+
+.burgerOpenBtn {
+  width: 30px;
+  height: 16px;
+  margin-left: 24px;
+  background: $background-color;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  @media screen and (min-width: 768px) {
+    margin-left: 40px;
+  }
+}
