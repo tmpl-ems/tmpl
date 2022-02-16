@@ -9,17 +9,10 @@
 .headerContainer {
   display: flex;
   align-items: center;
-
-  // @media screen and (min-width: 1280px) {
-  //   align-items: baseline;
-  // }
 }
 .logoLink {
   margin-right: auto;
 }
-// .navMobileBlock {
-//   @include flexBlock;
-// }
 
 .burgerOpenBtn {
   padding: 0;

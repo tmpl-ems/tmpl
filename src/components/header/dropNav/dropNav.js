@@ -19,6 +19,7 @@ const DropNav = ({ onClick }) => {
       <a href="/" className={logoLink}>
         <LogoIcon width="74" height="66" />
       </a>
+
       <NavBlock />
     </Container>
   );

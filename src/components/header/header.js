@@ -17,7 +17,6 @@ import {
 } from './header.module.scss';
 
 export default function Header() {
-  // забираем значение ширины экрана, которое высчитывается в компоненте Layout и реализуем рендеринг по условию
   const pageFormat = useContext(PageFormatContext);
   const isDesktop = pageFormat === format.desktop;
   const [showDropNav, setShowDropNav] = useState(false);
