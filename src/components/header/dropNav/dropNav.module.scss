@@ -1,0 +1,47 @@
+@import 'styles/vars.scss';
+@import 'styles/mixins.scss';
+
+button {
+  display: block;
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  overflow-y: scroll;
+  background: $backdrop-color;
+  backdrop-filter: blur(6px);
+}
+.containerInDrop {
+  padding: 20px;
+  margin: 0;
+}
+.navBlockInDrop {
+  @include flexBlock;
+  flex-direction: column;
+  justify-content: start;
+}
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  @include flexBlock;
+  padding: 0;
+  //outline: none;
+  border: none;
+  justify-content: center;
+  background: $main-text-color;
+  color: $secondary-text-color;
+  cursor: pointer;
+}
+.logoLinkInDrop {
+  display: block;
+  width: 100px;
+  height: 89px;
+  margin-bottom: 40px;
+}
