@@ -1,0 +1,53 @@
+@import 'styles/vars';
+@import 'styles/mixins';
+.mapBox {
+  margin-bottom: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.map {
+  border: 0;
+  width: 280px;
+  height: 270px;
+}
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 40px;
+}
+.contactsList {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+  color: $secondary-text-color;
+  //   @media screen and (min-width: 768px) {
+  //     margin-bottom: 44px;
+  //   }
+  font-style: normal;
+}
+.contactItem {
+  margin-bottom: 8px;
+  margin-left: auto;
+  font-family: $secondary-font;
+  font-style: normal;
+  @include fontProperties(16, 1.25);
+}
+.mediaWrapper {
+  width: 173px;
+  margin-left: auto;
+  margin-bottom: 60px;
+}
+.mediaList {
+  @include flexBlock;
+}
+.copyRight {
+  font-family: $secondary-font;
+  color: $secondary-text-color;
+  @include fontProperties(18, 1.22);
+  text-align: center;
+}
+.copyRightSign {
+  margin-right: 4px;
+}
