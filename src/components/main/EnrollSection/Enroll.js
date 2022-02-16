@@ -4,6 +4,7 @@ import Title from 'components/common/title/title';
 import Container from 'components/common/container/container';
 import Button from 'components/common/button/button';
 import Modal from 'components/common/Modal/Modal';
+import * as s from './_enroll.scss';
 
 export const Enroll = () => {
   const [showModal, setShowModal] = useState(false);
@@ -11,14 +12,14 @@ export const Enroll = () => {
   const toggleModal = () => {
     setShowModal(showModal => !showModal);
   };
-  const onOpenModal = () => {
-    setShowModal(true);
-  };
+
   const enroll = {
     ru: {
       title: '',
-      questions:
-        'Цените свое время?Хотите гарантированно получить идеальные формы?Мечтаете закрепить этот результат надолго?Хотите заниматься в удовольствие?',
+      question1: 'Цените свое время?',
+      question2: 'Хотите гарантированно получить идеальные формы?',
+      question3: 'Мечтаете закрепить этот результат надолго?',
+      question4: 'Хотите заниматься в удовольствие?',
       enroll: 'Тогда записывайтесь на пробную тренировку уже сейчас:',
       buttonTitle: 'ЗАПИСАТЬСЯ ',
     },
@@ -26,12 +27,15 @@ export const Enroll = () => {
   };
   return (
     <>
-      <Section>
+      <Section className={s.enroll}>
         <Container>
           <Title head={enroll.ru.title} titleHidden={true} titleLevel="h2" />
-          <p>{enroll.ru.questions}</p>
-          <p>{enroll.ru.partTwo}</p>
-          <Button onClick={onOpenModal} classType={3} type="button" />
+          <p>{enroll.ru.question1}</p>
+          <p>{enroll.ru.question2}</p>
+          <p>{enroll.ru.question3}</p>
+          <p>{enroll.ru.question4}</p>
+          <p>{enroll.ru.enroll}</p>
+          <Button onClick={toggleModal} classType={2} type="button" />
         </Container>
       </Section>
       {showModal && <Modal closeModal={toggleModal}></Modal>}
