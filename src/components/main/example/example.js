@@ -10,6 +10,7 @@ import Section from 'components/common/section/Section';
 // Пример использования СВГ
 import LogoIcon from 'images/svg/logo.svg';
 import Button from 'components/common/button/button';
+import Advantages from '../advantages/advantages';
 
 // Пример организации данных, можете напрямую в конпонент писать, но в будущем, вероятнее всего нужно будет выносить весть текст в отдельные json файлы и струкрута будет примерно такой.
 const data = {
