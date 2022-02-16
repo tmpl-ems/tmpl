@@ -6,24 +6,24 @@ import NavBlock from '../navBlock/navBlock';
 
 import {
   backdrop,
-  container,
+  containerInDrop,
   closeBtn,
-  navBlock,
-  logoLink,
+  navBlockInDrop,
+  logoLinkInDrop,
 } from './dropNav.module.scss';
 
 const DropNav = ({ onClick }) => {
   return (
     <div className={backdrop}>
       {/* ---CloseBtn--- */}
-      <div className={container}>
+      <div className={containerInDrop}>
         <button className={closeBtn} type="button" onClick={onClick}>
           <CloseIcon width="18" height="18" />
         </button>
 
-        <div className={navBlock}>
+        <div className={navBlockInDrop}>
           {/* ----logo------ */}
-          <a href="#" className={logoLink}>
+          <a href="#" className={logoLinkInDrop}>
             <LogoIcon width="74" height="66" />
           </a>
           <NavBlock />

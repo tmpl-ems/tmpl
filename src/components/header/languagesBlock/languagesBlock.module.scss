@@ -1,20 +1,10 @@
-@import 'styles/fonts.scss';
 @import 'styles/vars.scss';
-@import 'styles/common.scss';
-
-@mixin flexBlock {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
+@import 'styles/mixins.scss';
 
 .languagesBlock {
   @include flexBlock;
-  align-items: baseline;
 }
-.ruBtn,
-.uaBtn {
+.languagesBtn {
   background: $background-color;
   outline: none;
   border: none;

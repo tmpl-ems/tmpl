@@ -26,6 +26,7 @@ export default function Header() {
   const openDropNav = () => {
     setShowDropNav(true);
     window.addEventListener('keydown', closeDropNav);
+    document.body.style.overflow = 'hidden';
   };
 
   const closeDropNav = e => {
@@ -33,6 +34,7 @@ export default function Header() {
       window.removeEventListener('keydown', closeDropNav);
     }
     setShowDropNav(false);
+    document.body.style.overflow = '';
   };
 
   return (
@@ -64,5 +66,3 @@ export default function Header() {
     </header>
   );
 }
-
-//export default Header;
