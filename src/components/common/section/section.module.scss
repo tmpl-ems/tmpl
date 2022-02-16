@@ -1,6 +1,7 @@
 @import 'styles/vars';
 
 .section {
+  position: relative;
   padding-top: 40px;
   padding-bottom: 40px;
   margin: 0 auto;
@@ -18,9 +19,18 @@
   font-weight: normal;
   font-size: 40px;
   line-height: 1.125;
+  color: $title-color;
 
   @media screen and (min-width: 768px) {
     font-size: 48px;
     line-height: 54px;
   }
+}
+
+.light-title {
+  color: $secondary-text-color;
+}
+
+.dark {
+  background-color: $main-text-color;
 }

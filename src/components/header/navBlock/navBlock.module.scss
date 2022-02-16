@@ -1,0 +1,52 @@
+@import 'styles/vars.scss';
+@import 'styles/mixins.scss';
+
+.navList {
+  // @include flexBlock;
+  @media screen and (min-width: 1280px) {
+    display: flex;
+  }
+  justify-content: start;
+  list-style: none;
+}
+
+.navItem {
+  text-transform: uppercase;
+  text-align: center;
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+      margin-right: 32px;
+    }
+  }
+}
+.navLink {
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 22px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $secondary-text-color;
+  cursor: pointer;
+  &:hover {
+    color: $main-brand-color;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    line-height: 27px;
+  }
+  @media screen and (min-width: 1280px) {
+    font-size: 14px;
+    line-height: 16px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}

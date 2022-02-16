@@ -1,0 +1,27 @@
+@import 'styles/vars.scss';
+@import 'styles/mixins.scss';
+
+.header {
+  background-color: $background-color;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.headerContainer {
+  display: flex;
+  align-items: center;
+}
+.logoLink {
+  margin-right: auto;
+}
+
+.burgerOpenBtn {
+  padding: 0;
+  margin-left: 24px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: $background-color;
+  @media screen and (min-width: 768px) {
+    margin-left: 40px;
+  }
+}
