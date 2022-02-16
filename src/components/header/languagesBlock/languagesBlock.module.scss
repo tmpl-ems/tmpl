@@ -2,18 +2,23 @@
 @import 'styles/mixins.scss';
 
 .languagesBlock {
-  @include flexBlock;
+  display: flex;
+  align-items: center;
+
+  @media screen and (min-width: 1280px) {
+    margin-left: 44px;
+  }
 }
+
 .languagesBtn {
   background: $background-color;
   outline: none;
   border: none;
-
   font-family: $main-font;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 1;
   text-transform: uppercase;
   color: $inactive-color;
   cursor: pointer;
@@ -21,7 +26,11 @@
     color: $main-brand-color;
   }
 }
-.languageBetweenEl {
+
+.separator {
+  margin: 0 12px;
   display: block;
-  color: $inactive-color;
+  width: 1px;
+  height: 18px;
+  background-color: $inactive-color;
 }

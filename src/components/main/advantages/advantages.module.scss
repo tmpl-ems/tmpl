@@ -1,0 +1,36 @@
+@import '../../../styles/vars';
+
+.advantages {
+  padding-left: 20px;
+  padding-right: 20px;
+  color: $placeholder-color;
+
+  &__title {
+    text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.33;
+  }
+
+  //   &__mainList {
+
+  //   }
+
+  &__titleList {
+    font-size: 18px;
+    line-height: 1.11;
+  }
+
+  &__list {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  &__result {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+  }
+}

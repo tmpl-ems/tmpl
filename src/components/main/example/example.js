@@ -10,6 +10,7 @@ import Section from 'components/common/section/Section';
 // Пример использования СВГ
 import LogoIcon from 'images/svg/logo.svg';
 import Button from 'components/common/button/button';
+import Advantages from '../advantages/advantages';
 
 import Modal from 'components/common/Modal/Modal';
 
