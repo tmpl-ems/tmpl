@@ -1,0 +1,19 @@
+@import '../../../styles/vars';
+
+.about-section-title {
+  margin-bottom: 32px;
+
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.125;
+
+  color: $placeholder-color;
+}
+
+.aboutSectionDescription {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+
+  color: $placeholder-color;
+}
