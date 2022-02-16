@@ -7,7 +7,7 @@ import resultBefore_2x from '../../images/result/result-before-desktop-x2.png';
 import resultAfter_1x from '../../images/result/result-after-desktop.png';
 import resultAfter_2x from '../../images/result/result-after-desktop-x2.png';
 
-const ResultCard = () => {
+const ResultCard = ({ textContent }) => {
   return (
     <div className={s.sliderWrapper}>
       <div className={s.slider}>

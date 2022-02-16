@@ -9,14 +9,14 @@ import Section from 'components/common/section/Section';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import 'swiper/scss';
+import 'swiper/scss/navigation';
+import 'swiper/scss/pagination';
 
 import '../../styles/vendor/_swiperStyles.scss';
 
 // import required modules
-import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
+import { Navigation, Pagination, Keyboard } from 'swiper';
 import ResultCard from 'components/resultCard/ResultCard';
 
 const Results = () => {
@@ -33,14 +33,14 @@ const Results = () => {
       titleHidden={false}
       titleLevel="h4"
     >
-      <div className={isBackground && s.background}> </div>
+      {isBackground && <div className={s.background}></div>}
       <Swiper
-        cssMode={true}
+        // cssMode={true}
         navigation={true}
         pagination={true}
         mousewheel={true}
         keyboard={true}
-        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+        modules={[Navigation, Pagination, Keyboard]}
         className="resultSwiper"
       >
         <SwiperSlide>
