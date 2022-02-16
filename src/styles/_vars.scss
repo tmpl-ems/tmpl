@@ -33,3 +33,7 @@ $inactive-color: #666666;
 //placeholder
 
 $title-color: #15141d;
+
+// transition
+$default-transition: color 250ms linear, background-color 250ms linear,
+  fill 250ms linear;
