@@ -1,7 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { section, title } from './section.module.scss';
+import {
+  section,
+  title,
+  heroTitle,
+  dark,
+  lightTitle,
+} from './section.module.scss';
 import Container from '../container/container';
 import Title from '../title/title';
 
@@ -17,17 +23,21 @@ const Section = ({
   children,
   pt,
   pb,
+  darkBackground = false,
+  hero = false,
 }) => {
   return (
     <section
-      className={section}
+      className={`${section} ${darkBackground && dark}`}
       style={{ paddingTop: `${pt}px`, paddingBottom: `${pb}px` }}
     >
       <Container>
         {head && (
           <Title
             tagName={titleLevel}
-            className={`${title} ${titleHidden && 'visually-hidden'}`}
+            className={`${title} ${titleHidden && 'visually-hidden'} ${
+              darkBackground && lightTitle
+            } ${hero && heroTitle}`}
           >
             {head}
           </Title>
@@ -47,4 +57,5 @@ Section.propTypes = {
   titleHidden: PropTypes.bool,
   pt: PropTypes.number,
   pb: PropTypes.number,
+  darkBackground: PropTypes.bool,
 };
