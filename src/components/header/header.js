@@ -12,13 +12,11 @@ import LanguagesBlock from './languagesBlock/languagesBlock';
 import {
   header,
   headerContainer,
-  navMobileBlock,
   logoLink,
   burgerOpenBtn,
 } from './header.module.scss';
 
 export default function Header() {
-  // забираем значение ширины экрана, которое высчитывается в компоненте Layout и реализуем рендеринг по условию
   const pageFormat = useContext(PageFormatContext);
   const isDesktop = pageFormat === format.desktop;
   const [showDropNav, setShowDropNav] = useState(false);
@@ -39,30 +37,24 @@ export default function Header() {
 
   return (
     <header className={header} id="header">
-      <Container>
-        <div className={headerContainer}>
-          {/* //----logo------ */}
-          <a href="#header" className={logoLink}>
-            <LogoIcon width="74" height="66" />
-          </a>
+      <Container addClass={headerContainer}>
+        {/* //----logo------ */}
+        <a href="#header" className={logoLink}>
+          <LogoIcon width="74" height="66" />
+        </a>
 
-          {isDesktop && <NavBlock />}
-          <div className={navMobileBlock}>
-            <LanguagesBlock />
-            {/* //---BurgerBtn--- */}
-            {!isDesktop && (
-              <button
-                className={burgerOpenBtn}
-                type="button"
-                onClick={openDropNav}
-              >
-                <BurgerIcon width="30" height="16" />
-              </button>
-            )}
-          </div>
-        </div>
+        {isDesktop && <NavBlock />}
+        {/* <div className={navMobileBlock}> */}
+        <LanguagesBlock />
+        {/* //---BurgerBtn--- */}
+        {!isDesktop && (
+          <button className={burgerOpenBtn} type="button" onClick={openDropNav}>
+            <BurgerIcon width="30" height="16" />
+          </button>
+        )}
+        {/* </div> */}
       </Container>
-      {showDropNav && <DropNav onClick={closeDropNav} />}
+      {!isDesktop && showDropNav && <DropNav onClick={closeDropNav} />}
     </header>
   );
 }
