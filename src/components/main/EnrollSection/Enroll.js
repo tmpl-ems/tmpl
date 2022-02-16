@@ -4,7 +4,12 @@ import Title from 'components/common/title/title';
 import Container from 'components/common/container/container';
 import Button from 'components/common/button/button';
 import Modal from 'components/common/Modal/Modal';
-import * as s from './_enroll.scss';
+import {
+  enrollSection,
+  enrollCall,
+  enrollSentences,
+  enrollButton,
+} from './_enroll.module.scss';
 
 export const Enroll = () => {
   const [showModal, setShowModal] = useState(false);
@@ -27,17 +32,21 @@ export const Enroll = () => {
   };
   return (
     <>
-      <Section className={s.enroll}>
+      <section className={enrollSection}>
         <Container>
           <Title head={enroll.ru.title} titleHidden={true} titleLevel="h2" />
-          <p>{enroll.ru.question1}</p>
-          <p>{enroll.ru.question2}</p>
-          <p>{enroll.ru.question3}</p>
-          <p>{enroll.ru.question4}</p>
-          <p>{enroll.ru.enroll}</p>
-          <Button onClick={toggleModal} classType={2} type="button" />
+          <div className={enrollSentences}>
+            <p>{enroll.ru.question1}</p>
+            <p>{enroll.ru.question2}</p>
+            <p>{enroll.ru.question3}</p>
+            <p>{enroll.ru.question4}</p>
+            <p className={enrollCall}>{enroll.ru.enroll}</p>
+          </div>
+          <div className={enrollButton}>
+            <Button onClick={toggleModal} classType={2} type="button" />
+          </div>
         </Container>
-      </Section>
+      </section>
       {showModal && <Modal closeModal={toggleModal}></Modal>}
     </>
   );
