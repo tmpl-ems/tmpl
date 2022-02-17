@@ -3,7 +3,7 @@ import Button from 'components/common/button/button';
 import { enrollSection, enrollButton, text } from './enroll.module.scss';
 import Section from 'components/common/section/section';
 
-export const Enroll = ({ onModalOpen }) => {
+export const Enroll = ({ onSingUpModalOpen }) => {
   const enroll = {
     ru: {
       title: '',

@@ -13,7 +13,7 @@ import Goals from './goals/goals';
 import MyComponent from './myComponent/myComponent';
 import Hero from '../hero/hero';
 
-const Main = ({ onModalOpen }) => {
+const Main = ({ onSingUpModalOpen }) => {
   return (
     <main>
       <Goals onModalOpen={onModalOpen} />
@@ -22,6 +22,8 @@ const Main = ({ onModalOpen }) => {
       <Results />
       <Reviews />
       {/* <MyComponent /> */}
+      <PersonalProgram onSingUpModalOpen={onSingUpModalOpen} />
+      <Enroll onSingUpModalOpen={onSingUpModalOpen} />
       <PersonalProgram />
       <Enroll onModalOpen={onModalOpen} />
       <Hero />
