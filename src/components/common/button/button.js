@@ -24,6 +24,7 @@ const Button = ({
   classType = 1,
   text,
   addClass,
+  onBtnClick,
   ...props
 }) => {
   const [nameOfClass, setNameOfClass] = useState(s.btn1);
@@ -38,7 +39,11 @@ const Button = ({
   }, [classType]);
 
   return (
-    <button type={type} className={`${nameOfClass} ${addClass}`} {...props}>
+    <button
+      type={type}
+      className={`${nameOfClass} ${addClass}`}
+      onClick={onBtnClick}
+    >
       {text ? text : data.ru.text}
     </button>
   );
