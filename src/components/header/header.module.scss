@@ -1,35 +1,26 @@
 @import 'styles/vars.scss';
 @import 'styles/mixins.scss';
 
-button {
-  display: block;
-}
 .header {
   background-color: $background-color;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 .headerContainer {
-  @include flexBlock;
-  @media screen and (min-width: 1280px) {
-    align-items: baseline;
-  }
+  display: flex;
+  align-items: center;
 }
 .logoLink {
-  width: 74px;
-  height: 66px;
-  margin: 20px 0 5px;
-}
-.navMobileBlock {
-  @include flexBlock;
+  margin-right: auto;
 }
 
 .burgerOpenBtn {
-  width: 30px;
-  height: 16px;
+  padding: 0;
   margin-left: 24px;
-  background: $background-color;
   outline: none;
   border: none;
   cursor: pointer;
+  background: $background-color;
   @media screen and (min-width: 768px) {
     margin-left: 40px;
   }

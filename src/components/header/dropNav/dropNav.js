@@ -4,32 +4,24 @@ import CloseIcon from 'images/svg/btn-close.svg';
 import LogoIcon from 'images/svg/logo.svg';
 import NavBlock from '../navBlock/navBlock';
 
-import {
-  backdrop,
-  containerInDrop,
-  closeBtn,
-  navBlockInDrop,
-  logoLinkInDrop,
-} from './dropNav.module.scss';
+import { backdrop, closeIcon, closeBtn, logoLink } from './dropNav.module.scss';
+import Container from 'components/common/container/container';
 
 const DropNav = ({ onClick }) => {
   return (
-    <div className={backdrop}>
+    <Container addClass={backdrop}>
       {/* ---CloseBtn--- */}
-      <div className={containerInDrop}>
-        <button className={closeBtn} type="button" onClick={onClick}>
-          <CloseIcon width="18" height="18" />
-        </button>
+      <button className={closeBtn} type="button" onClick={onClick}>
+        <CloseIcon width="18" height="18" className={closeIcon} />
+      </button>
 
-        <div className={navBlockInDrop}>
-          {/* ----logo------ */}
-          <a href="#" className={logoLinkInDrop}>
-            <LogoIcon width="74" height="66" />
-          </a>
-          <NavBlock />
-        </div>
-      </div>
-    </div>
+      {/* ----logo------ */}
+      <a href="/" className={logoLink}>
+        <LogoIcon width="74" height="66" />
+      </a>
+
+      <NavBlock />
+    </Container>
   );
 };
 

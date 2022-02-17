@@ -1,7 +1,5 @@
 @mixin flexBlock {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
 }
 @mixin fontProperties($fs, $lh) {

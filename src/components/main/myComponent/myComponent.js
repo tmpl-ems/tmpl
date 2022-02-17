@@ -22,7 +22,7 @@ const MyComponent = () => {
       titleLevel="h2"
       pt={pad.pt}
       pb={pad.pb}
-      darkBackground={true}
+      darkBackground={false}
     >
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
