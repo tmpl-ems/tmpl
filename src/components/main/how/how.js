@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Section from 'components/common/section/Section';
+import Section from 'components/common/section/section';
 import Video from 'components/common/video/video';
 import { PageFormatContext, format } from 'context/pageFormatContext';
 import { usePaddingsValues } from 'hooks/usePaddingsValues';
