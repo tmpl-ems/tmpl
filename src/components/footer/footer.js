@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { PageFormatContext, format } from 'context/pageFormatContext';
+import { usePaddingsValues } from 'hooks/usePaddingsValues';
 import Section from 'components/common/section/section';
 import Logo from 'images/svg/logo.svg';
 import Telegram from 'images/svg/footer-telegram.svg';
@@ -7,10 +9,19 @@ import Facebook from 'images/svg/footer-facebook.svg';
 import Instagram from 'images/svg/footer-instagram.svg';
 import CopyRight from 'images/svg/footer-copyright.svg';
 import * as s from './footer.module.scss';
+
+const styles = {
+  response: { pt: 32, pb: 16 },
+  mobile: { pt: 32, pb: 16 },
+  tablet: { pt: 60, pb: 16 },
+  desktop: { pt: 60, pb: 16 },
+};
 const Footer = () => {
+  const pageFormat = useContext(PageFormatContext);
+  const pad = usePaddingsValues(styles, pageFormat, format);
   return (
     <footer>
-      <Section darkBackground={true} pt={32} pb={16} >
+      <Section darkBackground={true} pt={pad.pt} pb={pad.pb} className={`${s.footer}`} >
         <div className={`${s.footerWrapper}`}>
           <div className={`${s.mapBox}`}>
           <iframe
