@@ -3,8 +3,10 @@ import Section from 'components/common/section/Section';
 import Video from 'components/common/video/video';
 import { PageFormatContext, format } from 'context/pageFormatContext';
 import { usePaddingsValues } from 'hooks/usePaddingsValues';
+
 import arrow from '../../../../src/images/how/dashed-angle-arrow.png';
 import secondaryArrow from '../../../../src/images/how/dashed-straight-arrow.png';
+import * as s from './how.module.scss';
 
 const data = {
   ru: {
@@ -89,12 +91,10 @@ const How = () => {
     }
   }, [pageFormat]);
 
-  console.log(pageFormat);
-
   const paddings = usePaddingsValues(styles, pageFormat, format);
 
   return (
-    <div className="howBackgroundContainer">
+    <div className={s.howBackgroundContainer}>
       <Section
         titleHidden={true}
         titleLevel={'h3'}
@@ -102,8 +102,10 @@ const How = () => {
         pt={paddings.pt}
         pb={paddings.pb}
       >
-        <h3 className="howTitle">{data.ru.title}</h3>
-        <div className={isTablet || isDesktop ? 'howTabletFlexContainer' : ''}>
+        <h3 className={s.howTitle}>{data.ru.title}</h3>
+        <div
+          className={isTablet || isDesktop ? `${s.howTabletFlexContainer}` : ''}
+        >
           <Video
             videoSrcURL={videoUrl}
             videoTitle={videoTitle}
@@ -112,19 +114,31 @@ const How = () => {
             style={videoStyle}
           />
 
-          <div className="howTextContentContainer">
+          <div className={s.howTextContentContainer}>
             <ul>
               {data.ru.content.textContent.map((el, index) => {
                 return (
                   <li key={index}>
-                    <div className={`howTextBox${index} howTextBox`}>
-                      <p className={`howNumber howNumber${index}`}>
+                    <div
+                      className={`${s['howTextBox' + index]}  ${s.howTextBox}`}
+                    >
+                      <p
+                        className={`${s.howNumber}  ${s['howNumber' + index]}`}
+                      >
                         {el.number}
                       </p>
-                      <p className={`howCommonText${index} howCommonText`}>
+                      <p
+                        className={`${s['howCommonText' + index]} ${
+                          s.howCommonText
+                        }`}
+                      >
                         {el.text}
                       </p>
-                      <div className={`howArrowBox${index} howArrowBox`}>
+                      <div
+                        className={`${s['howArrowBox' + index]}  ${
+                          s.howArrowBox
+                        }`}
+                      >
                         {index < 3 && (
                           <img
                             src={
@@ -133,7 +147,7 @@ const How = () => {
                                 : arrow
                             }
                             alt={'arrow'}
-                            className="arrowImage"
+                            className={s.arrowImage}
                           ></img>
                         )}
                       </div>

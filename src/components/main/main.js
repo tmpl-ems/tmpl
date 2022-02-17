@@ -10,9 +10,9 @@ import PersonalProgram from 'components/main/PersonalProgram';
 const Main = () => {
   return (
     <main>
-      <How />
       <Example />
       <Advantages />
+      <How />
       {/* <Example /> */}
       <MyComponent />
       <PersonalProgram />
