@@ -6,6 +6,8 @@ import Advantages from './advantages/advantages';
 // import MyComponent from './myComponent/myComponent';
 import PersonalProgram from 'components/main/PersonalProgram';
 import Goals from './goals/goals';
+import MyComponent from './myComponent/myComponent';
+import Hero from '../hero/hero';
 
 const Main = ({ onModalOpen }) => {
   return (
@@ -15,6 +17,9 @@ const Main = ({ onModalOpen }) => {
       <Results />
       <PersonalProgram />
       <Enroll onModalOpen={onModalOpen} />
+      <Hero />
+      {/* <Example /> */}
+      <MyComponent />
     </main>
   );
 };
