@@ -18,20 +18,18 @@ export const Enroll = ({ onSingUpModalOpen }) => {
     ukr: {},
   };
   return (
-    <>
-      <Section titleLevel="h2" sectionClass={enrollSection}>
-        {enroll.ru.text.map(item => (
-          <p className={text} key={item}>
-            {item}
-          </p>
-        ))}
-        <Button
-          classType={2}
-          type="button"
-          addClass={enrollButton}
-          onBtnClick={onSingUpModalOpen}
-        />
-      </Section>
-    </>
+    <Section titleLevel="h2" sectionClass={enrollSection}>
+      {enroll.ru.text.map(item => (
+        <p className={text} key={item}>
+          {item}
+        </p>
+      ))}
+      <Button
+        classType={2}
+        type="button"
+        addClass={enrollButton}
+        onBtnClick={onModalOpen}
+      />
+    </Section>
   );
 };
