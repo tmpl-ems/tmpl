@@ -1,13 +1,6 @@
 @import 'styles/vars';
 @import 'styles/mixins';
-// .footer {
-//   padding-top: 32px;
-//   padding-bottom: 16px;
-//   @media screen and (min-width: 768px) {
-//     padding-top: 60px;
-//     padding-bottom: 16px;
-//   }
-// }
+
 .footerWrapper {
   margin-bottom: 60px;
   @media screen and (min-width: 768px) {
@@ -83,7 +76,7 @@
   }
 }
 .mediaList {
-  @include flexBlock;
+  @include flexBlockSpaceBetween;
 }
 .mediaItem {
   color: $secondary-text-color;
