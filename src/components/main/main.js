@@ -10,13 +10,11 @@ import Goals from './goals/goals';
 const Main = ({ onModalOpen }) => {
   return (
     <main>
-      {/* <Example /> */}
-      {/* <Advantages />
-      <Results /> */}
-      {/* <MyComponent /> */}
-      {/* <PersonalProgram />
-      <Enroll onModalOpen={onModalOpen} /> */}
-      <Goals />
+      <Goals onModalOpen={onModalOpen} />
+      <Advantages />
+      <Results />
+      <PersonalProgram />
+      <Enroll onModalOpen={onModalOpen} />
     </main>
   );
 };
