@@ -5,7 +5,7 @@ import { usePaddingsValues } from 'hooks/usePaddingsValues';
 
 // Если в нашем компоненте нужно выполнить или нет рендеринг в зависимости от ширины экрана, берём испортируем контекст и формат. А такэе useContext
 import { PageFormatContext, format } from 'context/pageFormatContext';
-import Section from 'components/common/section/Section';
+import Section from 'components/common/section/section';
 
 // Пример использования СВГ
 import LogoIcon from 'images/svg/logo.svg';

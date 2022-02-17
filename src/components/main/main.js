@@ -1,3 +1,4 @@
+import Results from 'components/results/Results';
 import React from 'react';
 import Example from './example/example';
 import { Enroll } from './EnrollSection/Enroll';
@@ -9,10 +10,10 @@ import PersonalProgram from 'components/main/PersonalProgram';
 const Main = () => {
   return (
     <main>
+      <Results />
       <Example />
       <Enroll />
       <Advantages />
-      {/* <Example /> */}
       <MyComponent />
       <PersonalProgram />
     </main>
