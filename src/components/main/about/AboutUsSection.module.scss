@@ -89,6 +89,9 @@
 }
 
 .listItem {
+  display: flex;
+  flex-wrap: nowrap;
+
   font-weight: 300;
   font-size: 16px;
   line-height: 1.125;
@@ -100,6 +103,10 @@
   &:not(:last-child) {
     margin-bottom: 12px;
   }
+}
+
+.marker {
+  display: block;
 }
 
 .resultText {
@@ -121,4 +128,7 @@
     margin-right: auto;
     margin-left: auto;
   }
+}
+
+.itemText {
 }

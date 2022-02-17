@@ -36,51 +36,35 @@ const AboutUsSection = () => {
         <p className={s.listPreTitle}>{data.ru.listPreTitle}</p>
         <div className={s.listBox}>
           <div className={s.listWrapper}>
-          <ul>
             <h3 className={s.listTitle}>{data.ru.gymListTitle}</h3>
-            <li className={s.listItem}>
-              <LightIcon style={{ marginRight: '10px'}}></LightIcon>
-              {data.ru.gymListContent[0]}
-            </li>
-            <li className={s.listItem}>
-              <LightIcon style={{ marginRight: '10px'}}></LightIcon>
-              {data.ru.gymListContent[1]}
-            </li>
-            <li className={s.listItem}>
-              <LightIcon style={{ marginRight: '10px'}}></LightIcon>
-              {data.ru.gymListContent[2]}
-            </li>
-            <li className={s.listItem}>
-              <LightIcon style={{ marginRight: '10px'}}></LightIcon>
-              {data.ru.gymListContent[3]}
-            </li>
-            <li className={s.listItem}>
-              <LightIcon style={{ marginRight: '10px'}}></LightIcon>
-              {data.ru.gymListContent[4]}
-            </li>
+            <ul>
+              {data.ru.gymListContent.map((item, index) => (<li key={index} className={s.listItem}>
+                <LightIcon className={s.marker}/>
+              <span className={s.itemText}>{item}</span>
+            </li>))}
           </ul>
           </div>
           <div className={s.listWrapper}>
-          <ul>
             <h3 className={s.listTitle}>{data.ru.EMSListTitle}</h3>
+          <ul>
             <li className={s.listItem}>
-              <LightIcon style={{ marginRight: '10px'}}></LightIcon>
+              <LightIcon style={{ marginRight: '10px'}}/>
               {data.ru.EMSListContent[0]}
             </li>
             <li className={s.listItem}>
-              <LightIcon style={{ marginRight: '10px'}}></LightIcon>
+              <LightIcon style={{ marginRight: '10px'}}/>
               {data.ru.EMSListContent[1]}
             </li>
             <li className={s.listItem}>
-              <LightIcon style={{ marginRight: '10px'}}></LightIcon>
+              <LightIcon style={{ marginRight: '10px'}}/>
               {data.ru.EMSListContent[2]}
             </li>
             <li className={s.listItem}>
-              <LightIcon style={{ marginRight: '10px'}}></LightIcon>
+              <LightIcon style={{ marginRight: '10px'}}/>
               {data.ru.EMSListContent[3]}
             </li>
             <li className={s.listItem}>
-              <LightIcon style={{ marginRight: '10px'}}></LightIcon>
+              <LightIcon style={{ marginRight: '10px'}}/>
               {data.ru.EMSListContent[4]}
             </li>
           </ul>
