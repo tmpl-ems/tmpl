@@ -19,13 +19,15 @@ const Section = ({
   pt,
   pb,
   darkBackground = false,
+  sectionClass,
+  containerClass,
 }) => {
   return (
     <section
-      className={`${section} ${darkBackground && dark}`}
+      className={`${section} ${darkBackground && dark} ${sectionClass}`}
       style={{ paddingTop: `${pt}px`, paddingBottom: `${pb}px` }}
     >
-      <Container>
+      <Container addClass={containerClass}>
         {head && (
           <Title
             tagName={titleLevel}
