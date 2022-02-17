@@ -1,0 +1,76 @@
+@import 'styles/vars.scss';
+@import 'styles/mixins.scss';
+
+.contentBlock {
+  @include flexBlock;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 320px;
+}
+.sectionTitle {
+  @include textStyleHeader;
+  margin-bottom: 28px;
+  font-size: 28px;
+  line-height: 31px;
+  letter-spacing: 0.01em;
+  color: $main-brand-color;
+  @media screen and (min-width: 768px) {
+    font-size: 48px;
+    line-height: 64px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-top: 60px;
+  }
+}
+.text1 {
+  display: block;
+  width: 200px;
+  @include textStyleHeader;
+  font-weight: 600;
+  color: $secondary-text-color;
+  margin-top: 28px;
+  margin-bottom: 16px;
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 33px;
+    margin-top: 36px;
+    margin-bottom: 8px;
+  }
+}
+.snakeArrowIcon {
+  display: block;
+  margin-top: 16px;
+}
+.text2 {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 16px;
+  @include textStyleHeader;
+  color: $third-text-color;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  & .text2_span {
+    font-weight: 300;
+    opacity: 0.5;
+    text-decoration: line-through;
+  }
+}
+.price {
+  display: block;
+  width: 120px;
+  margin-bottom: 10px;
+  margin-right: 2px;
+  align-self: flex-end;
+  @include textStyleHeader;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 20px;
+  text-align: center;
+  color: $secondary-text-color;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.dashedLine {
+  display: block;
+  align-self: flex-end;
+}

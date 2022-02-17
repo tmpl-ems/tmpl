@@ -1,9 +1,9 @@
 import React from 'react';
-import { languagesBtn } from './languagesBlock.module.scss';
+import * as s from './languagesBlock.module.scss';
 
 const LangButton = ({ content }) => {
   return (
-    <button className={languagesBtn} type="button">
+    <button className={s.languagesBtn} type="button">
       {content}
     </button>
   );
