@@ -28,7 +28,7 @@
 }
 
 .swiper-pagination-bullet {
-  border: 1px solid #20c5a0;
+  border: 1px solid $secondary-brand-color;
 }
 
 .swiper-pagination-bullet-active {
@@ -51,4 +51,8 @@
   @media (min-width: 1280px) {
     max-width: 545px;
   }
+}
+
+.reviewSwiper {
+  --swiper-pagination-bullet-inactive-color: $background-color;
 }

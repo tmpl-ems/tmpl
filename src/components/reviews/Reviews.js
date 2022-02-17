@@ -1,5 +1,5 @@
 import React from 'react';
-import * as s from './Reviews.module.scss';
+// import * as s from './Reviews.module.scss';
 
 import ReviewCard from '../reviewCard/ReviewCard';
 
@@ -40,7 +40,7 @@ const Reviews = () => {
         pagination={true}
         keyboard={true}
         modules={[Pagination, Keyboard]}
-        className={s.reviewSwiper}
+        className="reviewSwiper"
       >
         <SwiperSlide>
           <ReviewCard
