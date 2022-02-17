@@ -1,16 +1,14 @@
 @import '../../../styles/vars';
 
-.about-section-title {
-  margin-bottom: 32px;
-
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 1.125;
-
-  color: $placeholder-color;
+.wrapper {
+  @media screen and (min-width: 1280px) {
+    width: 1035px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
-.aboutSectionDescription {
+.description {
   margin-bottom: 32px;
 
   font-weight: 300;
@@ -20,16 +18,107 @@
   color: $placeholder-color;
 }
 
-.aboutSectionText {
+.listPreTitle {
+  margin-bottom: 32px;
+
   font-weight: 500;
   font-size: 18px;
-  line-height: 20px;
+  line-height: 1.111;
+  text-align: center;
+
+  color: $placeholder-color;
+
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 26px;
+  }
+}
+
+.listBox {
+  margin-bottom: 32px;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: nowrap;
+
+    margin-right: -32px;
+  }
+}
+
+.listWrapper {
+  padding-top: 24px;
+  padding-bottom: 32px;
+  padding-left: 15px;
+  padding-right: 20px;
+
+  border-width: 2px;
+  border-style: solid;
+  // border-image: (
+  //   linear-gradient(180deg, #20c5a0 0%, #0a866a 100%),
+  //   linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))
+  // );
+  border-color: $main-brand-color;
+  border-radius: 16px;
+
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-basis: calc((100% - 64px) / 2);
+    margin-right: 32px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-left: 26px;
+    padding-bottom: 24px;
+    padding-right: 41px;
+  }
+}
+
+.listTitle {
+  margin-bottom: 24px;
+
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.111;
   text-align: center;
 
   color: $placeholder-color;
 }
 
-.aboutSectionCompareList {
-  border: 2px solid black;
-  border-radius: 16px;
+.listItem {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.125;
+
+  list-style-type: none;
+
+  color: $placeholder-color;
+
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+}
+
+.resultText {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+
+  color: $placeholder-color;
+
+  @media screen and (min-width: 768px) {
+    width: 680px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 850px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
