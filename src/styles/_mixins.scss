@@ -4,3 +4,10 @@
   justify-content: space-between;
   align-items: center;
 }
+@mixin textStyleHeader {
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+}

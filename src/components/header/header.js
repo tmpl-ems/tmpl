@@ -9,13 +9,7 @@ import BurgerIcon from 'images/svg/button-burger.svg';
 import DropNav from './dropNav/dropNav';
 import NavBlock from './navBlock/navBlock';
 import LanguagesBlock from './languagesBlock/languagesBlock';
-import {
-  header,
-  headerContainer,
-  navMobileBlock,
-  logoLink,
-  burgerOpenBtn,
-} from './header.module.scss';
+import * as s from './header.module.scss';
 
 export default function Header() {
   // забираем значение ширины экрана, которое высчитывается в компоненте Layout и реализуем рендеринг по условию
@@ -38,21 +32,21 @@ export default function Header() {
   };
 
   return (
-    <header className={header} id="header">
+    <header className={s.header} id="header">
       <Container>
-        <div className={headerContainer}>
+        <div className={s.headerContainer}>
           {/* //----logo------ */}
-          <a href="#header" className={logoLink}>
+          <a href="#header" className={s.logoLink}>
             <LogoIcon width="74" height="66" />
           </a>
 
           {isDesktop && <NavBlock />}
-          <div className={navMobileBlock}>
+          <div className={s.navMobileBlock}>
             <LanguagesBlock />
             {/* //---BurgerBtn--- */}
             {!isDesktop && (
               <button
-                className={burgerOpenBtn}
+                className={s.burgerOpenBtn}
                 type="button"
                 onClick={openDropNav}
               >

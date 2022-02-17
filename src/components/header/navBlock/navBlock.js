@@ -1,5 +1,5 @@
 import React from 'react';
-import { navList, navItem, navLink } from './navBlock.module.scss';
+import * as s from './navBlock.module.scss';
 
 const NavBlock = () => {
   const data = {
@@ -8,10 +8,10 @@ const NavBlock = () => {
   };
   return (
     <nav>
-      <ul className={navList}>
-        {data.ru.map(item => (
-          <li className={navItem}>
-            <a className={navLink} href="#">
+      <ul className={s.navList}>
+        {data.ru.map((item, i) => (
+          <li key={i} className={s.navItem}>
+            <a className={s.navLink} href="#">
               {item}
             </a>
           </li>

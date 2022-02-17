@@ -13,7 +13,18 @@ button {
   z-index: 999;
   overflow-y: scroll;
   background: $backdrop-color;
-  backdrop-filter: blur(6px);
+  // backdrop-filter: blur(6px);
+  &::after {
+    content: '';
+    background: rgba(0, 0, 0, 0.8);
+    filter: blur(6px);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+  }
 }
 .containerInDrop {
   padding: 20px;
@@ -28,8 +39,8 @@ button {
   position: absolute;
   top: 20px;
   right: 20px;
-  width: 36px;
-  height: 36px;
+  width: 18px;
+  height: 18px;
   @include flexBlock;
   padding: 0;
   //outline: none;

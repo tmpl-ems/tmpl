@@ -1,15 +1,12 @@
 import React from 'react';
 import LangButton from './languagesBtn';
-import {
-  languagesBlock,
-  languageBetweenEl,
-} from './languagesBlock.module.scss';
+import * as s from './languagesBlock.module.scss';
 
 const LanguagesBlock = () => {
   return (
-    <div className={languagesBlock}>
+    <div className={s.languagesBlock}>
       <LangButton content="RU" />
-      <span className={languageBetweenEl}>|</span>
+      <span className={s.languageBetweenEl}>|</span>
       <LangButton content="UA" />
     </div>
   );
