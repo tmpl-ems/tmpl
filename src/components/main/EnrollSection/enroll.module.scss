@@ -1,0 +1,27 @@
+@import 'styles/vars';
+
+.enrollSection {
+  background-color: $main-brand-color;
+  color: $secondary-text-color;
+  padding-top: 60px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 52px;
+    padding-bottom: 32px;
+  }
+}
+
+.text {
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.25;
+
+  &:last-of-type {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+}
+
+.enrollButton {
+  margin: 0 auto;
+}
