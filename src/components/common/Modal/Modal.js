@@ -10,7 +10,7 @@ const Modal = ({ children, closeModal }) => {
     };
 
     window.addEventListener('keydown', handleKeyDown);
-
+    // disableScroll();
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
@@ -20,6 +20,11 @@ const Modal = ({ children, closeModal }) => {
       closeModal();
     }
   };
+  // function disableScroll(e) {
+  //   window.addEventListener('touchmove', e.preventDefault, {
+  //     passive: false,
+  //   });
+  // }
 
   return <div className={overlay} onClick={handleBackdropClick}></div>;
 };
