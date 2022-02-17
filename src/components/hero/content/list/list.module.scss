@@ -1,0 +1,29 @@
+@import 'styles/vars.scss';
+@import 'styles/mixins.scss';
+
+.listContainer {
+  display: block;
+  padding: 16px 0 40px;
+}
+.list {
+  columns: 2;
+  list-style-image: url('images/header/header-mark-list.png');
+  margin: 0;
+  padding: 0;
+}
+.listItem {
+  list-style-type: none;
+  margin-bottom: 16px;
+  padding-left: 8px;
+  @include textStyleHeader;
+  font-weight: 300;
+  color: $secondary-text-color;
+}
+
+// @media screen and (min-width: 768px) {
+//
+// }
+// @media screen and (min-width: 1280px) {
+//
+
+// }
