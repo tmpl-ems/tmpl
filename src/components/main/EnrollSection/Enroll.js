@@ -1,17 +1,9 @@
 import React from 'react';
-// import React, { useState } from 'react';
 import Button from 'components/common/button/button';
-// import Modal from 'components/common/Modal/Modal';
 import { enrollSection, enrollButton, text } from './enroll.module.scss';
 import Section from 'components/common/section/section';
 
-export const Enroll = () => {
-  // const [showModal, setShowModal] = useState(false);
-
-  // const toggleModal = () => {
-  //   setShowModal(showModal => !showModal);
-  // };
-
+export const Enroll = ({ onModalOpen }) => {
   const enroll = {
     ru: {
       title: '',
@@ -33,9 +25,13 @@ export const Enroll = () => {
             {item}
           </p>
         ))}
-        <Button classType={2} type="button" addClass={enrollButton} />
+        <Button
+          classType={2}
+          type="button"
+          addClass={enrollButton}
+          onBtnClick={onModalOpen}
+        />
       </Section>
-      {/* {showModal && <Modal closeModal={toggleModal}></Modal>} */}
     </>
   );
 };

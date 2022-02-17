@@ -7,12 +7,12 @@ import Advantages from './advantages/advantages';
 import MyComponent from './myComponent/myComponent';
 import PersonalProgram from 'components/main/PersonalProgram';
 
-const Main = () => {
+const Main = ({ onModalOpen }) => {
   return (
     <main>
       <Results />
       <Example />
-      <Enroll />
+      <Enroll onModalOpen={onModalOpen} />
       <Advantages />
       <MyComponent />
       <PersonalProgram />
