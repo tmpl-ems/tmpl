@@ -45,16 +45,16 @@ const Footer = () => {
         </ul>
         <div className={`${s.mediaWrapper}`}>
            <ul className={ `${s.mediaList} list`}>
-          <li><a href="">
+          <li><a href="javascript:void(0)" className={`${s.mediaItem} link`}>
           <Telegram/>
           </a></li>
-          <li><a href="">
+          <li><a href="javascript:void(0)"className={`${s.mediaItem} link`}>
           <Youtube/>
           </a></li>
-          <li><a href="">
+          <li><a href="javascript:void(0)"className={`${s.mediaItem} link`}>
           <Facebook/>
           </a></li>
-          <li><a href="">
+          <li><a href="javascript:void(0)"className={`${s.mediaItem} link`}>
           <Instagram/>
           </a></li>
         </ul>

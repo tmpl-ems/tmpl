@@ -47,9 +47,6 @@
   flex-direction: column;
   margin-bottom: 32px;
   color: $secondary-text-color;
-  //   @media screen and (min-width: 768px) {
-  //     margin-bottom: 44px;
-  //   }
   font-style: normal;
   @media screen and (min-width: 768px) {
     margin-bottom: 58px;
@@ -62,6 +59,9 @@
   @include fontProperties(16, 1.25);
   &:not(:last-child) {
     margin-bottom: 8px;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   @media screen and (min-width: 768px) {
     @include fontProperties(18, 1.22);
@@ -70,7 +70,6 @@
 .mediaWrapper {
   width: 173px;
   margin-left: auto;
-  //   margin-bottom: 60px;
   @media screen and (min-width: 768px) {
     margin-bottom: 0;
   }
@@ -78,6 +77,16 @@
 .mediaList {
   @include flexBlock;
 }
+.mediaItem {
+  color: $secondary-text-color;
+  &:hover {
+    color: $main-brand-color;
+  }
+}
+.mediaItem svg {
+  fill: currentColor;
+}
+
 .copyRight {
   font-family: $secondary-font;
   color: $secondary-text-color;
