@@ -3,4 +3,6 @@
 @import './vendor/swiperStyles';
 @import './common';
 @import './utils/visually-hidden';
+@import '../components/main/EnrollSection/enroll.module';
+@import '../components/common/Modal/modal.module';
 @import './mixins';

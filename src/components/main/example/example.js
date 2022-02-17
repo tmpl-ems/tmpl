@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 // кастомный хук, для расчёта верхних и нижних отступов в зависимости от ширины вьюпорта
 import { usePaddingsValues } from 'hooks/usePaddingsValues';
@@ -11,6 +11,8 @@ import Section from 'components/common/section/section';
 import LogoIcon from 'images/svg/logo.svg';
 import Button from 'components/common/button/button';
 import Advantages from '../advantages/advantages';
+
+import Modal from 'components/common/Modal/Modal';
 
 // Пример организации данных, можете напрямую в конпонент писать, но в будущем, вероятнее всего нужно будет выносить весть текст в отдельные json файлы и струкрута будет примерно такой.
 const data = {
@@ -42,6 +44,10 @@ const Example = () => {
   // хук вовразает значения паддингов в зависимости от ширины экрана.
 
   const paddings = usePaddingsValues(styles, pageFormat, format);
+  const [showModal, setShowModal] = useState(false);
+  const toggleModal = () => {
+    setShowModal(showModal => !showModal);
+  };
 
   return (
     <Section
@@ -54,6 +60,8 @@ const Example = () => {
       <p>{data.ru.content}</p>
       {isTablet && <LogoIcon width="200" height="200" />}
       <Button classType={3} type={'button'} />
+      <button onClick={toggleModal}>Checkout button</button>
+      {showModal && <Modal closeModal={toggleModal}></Modal>}
     </Section>
   );
 };
