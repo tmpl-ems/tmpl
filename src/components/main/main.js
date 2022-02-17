@@ -6,15 +6,15 @@ import Advantages from './advantages/advantages';
 // import MyComponent from './myComponent/myComponent';
 import PersonalProgram from 'components/main/PersonalProgram';
 
-const Main = ({ onModalOpen }) => {
+const Main = ({ onSingUpModalOpen }) => {
   return (
     <main>
       {/* <Example /> */}
       <Advantages />
       <Results />
       {/* <MyComponent /> */}
-      <PersonalProgram />
-      <Enroll onModalOpen={onModalOpen} />
+      <PersonalProgram onSingUpModalOpen={onSingUpModalOpen} />
+      <Enroll onSingUpModalOpen={onSingUpModalOpen} />
     </main>
   );
 };

@@ -4,31 +4,22 @@ import Footer from 'components/footer/footer';
 import Header from 'components/header/header';
 import Main from 'components/main/main';
 import Modal from 'components/common/Modal/Modal';
+import SingUpForm from 'components/common/SingUpForm';
 
 export default function IndexPage() {
-  const [showModal, setShowModal] = useState(false);
-
-  const toggleModal = () => {
-    setShowModal(showModal => !showModal);
+  const [showSingUpModal, setShowSingUpModal] = useState(false);
+  const toggleSingUpModal = () => {
+    setShowSingUpModal(showModal => !showModal);
   };
 
   return (
     <Layout>
       <Header />
-      <Main onModalOpen={toggleModal} />
+      <Main onSingUpModalOpen={toggleSingUpModal} />
       <Footer />
-      {showModal && (
-        <Modal closeModal={toggleModal}>
-          <div
-            style={{
-              width: '200px',
-              height: '200px',
-              backgroundColor: '#ffffff',
-            }}
-          >
-            Вместо этого Div вы будете добавлять свой компонент, нужна
-            реализация
-          </div>
+      {showSingUpModal && (
+        <Modal closeModal={toggleSingUpModal}>
+          <SingUpForm closeModal={toggleSingUpModal} />
         </Modal>
       )}
     </Layout>

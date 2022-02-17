@@ -1,0 +1,111 @@
+@import 'styles/vars';
+
+.modalContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px 12px;
+  width: 280px;
+
+  border: 1px solid $main-brand-color;
+  border-radius: 16px;
+  background-color: #ffffff;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    padding: 40px 48px;
+    width: 704px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding: 40px 125px;
+    width: 822px;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 19px;
+  right: 19px;
+
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  & svg {
+    @media screen and (min-width: 768px) {
+      top: 21px;
+      left: 21px;
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.text {
+  margin-bottom: 32px;
+
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: $placeholder-color;
+
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    line-height: 48px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width: 768px) {
+    margin: 0 auto;
+    width: 423px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin: 0 auto;
+    width: 394px;
+  }
+}
+
+.input {
+  padding: 6px 20px;
+  margin-bottom: 24px;
+  height: 44px;
+  width: 100%;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 33px;
+  color: $placeholder-color;
+
+  border: 1px solid $placeholder-color;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+
+  &::placeholder {
+    color: $placeholder-color;
+  }
+
+  &:focus {
+    border: 1px solid $main-brand-color;
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 6px 22px;
+  }
+}

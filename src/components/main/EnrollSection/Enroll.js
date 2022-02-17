@@ -3,7 +3,7 @@ import Button from 'components/common/button/button';
 import { enrollSection, enrollButton, text } from './enroll.module.scss';
 import Section from 'components/common/section/section';
 
-export const Enroll = ({ onModalOpen }) => {
+export const Enroll = ({ onSingUpModalOpen }) => {
   const enroll = {
     ru: {
       title: '',
@@ -29,7 +29,7 @@ export const Enroll = ({ onModalOpen }) => {
           classType={2}
           type="button"
           addClass={enrollButton}
-          onBtnClick={onModalOpen}
+          onBtnClick={onSingUpModalOpen}
         />
       </Section>
     </>
