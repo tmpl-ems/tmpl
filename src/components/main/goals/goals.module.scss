@@ -1,0 +1,143 @@
+@import 'styles/vars';
+
+.subtitle {
+  font-family: $main-font;
+  color: $secondary-text-color;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.33;
+
+  &:not(:last-of-type) {
+    margin-bottom: 16px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: 768px) {
+    &:last-of-type {
+      margin-bottom: 80px;
+    }
+  }
+}
+
+.list {
+  color: $secondary-text-color;
+  list-style-type: none;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 768px) {
+    // column-count: 2;
+  }
+}
+
+.item {
+  position: relative;
+  padding-left: 40px;
+
+  &::before {
+    content: '';
+    background-image: url('../../../images/goals/marker.png');
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    left: 0;
+    top: 50%;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 300px;
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+// .goalsList {
+//   list-style-type: none;
+//   margin-bottom: 40px;
+
+//   @media screen and (min-width: 768px) {
+//   }
+//   @media screen and (min-width: 1280px) {
+//     width: $desktop;
+
+//     margin-top: 80px;
+//     margin-bottom: 80px;
+//   }
+// }
+
+// .goalsList .goalsListLi {
+//   margin-bottom: 32px;
+//   @media screen and (min-width: 480px) {
+//   }
+//   @media screen and (min-width: 768px) {
+//     display: block;
+//     float: left;
+//     width: 48%;
+//   }
+//   @media screen and (min-width: 1280px) {
+//     display: block;
+//     float: left;
+//     width: 49%;
+//   }
+// }
+// .goalsListLi {
+//   color: $secondary-text-color;
+//   font-style: normal;
+//   font-weight: 300;
+//   font-size: 16px;
+//   line-height: 24px;
+//   padding-left: 15px;
+// }
+// .button {
+//   padding-bottom: 60px;
+// }
+.goalsButton {
+  background-color: #00af87;
+  color: $main-text-color;
+
+  display: flex;
+  justify-content: center;
+  padding: 16px 40px;
+  border-radius: 16px;
+  height: 65px;
+  border: none;
+
+  font-family: $main-font;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.83;
+  text-transform: uppercase;
+  cursor: pointer;
+  align-items: center;
+  margin: 0px auto;
+  &:hover,
+  &:focus {
+    background-color: red;
+    color: $secondary-text-color;
+  }
+}
+.imagetop {
+  position: absolute;
+  top: -250px;
+  right: 0;
+}
+.imagebottom {
+  position: absolute;
+  bottom: -250px;
+  left: -50px;
+}
+
+.marker {
+  width: 24px;
+  height: 24px;
+}
