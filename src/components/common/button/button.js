@@ -19,7 +19,13 @@ classType: число 1, 2 или 3, в зависимости от типа к�
 text: этот проп содержит текст кнопки (по умолчанию уже указано "Записаться", поэтому это необязательный проп)
 */
 
-const Button = ({ type = 'button', classType = 1, text, ...props }) => {
+const Button = ({
+  type = 'button',
+  classType = 1,
+  text,
+  addClass,
+  ...props
+}) => {
   const [nameOfClass, setNameOfClass] = useState(s.btn1);
 
   useEffect(() => {
@@ -32,7 +38,7 @@ const Button = ({ type = 'button', classType = 1, text, ...props }) => {
   }, [classType]);
 
   return (
-    <button type={type} className={nameOfClass} {...props}>
+    <button type={type} className={`${nameOfClass} ${addClass}`} {...props}>
       {text ? text : data.ru.text}
     </button>
   );

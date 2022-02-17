@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { overlay } from './_modal.module.scss';
+import { overlay } from './modal.module.scss';
 
 const Modal = ({ children, closeModal }) => {
   useEffect(() => {
