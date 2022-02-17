@@ -28,7 +28,7 @@ export const Enroll = ({ onSingUpModalOpen }) => {
         classType={2}
         type="button"
         addClass={enrollButton}
-        onBtnClick={onModalOpen}
+        onBtnClick={onSingUpModalOpen}
       />
     </Section>
   );

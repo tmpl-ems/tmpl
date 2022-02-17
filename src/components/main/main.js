@@ -16,18 +16,15 @@ import Hero from '../hero/hero';
 const Main = ({ onSingUpModalOpen }) => {
   return (
     <main>
-      <Goals onModalOpen={onModalOpen} />
+      <Hero />
       <Advantages />
+      <Goals onSingUpModalOpen={onSingUpModalOpen} />
       <How />
       <Results />
       <Reviews />
-      {/* <MyComponent /> */}
       <PersonalProgram onSingUpModalOpen={onSingUpModalOpen} />
       <Enroll onSingUpModalOpen={onSingUpModalOpen} />
       <PersonalProgram />
-      <Enroll onModalOpen={onModalOpen} />
-      <Hero />
-      {/* <Example /> */}
       <MyComponent />
     </main>
   );
