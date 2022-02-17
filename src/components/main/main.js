@@ -4,10 +4,8 @@ import React from 'react';
 
 import How from './how/how';
 
-// import Example from './example/example';
 import { Enroll } from './EnrollSection/Enroll';
 import Advantages from './advantages/advantages';
-// import MyComponent from './myComponent/myComponent';
 import PersonalProgram from 'components/main/PersonalProgram';
 import Goals from './goals/goals';
 import MyComponent from './myComponent/myComponent';
@@ -16,18 +14,15 @@ import Hero from '../hero/hero';
 const Main = ({ onSingUpModalOpen }) => {
   return (
     <main>
-      <Goals onModalOpen={onModalOpen} />
+      <Hero />
       <Advantages />
+      <Goals onSingUpModalOpen={onSingUpModalOpen} />
       <How />
       <Results />
       <Reviews />
-      {/* <MyComponent /> */}
       <PersonalProgram onSingUpModalOpen={onSingUpModalOpen} />
       <Enroll onSingUpModalOpen={onSingUpModalOpen} />
       <PersonalProgram />
-      <Enroll onModalOpen={onModalOpen} />
-      <Hero />
-      {/* <Example /> */}
       <MyComponent />
     </main>
   );
