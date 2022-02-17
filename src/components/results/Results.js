@@ -4,6 +4,7 @@ import * as s from './Results.module.scss';
 // Если в нашем компоненте нужно выполнить или нет рендеринг в зависимости от ширины экрана, берём испортируем контекст и формат. А такэе useContext
 import { PageFormatContext, format } from 'context/pageFormatContext';
 import Section from 'components/common/section/section';
+import ResultCard from 'components/resultCard/ResultCard';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -17,7 +18,6 @@ import '../../styles/vendor/_swiperStyles.scss';
 
 // import required modules
 import { Navigation, Pagination, Keyboard } from 'swiper';
-import ResultCard from 'components/resultCard/ResultCard';
 
 const Results = () => {
   // забираем значение ширины экрана, которое высчитывается в компоненте Layout и реализуем рендеринг по условию
@@ -28,11 +28,7 @@ const Results = () => {
   const isBackground = isTablet || isDesktop;
 
   return (
-    <Section
-      head={'Результаты наших клиентов'}
-      titleHidden={false}
-      titleLevel="h4"
-    >
+    <Section head={'Результаты наших клиентов'} titleLevel="h4">
       {isBackground && <div className={s.background}></div>}
       <Swiper
         // cssMode={true}
