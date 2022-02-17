@@ -10,8 +10,9 @@ import * as s from './footer.module.scss';
 const Footer = () => {
   return (
     <footer>
-      <Section darkBackground={true} pt={32} pb={16}>
-        <div className={`${s.mapBox}`}>
+      <Section darkBackground={true} pt={32} pb={16} >
+        <div className={`${s.footerWrapper}`}>
+          <div className={`${s.mapBox}`}>
           <iframe
              title="Location"
             className={`${s.map}`}
@@ -22,8 +23,8 @@ const Footer = () => {
           // loading
         ></iframe>
         </div>
-       
-      <Logo  className={`${s.logo}`}/>
+        <div>
+          <Logo  className={`${s.logo}`}/>
         
         <ul className={ `${s.contactsList} list`}>
           <li className={ `${s.contactItem}`}>
@@ -58,6 +59,10 @@ const Footer = () => {
           </a></li>
         </ul>
        </div>
+       </div>
+       </div>
+        
+      
        
         <p className={`${s.copyRight}`}>
           <span className={`${s.copyRightSign}`}><CopyRight /></span>2022</p>

@@ -1,16 +1,41 @@
 @import 'styles/vars';
 @import 'styles/mixins';
+.footerWrapper {
+  margin-bottom: 60px;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 34px;
+  }
+}
 .mapBox {
   margin-bottom: 24px;
   margin-left: auto;
   margin-right: auto;
+  width: 280px;
+  height: 270px;
   border-radius: 16px;
   overflow: hidden;
+
+  @media screen and (min-width: 768px) {
+    width: 336px;
+    margin: 0;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 608px;
+  }
 }
 .map {
   border: 0;
   width: 280px;
   height: 270px;
+  @media screen and (min-width: 768px) {
+    width: 336px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 608px;
+  }
 }
 .logo {
   display: block;
@@ -26,18 +51,29 @@
   //     margin-bottom: 44px;
   //   }
   font-style: normal;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 58px;
+  }
 }
 .contactItem {
-  margin-bottom: 8px;
   margin-left: auto;
   font-family: $secondary-font;
   font-style: normal;
   @include fontProperties(16, 1.25);
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+  @media screen and (min-width: 768px) {
+    @include fontProperties(18, 1.22);
+  }
 }
 .mediaWrapper {
   width: 173px;
   margin-left: auto;
-  margin-bottom: 60px;
+  //   margin-bottom: 60px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
 }
 .mediaList {
   @include flexBlock;
