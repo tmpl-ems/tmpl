@@ -1,36 +1,66 @@
-@import '../../../styles/vars';
+@import 'styles/vars';
 
-.advantages {
-  padding-left: 20px;
-  padding-right: 20px;
+.container {
   color: $placeholder-color;
-
-  &__title {
-    text-align: center;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.33;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.11;
+  @media screen and (min-width: 1280px) {
+    padding-left: 110px;
+    padding-right: 110px;
   }
+}
 
-  //   &__mainList {
+.head {
+  text-align: center;
+}
 
-  //   }
-
-  &__titleList {
-    font-size: 18px;
-    line-height: 1.11;
+.info {
+  line-height: 1.33;
+  margin-bottom: 32px;
+  @media screen and (min-width: 1280px) {
+    padding-left: 87px;
+    padding-right: 87px;
   }
+}
 
-  &__list {
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 1.25;
+.mainTitle,
+.mainItem {
+  margin-bottom: 40px;
+}
+
+.mainList {
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(336px, 1fr));
+    grid-gap: 32px;
   }
+  @media screen and (min-width: 1280px) {
+    grid-template-columns: repeat(2, minmax(482px, 1fr));
+  }
+}
 
-  &__result {
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 1.5;
-    text-align: center;
+.list,
+.result {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.item,
+.title {
+  margin-bottom: 12px;
+}
+
+.icon {
+  margin-bottom: 18px;
+}
+
+.result {
+  line-height: 1.5;
+  text-align: center;
+  @media screen and (min-width: 1280px) {
+    padding-left: 160px;
+    padding-right: 160px;
   }
 }
