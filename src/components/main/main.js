@@ -1,6 +1,9 @@
 import Results from 'components/results/Results';
 import Reviews from 'components/reviews/Reviews';
 import React from 'react';
+
+import How from './how/how';
+
 // import Example from './example/example';
 import { Enroll } from './EnrollSection/Enroll';
 import Advantages from './advantages/advantages';
@@ -15,6 +18,7 @@ const Main = ({ onModalOpen }) => {
     <main>
       <Goals onModalOpen={onModalOpen} />
       <Advantages />
+      <How />
       <Results />
       <Reviews />
       {/* <MyComponent /> */}
