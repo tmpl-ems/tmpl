@@ -10,11 +10,13 @@ import PersonalProgram from 'components/main/PersonalProgram';
 import Goals from './goals/goals';
 import MyComponent from './myComponent/myComponent';
 import Hero from '../hero/hero';
+import AboutUsSection from './about/AboutUsSection';
 
 const Main = ({ onSingUpModalOpen }) => {
   return (
     <main>
       <Hero />
+      <AboutUsSection />
       <Advantages />
       <Goals onSingUpModalOpen={onSingUpModalOpen} />
       <How />
