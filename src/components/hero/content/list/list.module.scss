@@ -1,29 +1,32 @@
 @import 'styles/vars.scss';
 @import 'styles/mixins.scss';
 
-.listContainer {
-  display: block;
-  padding: 16px 0 40px;
-}
 .list {
-  columns: 2;
-  list-style-image: url('images/header/header-mark-list.png');
-  margin: 0;
-  padding: 0;
-}
-.listItem {
   list-style-type: none;
-  margin-bottom: 16px;
-  padding-left: 8px;
+  display: grid;
+  gap: 16px 16px;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 16px 0 40px;
+  max-width: 400px;
+}
+
+.listItem {
+  padding-left: 20px;
+  position: relative;
   @include textStyleHeader;
   font-weight: 300;
   color: $secondary-text-color;
+
+  &::before {
+    content: ' ';
+    width: 12px;
+    height: 12px;
+    display: block;
+    position: absolute;
+    left: 0;
+    background-image: url('images/header/header-mark-list.png');
+    background-position: 0 0;
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+  }
 }
-
-// @media screen and (min-width: 768px) {
-//
-// }
-// @media screen and (min-width: 1280px) {
-//
-
-// }

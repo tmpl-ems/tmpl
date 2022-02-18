@@ -5,22 +5,20 @@ const List = () => {
   const data = {
     ru: [
       'Без тяжелых весов и нагрузок',
-      'Прорабатывая все группы мышц',
       'Индивидуально с тренером',
+      'Прорабатывая все группы мышц',
       'Укрепляя здоровье',
     ],
     ua: [],
   };
   return (
-    <div className={s.listContainer}>
-      <ul className={s.list}>
-        {data.ru.map((item, i) => (
-          <li key={i} className={s.listItem}>
-            {item}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul className={s.list}>
+      {data.ru.map((item, i) => (
+        <li key={i} className={s.listItem}>
+          {item}
+        </li>
+      ))}
+    </ul>
   );
 };
 
