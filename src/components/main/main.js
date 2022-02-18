@@ -1,6 +1,7 @@
 import Results from 'components/results/Results';
 import Reviews from 'components/reviews/Reviews';
 import React from 'react';
+import { Element } from 'react-scroll';
 
 import How from './how/how';
 
@@ -18,11 +19,22 @@ const Main = ({ onSingUpModalOpen }) => {
       <Hero />
       <AboutUsSection />
       <Advantages />
-      <Goals onSingUpModalOpen={onSingUpModalOpen} />
-      <How />
-      <Results />
-      <Reviews />
-      <PersonalProgram onSingUpModalOpen={onSingUpModalOpen} />
+      <Element name={'goals'}>
+        <Goals onSingUpModalOpen={onSingUpModalOpen} />
+      </Element>
+      <Element name={'about-us'}>
+        <How />
+      </Element>
+      <Element name={'clients-result'}>
+        <Results />
+      </Element>
+      <Element name={'feedbacks'}>
+        <Reviews />
+      </Element>
+      <Element name={'programs'}>
+        <PersonalProgram onSingUpModalOpen={onSingUpModalOpen} />
+      </Element>
+
       <Enroll onSingUpModalOpen={onSingUpModalOpen} />
       <PersonalProgram />
       <MyComponent />
