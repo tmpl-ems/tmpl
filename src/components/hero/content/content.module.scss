@@ -16,6 +16,7 @@
   @media screen and (min-width: 768px) {
     font-size: 48px;
     line-height: 64px;
+    margin-bottom: 36px;
   }
   @media screen and (min-width: 1280px) {
     margin-top: 60px;
@@ -37,41 +38,110 @@
     margin-bottom: 8px;
   }
 }
-.snakeArrowMobIcon {
-  display: block;
-  margin-top: 16px;
-}
-.snakeArrowIcon {
-  display: block;
+.offerBlock {
+  width: 280px;
+  height: 230px;
+  padding: 0;
+  margin: 0;
+  @media screen and (min-width: 768px) {
+    margin-left: 200px;
+    width: 400px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-left: 220px;
+  }
 }
 .text2 {
+  position: relative;
   display: block;
-  margin-top: 15px;
   margin-bottom: 16px;
+  padding-top: 120px;
   @include textStyleHeader;
   color: $third-text-color;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  @media screen and (min-width: 768px) {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    padding-top: 77px;
+    margin-bottom: 30px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-top: 45px;
+  }
   & .text2_span {
+    padding-left: 10px;
     font-weight: 300;
     opacity: 0.5;
     text-decoration: line-through;
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+    }
+  }
+  &::before {
+    content: ' ';
+    width: 90px;
+    height: 90px;
+    display: block;
+    position: absolute;
+    top: 16px;
+    background-image: url('images/header/header-snake-arrow-mobile.png');
+    background-position: 0 0;
+    background-size: 90px 90px;
+    background-repeat: no-repeat;
+
+    @media screen and (min-width: 768px) {
+      width: 64px;
+      height: 64px;
+      top: -12px;
+      left: 20px;
+      background-image: url('images/header/header-snake-arrow.png');
+      background-size: 64px 64px;
+    }
+    @media screen and (min-width: 1280px) {
+      top: -30px;
+      left: 0;
+    }
   }
 }
 .price {
   display: block;
-  width: 120px;
-  margin-bottom: 10px;
-  margin-right: 2px;
-  align-self: flex-end;
+  position: relative;
+  padding-bottom: 34px;
+  margin-left: 100px;
+
   @include textStyleHeader;
   font-weight: 600;
   font-size: 24px;
   line-height: 20px;
-  text-align: center;
   color: $secondary-text-color;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-.dashedLine {
-  display: block;
-  align-self: flex-end;
+
+  @media screen and (min-width: 768px) {
+    font-size: 36px;
+    margin-left: 140px;
+  }
+  @media screen and (min-width: 1280px) {
+  }
+
+  &::after {
+    content: ' ';
+    width: 182px;
+    height: 23px;
+    display: block;
+    position: absolute;
+    left: -35px;
+    top: 30px;
+    background-image: url('images/header/header-dashed-line.png');
+    background-position: 0 0;
+    background-size: 181px 23px;
+    background-repeat: no-repeat;
+    @media screen and (min-width: 768px) {
+      left: -20px;
+      top: 35px;
+    }
+    @media screen and (min-width: 1280px) {
+    }
+  }
 }

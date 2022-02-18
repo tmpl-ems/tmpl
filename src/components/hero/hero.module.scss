@@ -2,7 +2,6 @@
 
 .section {
   background: $background-color;
-  border: 2px solid red;
 }
 .contentBgImg {
   margin: 0 auto;
@@ -10,8 +9,8 @@
   background-image: url('images/header/header-img-mobile.png');
 
   background-repeat: no-repeat;
-  background-position: right;
   background-size: auto 349px;
+  background-position: top 60px right 0px;
 
   @media screen and (min-width: 480px) {
     width: $mobile;
@@ -20,9 +19,17 @@
     width: $tablet;
     background-image: url('images/header/header-img-tablet.png');
     background-size: contain;
+    background-position: top 0 right 0;
   }
   @media screen and (min-width: 1280px) {
     width: $desktop;
-    background-image: url('images/header/header-img-desktop.png');
+    background-image: url('images/header/header-img-desktop.png'),
+      url('images/header/triangle-fon1.png'),
+      url('images/header/triangle-fon2.png'),
+      url('images/header/triangle-fon3.png'),
+      url('images/header/triangle-fon4.png');
+    background-size: contain, 47px, 47px, 59px, 37px;
+    background-position: top 0 right 0, top 64px right 600px,
+      top 254px right 681px, top 360px right 780px, top 489px right 666px;
   }
 }
