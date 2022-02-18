@@ -62,7 +62,7 @@ const data = {
   },
 };
 
-export default function Goals({ onModalOpen }) {
+export default function Goals({ onSingUpModalOpen }) {
   return (
     <Section
       titleLevel="h2"
@@ -82,7 +82,11 @@ export default function Goals({ onModalOpen }) {
         ))}
       </ul>
 
-      <Button classType={1} addClass={s.button} onBtnClick={onModalOpen} />
+      <Button
+        classType={1}
+        addClass={s.button}
+        onBtnClick={onSingUpModalOpen}
+      />
 
       <div className={s.lightningUp}></div>
       <div className={s.lightningDown}></div>
