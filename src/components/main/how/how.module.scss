@@ -33,6 +33,10 @@
   }
 }
 
+.howItem {
+  display: block;
+}
+
 .how-item0,
 .how-item2 {
   margin-bottom: 30px;
@@ -122,6 +126,10 @@
   @media screen and (min-width: 768px) {
     text-align: right;
   }
+}
+
+.howTextBox {
+  display: block;
 }
 
 .howTextBox0 {
