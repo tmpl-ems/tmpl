@@ -12,15 +12,31 @@
   background-size: auto 349px;
   background-position: top 60px right 0px;
 
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url('images/header/header-img-mobile-x2.png');
+  }
+
   @media screen and (min-width: 480px) {
     width: $mobile;
   }
+
+  //----------------768px---------------
   @media screen and (min-width: 768px) {
     width: $tablet;
     background-image: url('images/header/header-img-tablet.png');
     background-size: contain;
     background-position: top 0 right 0;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('images/header/header-img-tablet-x2.png');
+    }
   }
+
+  //----------------------1280px-------------------------
   @media screen and (min-width: 1280px) {
     width: $desktop;
     background-image: url('images/header/header-img-desktop.png'),
@@ -31,5 +47,10 @@
     background-size: contain, 47px, 47px, 59px, 37px;
     background-position: top 0 right 0, top 64px right 600px,
       top 254px right 681px, top 360px right 780px, top 489px right 666px;
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url('images/header/header-img-desktop-x2.png');
   }
 }
