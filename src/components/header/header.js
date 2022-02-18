@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { Link } from 'gatsby';
 
 // Если в нашем компоненте нужно выполнить или нет рендеринг в зависимости от ширины экрана, берём испортируем контекст и формат. А такэе useContext
 import { PageFormatContext, format } from 'context/pageFormatContext';
@@ -39,10 +40,9 @@ export default function Header() {
     <header className={header} id="header">
       <Container addClass={headerContainer}>
         {/* //----logo------ */}
-        <a href="#header" className={logoLink}>
+        <Link to="/" className={logoLink}>
           <LogoIcon width="74" height="66" />
-        </a>
-
+        </Link>
         {isDesktop && <NavBlock />}
         {/* <div className={navMobileBlock}> */}
         <LanguagesBlock />

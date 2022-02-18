@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
 import { navList, navItem, navLink } from './navBlock.module.scss';
 
 const data = {
@@ -56,15 +56,14 @@ const NavBlock = () => {
       <ul className={navList}>
         {data.ru.map(item => (
           <li className={navItem} key={item.name}>
-            <Link
+            <ScrollLink
               to={item.name}
               className={navLink}
               smooth={true}
               duration={500}
             >
               {item.title}
-            </Link>
-            ;
+            </ScrollLink>
           </li>
         ))}
       </ul>
