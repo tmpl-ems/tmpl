@@ -4,8 +4,8 @@ import Video from 'components/common/video/video';
 import { PageFormatContext, format } from 'context/pageFormatContext';
 import { usePaddingsValues } from 'hooks/usePaddingsValues';
 
-import arrow from '../../../../src/images/how/dashed-angle-arrow.png';
-import secondaryArrow from '../../../../src/images/how/dashed-straight-arrow.png';
+import arrow from 'images/how/dashed-angle-arrow.png';
+import secondaryArrow from 'images/how/dashed-straight-arrow.png';
 import * as s from './how.module.scss';
 
 const data = {
@@ -71,11 +71,13 @@ const How = () => {
   const videoTitle = 'YouTube video player';
 
   const pageFormat = useContext(PageFormatContext);
-  const [videoSizes, setVideoSizes] = useState({});
-  const [videoStyle, setVideoStyle] = useState({});
+  const [videoSizes, setVideoSizes] = useState({ width: 280, height: 266 });
+  const [videoStyle, setVideoStyle] = useState({
+    ...videoStyles.common,
+    ...videoStyles.mobile,
+  });
   const isTablet = pageFormat === format.tablet;
   const isDesktop = pageFormat === format.desktop;
-  const isResponse = pageFormat === format.response;
 
   useEffect(() => {
     if (pageFormat === format.tablet) {

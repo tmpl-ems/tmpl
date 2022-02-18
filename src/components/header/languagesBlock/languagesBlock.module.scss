@@ -22,7 +22,9 @@
   text-transform: uppercase;
   color: $inactive-color;
   cursor: pointer;
-  &:hover {
+  transition: $default-transition;
+  &:hover,
+  &:focus {
     color: $main-brand-color;
   }
 }
