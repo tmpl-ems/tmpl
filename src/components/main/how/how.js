@@ -4,8 +4,6 @@ import Video from 'components/common/video/video';
 import { PageFormatContext, format } from 'context/pageFormatContext';
 import { usePaddingsValues } from 'hooks/usePaddingsValues';
 
-import arrow from 'images/how/dashed-angle-arrow.png';
-import secondaryArrow from 'images/how/dashed-straight-arrow.png';
 import * as s from './how.module.scss';
 
 const data = {
