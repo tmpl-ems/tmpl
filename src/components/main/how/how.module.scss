@@ -1,83 +1,102 @@
 @import 'styles/vars';
 
 .howTitle {
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 24px;
-  text-align: center;
-
   margin-bottom: 40px;
-  margin-left: auto;
-  margin-right: auto;
-  color: $secondary-text-color;
+  margin: 0 auto;
   max-width: 280px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.33;
+  text-align: center;
+  color: $secondary-text-color;
 
   @media screen and (min-width: 768px) {
     max-width: 499px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 72px;
+    margin-bottom: 50px;
+  }
+}
+
+.how-list {
+  position: relative;
+  max-width: 330px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    width: 320px;
+    margin-left: 32px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 500px;
+    max-width: 500px;
+    margin-left: 35px;
+  }
+}
+
+.howItem {
+  display: block;
+}
+
+.how-item0,
+.how-item2 {
+  margin-bottom: 30px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 60px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 12px;
+  }
+}
+
+.how-item1 {
+  margin-bottom: 12px;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    margin-bottom: 45px;
+  }
+}
+
+.how-item2 {
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
+}
+
+.how-item3 {
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    bottom: -24px;
+    left: -320px;
   }
 }
 
 .howNumber {
   color: $main-brand-color;
-
-  font-weight: bold;
+  margin-bottom: -7px;
+  text-align: left;
+  font-weight: 700;
   font-size: 72px;
-  line-height: 20px;
+  line-height: 1;
   -webkit-text-stroke: 1px $main-brand-color;
   -webkit-text-fill-color: transparent;
-
-  margin-right: 106px;
-
-  text-align: center;
-}
-
-.howNumber0 {
-  margin-left: 0;
-
-  width: 74px;
-  height: 26px;
-}
-
-.howNumber1 {
-  margin-top: 60px;
-  margin-right: auto;
-  max-width: 75px;
-  height: 26px;
-  @media screen and (min-width: 1280px) {
-    margin-top: 46px;
-  }
 }
 
 .howNumber2 {
-  margin-top: 40px;
-  margin-right: 106px;
-  width: 75px;
-  @media screen and (min-width: 768px) {
-    margin-right: 94px;
-  }
+  padding-left: 15px;
 }
 
 .howNumber3 {
-  margin-top: 60px;
-  margin-left: 2px;
-  width: 52px;
-  @media screen and (min-width: 1280px) {
-    margin-top: 50px;
-  }
+  padding-left: 10px;
 }
 
 .howCommonText {
   font-weight: 300;
   font-size: 18px;
-  line-height: 24px;
-  margin-top: 12px;
-
-  text-align: right;
-
+  line-height: 1.33;
   color: $secondary-text-color;
+}
+
+.howCommonText0 {
+  text-align: right;
   @media screen and (min-width: 1280px) {
     text-align: left;
   }
@@ -88,7 +107,7 @@
 
   text-align: left;
   @media screen and (min-width: 768px) {
-    width: 268px;
+    width: 270px;
   }
   @media screen and (min-width: 1280px) {
     text-align: right;
@@ -98,9 +117,7 @@
 .howCommonText2 {
   width: 181px;
   margin-left: auto;
-  @media screen and (min-width: 1280px) {
-    text-align: right;
-  }
+  text-align: right;
 }
 
 .howCommonText3 {
@@ -113,52 +130,105 @@
 
 .howTextBox {
   display: block;
-  text-align: left;
 }
 
 .howTextBox0 {
-  display: block;
-  width: 181px;
-  text-align: right;
+  position: relative;
+  width: 180px;
   margin-left: auto;
+
+  &::after {
+    content: '';
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+    background-image: url('../../../images/how/dashed-angle-arrow.png');
+    position: absolute;
+    left: -72px;
+    bottom: 0;
+    background-size: 100%;
+
+    @media screen and (min-width: 768px) {
+      width: 84px;
+      height: 84px;
+      left: -125px;
+      bottom: -30px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      left: -155px;
+      bottom: -12px;
+    }
+  }
 }
 
 .howTextBox1 {
-  display: block;
-  max-width: 181px;
-  text-align: right;
+  position: relative;
+  max-width: 180px;
+
   @media screen and (min-width: 768px) {
-    max-width: 268px;
-    margin-right: 68px;
-    margin-top: 90px;
+    max-width: 270px;
   }
-  @media screen and (min-width: 1280px) {
-    margin-top: 46px;
+
+  &::after {
+    content: '';
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+    background-image: url('../../../images/how/dashed-angle-arrow.png');
+    background-size: 100%;
+    position: absolute;
+    right: -72px;
+    bottom: -12px;
+    transform: scaleX(-100%);
+
+    @media screen and (min-width: 768px) {
+      width: 84px;
+      height: 84px;
+      right: -42px;
+      bottom: -77px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      right: -210px;
+      bottom: -24px;
+    }
   }
 }
 
 .howTextBox2 {
+  position: relative;
   display: block;
-  max-width: 181px;
-  text-align: right;
+  max-width: 180px;
   margin-left: auto;
-  @media screen and (min-width: 768px) {
-    position: absolute;
-    right: 0;
-    bottom: 24px;
-  }
-  @media screen and (min-width: 1280px) {
-    position: static;
-  }
-}
+  background-size: 100%;
 
-.howTextBox3 {
-  @media screen and (min-width: 768px) {
+  &::after {
+    content: '';
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+    background-image: url('../../../images/how/dashed-angle-arrow.png');
+    background-size: 100%;
+
     position: absolute;
-    right: 366px;
-  }
-  @media screen and (min-width: 1280px) {
-    position: static;
+    left: -72px;
+    bottom: -12px;
+
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      background-image: url('../../../images/how/dashed-straight-arrow.png');
+      width: 115px;
+      height: 84px;
+      left: -147px;
+      bottom: 20px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      width: 84px;
+      height: 84px;
+      left: -155px;
+      bottom: -12px;
+    }
   }
 }
 
@@ -168,85 +238,15 @@
 
 .howTextContentContainer {
   position: relative;
-  padding-top: 50px;
-  min-height: 616px;
-  @media screen and (min-width: 768px) {
-    padding-top: 0;
-    min-height: 445px;
-  }
-  @media screen and (min-width: 1280px) {
-    width: 501px;
-    height: 491px;
-    margin-left: 32px;
-  }
-}
-
-.howArrowBox {
-  position: absolute;
-}
-
-.howArrowBox0 {
-  top: 76px;
-  left: 25px;
-  @media screen and (min-width: 768px) {
-    top: 35px;
-    left: 27px;
-  }
-  @media screen and (min-width: 1280px) {
-    top: 0px;
-    left: 166px;
-  }
-}
-
-.howArrowBox1 {
-  top: 284px;
-  right: 46px;
-  transform: scale(-1, 1);
-  @media screen and (min-width: 768px) {
-    top: 256px;
-    right: 22px;
-  }
-  @media screen and (min-width: 1280px) {
-    top: 161px;
-    right: 23px;
-  }
-}
-
-.howArrowBox2 {
-  top: 403px;
-  left: 25px;
-  @media screen and (min-width: 768px) {
-    top: 12px;
-    left: -147px;
-  }
-  @media screen and (min-width: 1280px) {
-    top: 287px;
-    left: 166px;
-  }
-}
-
-.howArrowBox2 .arrowImage {
-  @media screen and (min-width: 768px) {
-    width: 115px;
-    height: 84px;
-  }
-  @media screen and (min-width: 1280px) {
-    width: 84px;
-    height: 84px;
+  @media screen and (max-width: 767px) {
+    margin-top: 50px;
   }
 }
 
 .howTabletFlexContainer {
   display: flex;
-  justify-content: space-between;
-  @media screen and (min-width: 1280px) {
-    justify-content: start;
-  }
 }
 
-.arrowImage {
-  @media screen and (min-width: 768px) {
-    width: 84px;
-    height: 84px;
-  }
+.videoWpapper {
+  padding-top: 24px;
 }
