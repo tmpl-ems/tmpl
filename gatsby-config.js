@@ -5,8 +5,19 @@
  */
 
 module.exports = {
-  /* Your site config here */
   plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `TMPL app`,
+        short_name: `TMPL`,
+        description: `EMS-тренировки в центре Киева`,
+        lang: `ru`,
+        display: `standalone`,
+        icon: `src/images/icon/icon.png`,
+        start_url: `/`,
+      },
+    },
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
     {
