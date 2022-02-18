@@ -1,9 +1,9 @@
 import React from 'react';
 
-import * as s from './AboutUsSection.module.scss';
-
-import LightIcon from 'images/svg/about-list-mark-lightning.svg'
 import Section from 'components/common/section/section';
+import AboutUsList from './AboutUsList';
+
+import * as s from './AboutUsSection.module.scss';
 
 const data = {
   ru: {
@@ -37,37 +37,11 @@ const AboutUsSection = () => {
         <div className={s.listBox}>
           <div className={s.listWrapper}>
             <h3 className={s.listTitle}>{data.ru.gymListTitle}</h3>
-            <ul>
-              {data.ru.gymListContent.map((item, index) => (<li key={index} className={s.listItem}>
-                <LightIcon className={s.marker}/>
-              <span className={s.itemText}>{item}</span>
-            </li>))}
-          </ul>
+            <AboutUsList list={data.ru.gymListContent}/>
           </div>
           <div className={s.listWrapper}>
             <h3 className={s.listTitle}>{data.ru.EMSListTitle}</h3>
-          <ul>
-            <li className={s.listItem}>
-              <LightIcon style={{ marginRight: '10px'}}/>
-              {data.ru.EMSListContent[0]}
-            </li>
-            <li className={s.listItem}>
-              <LightIcon style={{ marginRight: '10px'}}/>
-              {data.ru.EMSListContent[1]}
-            </li>
-            <li className={s.listItem}>
-              <LightIcon style={{ marginRight: '10px'}}/>
-              {data.ru.EMSListContent[2]}
-            </li>
-            <li className={s.listItem}>
-              <LightIcon style={{ marginRight: '10px'}}/>
-              {data.ru.EMSListContent[3]}
-            </li>
-            <li className={s.listItem}>
-              <LightIcon style={{ marginRight: '10px'}}/>
-              {data.ru.EMSListContent[4]}
-            </li>
-          </ul>
+            <AboutUsList list={data.ru.EMSListContent}/>
           </div>
         </div>
         <p className={s.resultText}>{data.ru.resultText}</p>
