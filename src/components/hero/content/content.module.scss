@@ -5,7 +5,6 @@
   @include flexBlock;
   flex-direction: column;
   align-items: flex-start;
-  min-width: 320px;
 }
 .sectionTitle {
   @include textStyleHeader;
@@ -28,7 +27,6 @@
   @include textStyleHeader;
   font-weight: 600;
   color: $secondary-text-color;
-  margin-top: 28px;
   margin-bottom: 16px;
   @media screen and (min-width: 768px) {
     width: 100%;
@@ -39,9 +37,12 @@
     margin-bottom: 8px;
   }
 }
-.snakeArrowIcon {
+.snakeArrowMobIcon {
   display: block;
   margin-top: 16px;
+}
+.snakeArrowIcon {
+  display: block;
 }
 .text2 {
   display: block;

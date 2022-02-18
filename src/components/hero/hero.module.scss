@@ -3,7 +3,10 @@
 .section {
   background: $background-color;
   border: 2px solid red;
+}
+.contentBgImg {
   margin: 0 auto;
+  min-width: 320px;
   background-image: url('images/header/header-img-mobile.png');
 
   background-repeat: no-repeat;
