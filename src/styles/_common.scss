@@ -25,10 +25,18 @@ button {
 
 body {
   font-family: $main-font;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+link {
+  outline: $main-brand-color;
+  outline-offset: 20px;
 }
 
 .link {
   text-decoration: none;
+  font-style: normal;
   color: inherit;
   transition: color 250ms linear;
 }

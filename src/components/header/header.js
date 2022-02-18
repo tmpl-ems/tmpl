@@ -48,7 +48,14 @@ export default function Header() {
         <LanguagesBlock />
         {/* //---BurgerBtn--- */}
         {!isDesktop && (
-          <button className={burgerOpenBtn} type="button" onClick={openDropNav}>
+          <button
+            className={burgerOpenBtn}
+            type="button"
+            onClick={openDropNav}
+            aria-label="Кнопка открытия мобильного меню"
+            aria-expanded={showDropNav}
+            aria-controls="mobile-menu"
+          >
             <BurgerIcon width="30" height="16" />
           </button>
         )}

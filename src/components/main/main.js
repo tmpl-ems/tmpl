@@ -1,18 +1,31 @@
+import Results from 'components/results/Results';
+import Reviews from 'components/reviews/Reviews';
 import React from 'react';
-import AboutUsSection from './about/AboutUsSection';
-import Example from './example/example';
-import Advantages from './advantages/advantages';
-import MyComponent from './myComponent/myComponent';
-import PersonalProgram from 'components/main/PersonalProgram';
 
-const Main = () => {
+import How from './how/how';
+
+import { Enroll } from './EnrollSection/Enroll';
+import Advantages from './advantages/advantages';
+import PersonalProgram from 'components/main/PersonalProgram';
+import Goals from './goals/goals';
+import MyComponent from './myComponent/myComponent';
+import Hero from '../hero/hero';
+import AboutUsSection from './about/AboutUsSection';
+
+const Main = ({ onSingUpModalOpen }) => {
   return (
     <main>
-      <AboutUsSection/>
-      <Example />
+      <Hero />
+      <AboutUsSection />
       <Advantages />
-      <MyComponent />
+      <Goals onSingUpModalOpen={onSingUpModalOpen} />
+      <How />
+      <Results />
+      <Reviews />
+      <PersonalProgram onSingUpModalOpen={onSingUpModalOpen} />
+      <Enroll onSingUpModalOpen={onSingUpModalOpen} />
       <PersonalProgram />
+      <MyComponent />
     </main>
   );
 };

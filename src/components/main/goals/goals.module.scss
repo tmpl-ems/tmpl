@@ -1,0 +1,187 @@
+@import 'styles/vars';
+
+.subtitle {
+  position: relative;
+  z-index: 5;
+  font-family: $main-font;
+  color: $secondary-text-color;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.33;
+
+  &:not(:last-of-type) {
+    margin-bottom: 16px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: 768px) {
+    &:last-of-type {
+      margin-bottom: 80px;
+    }
+  }
+}
+
+.list {
+  position: relative;
+  z-index: 5;
+  color: $secondary-text-color;
+  list-style-type: none;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 768px) {
+    display: grid;
+    gap: 32px 32px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-left: 107px;
+    max-width: 970px;
+    display: grid;
+    gap: 32px 105px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.item {
+  padding-left: 40px;
+  position: relative;
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.33;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  &::before {
+    content: ' ';
+    width: 24px;
+    height: 24px;
+    display: block;
+    position: absolute;
+    left: 0;
+    background-image: url('images/goals/marker.png');
+    background-position: 0 0;
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0px 0px 8px #00af87);
+  }
+
+  @media screen and (min-width: 768px) {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+    max-width: 430px;
+  }
+}
+
+.button {
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+.container {
+  position: static;
+}
+
+.lightning-up {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(0);
+
+  background-image: url('images/goals/lightning-up-mobile.png');
+  background-position: top -60px right 0px;
+  // background-size: auto;
+  background-repeat: no-repeat;
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url('images/goals/lightning-up-mobile-x2.png');
+  }
+
+  @media (min-width: 768px) {
+    background-image: url('images/goals/lightning-up-tablet.png');
+    background-position: top -200px right 0px;
+    // background-size: auto;
+    background-repeat: no-repeat;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('images/goals/lightning-up-tablet-x2.png');
+    }
+  }
+
+  @media (min-width: 1280px) {
+    background-image: url('images/goals/lightning-up-desktop.png');
+    background-position: top -230px right 0px;
+    // background-size: auto;
+    background-repeat: no-repeat;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('images/goals/lightning-up-desktop-x2.png');
+    }
+  }
+}
+
+.lightning-down {
+  z-index: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(0);
+
+  background-image: url('images/goals/lightning-down-mobile.png');
+  background-position: bottom -56px left 0px;
+  background-size: 150px;
+  background-repeat: no-repeat;
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url('images/goals/lightning-down-mobile-x2.png');
+  }
+
+  @media (min-width: 768px) {
+    background-image: url('images/goals/lightning-down-tablet.png');
+    background-position: bottom -130px left 0px;
+    background-size: auto;
+    background-repeat: no-repeat;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('images/goals/lightning-down-tablet-x2.png');
+    }
+  }
+
+  @media (min-width: 1280px) {
+    background-image: url('images/goals/lightning-down-desktop.png');
+    background-position: bottom -240px left 0px;
+    background-size: auto;
+    background-repeat: no-repeat;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('images/goals/lightning-down-desktop-x2.png');
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@import '../vars';
+
+:root {
+  --swiper-navigation-size: 12px;
+  --swiper-navigation-color: $main-text-color;
+  --swiper-pagination-color: $main-brand-color;
+  --swiper-pagination-bullet-inactive-color: $secondary-text-color;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+
+  --swiper-pagination-bullet-width: 12px;
+  --swiper-pagination-bullet-height: 12px;
+}
+
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  top: 45%;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-weight: 700;
+}
+
+.swiper-pagination-bullet {
+  border: 1px solid $secondary-brand-color;
+}
+
+.swiper-pagination-bullet-active {
+  width: 16px;
+  height: 16px;
+  background-color: $main-brand-color;
+}
+
+.swiper {
+  padding-bottom: 48px;
+}
+
+.resultSwiper {
+  box-sizing: border-box;
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    max-width: 425px;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 545px;
+  }
+}
+
+.reviewSwiper {
+  --swiper-pagination-bullet-inactive-color: $background-color;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import Section from 'components/common/section/section';
+import Modal from 'components/common/Modal/Modal';
 import PersonalProgramInfo from 'components/main/PersonalProgramInfo';
 import ProgramIcon1 from 'images/svg/program1.svg';
 import ProgramIcon2 from 'images/svg/program2.svg';
@@ -56,7 +57,7 @@ const data = {
   },
 };
 
-export default function PersonalProgram() {
+export default function PersonalProgram({ onSingUpModalOpen }) {
   const [selectedProgram, setSelectedProgram] = useState(null);
 
   const getSelectedProgram = id => {
@@ -149,10 +150,13 @@ export default function PersonalProgram() {
       <FoneIcon4 className={s.foneIcon4} />
 
       {selectedProgram && (
-        <PersonalProgramInfo
-          selectedProgram={selectedProgram}
-          closeInfoModal={closeInfoModal}
-        />
+        <Modal closeModal={closeInfoModal}>
+          <PersonalProgramInfo
+            selectedProgram={selectedProgram}
+            closeInfoModal={closeInfoModal}
+            onSingUpModalOpen={onSingUpModalOpen}
+          />
+        </Modal>
       )}
     </Section>
   );
