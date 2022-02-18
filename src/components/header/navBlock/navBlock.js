@@ -1,16 +1,53 @@
 import React from 'react';
+import { Link } from 'react-scroll';
 import { navList, navItem, navLink } from './navBlock.module.scss';
 
 const data = {
   ru: [
-    'о нас',
-    'цели',
-    'Результаты клиентов',
-    'отзывы',
-    'программы',
-    'Результаты клиентов',
+    {
+      name: 'about-us',
+      title: 'о нас',
+    },
+    {
+      name: 'goals',
+      title: 'цели',
+    },
+    {
+      name: 'clients-result',
+      title: 'Результаты клиентов',
+    },
+    {
+      name: 'feedbacks',
+      title: 'отзывы',
+    },
+    {
+      name: 'programs',
+      title: 'программы',
+    },
   ],
-  ua: ['про нас', 'цілі', 'Результати кліентів', 'відгуки', 'програми'],
+
+  ua: [
+    {
+      name: 'about-us',
+      title: 'про нас',
+    },
+    {
+      name: 'goals',
+      title: 'цілі',
+    },
+    {
+      name: 'clients-result',
+      title: 'Результати кліентів',
+    },
+    {
+      name: 'feedbacks',
+      title: 'відгуки',
+    },
+    {
+      name: 'programs',
+      title: 'програми',
+    },
+  ],
 };
 
 const NavBlock = () => {
@@ -18,10 +55,16 @@ const NavBlock = () => {
     <nav>
       <ul className={navList}>
         {data.ru.map(item => (
-          <li className={navItem}>
-            <a className={navLink} href="/">
-              {item}
-            </a>
+          <li className={navItem} key={item.name}>
+            <Link
+              to={item.name}
+              className={navLink}
+              smooth={true}
+              duration={500}
+            >
+              {item.title}
+            </Link>
+            ;
           </li>
         ))}
       </ul>
