@@ -1,0 +1,23 @@
+@import '../../../styles/vars';
+
+.listItem {
+  display: flex;
+  flex-wrap: nowrap;
+
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.125;
+
+  list-style-type: none;
+
+  color: $placeholder-color;
+
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+}
+
+.marker {
+  flex-shrink: 0;
+  margin-right: 10px;
+}

@@ -4,13 +4,12 @@ import Video from 'components/common/video/video';
 import { PageFormatContext, format } from 'context/pageFormatContext';
 import { usePaddingsValues } from 'hooks/usePaddingsValues';
 
-import arrow from '../../../../src/images/how/dashed-angle-arrow.png';
-import secondaryArrow from '../../../../src/images/how/dashed-straight-arrow.png';
 import * as s from './how.module.scss';
 
 const data = {
   ru: {
-    title: 'Как проходит 30-минутная тренировка индивидуально с тренером:',
+    title: 'Тренировки',
+    suptitle: 'Как проходит 30-минутная тренировка индивидуально с тренером:',
     content: {
       textContent: [
         {
@@ -34,7 +33,8 @@ const data = {
   },
   // just an example of Ukrainian version of  the section. WARNING THIS DATA`S TRANSLATION SHOULD BE CHECKED
   ukr: {
-    title: 'Як проходить 30-хвилинне тренування індивідуально з тренером',
+    title: 'Тренування',
+    suptitle: 'Як проходить 30-хвилинне тренування індивідуально з тренером',
     content: {
       styledNumbers: [10, 10, 5, 5],
       textContent: [
@@ -50,7 +50,7 @@ const data = {
 const styles = {
   response: { pt: 28, pb: 40 },
   mobile: { pt: 28, pb: 40 },
-  tablet: { pt: 60, pb: 60 },
+  tablet: { pt: 60, pb: 84 },
   desktop: { pt: 60, pb: 53 },
 };
 
@@ -71,15 +71,17 @@ const How = () => {
   const videoTitle = 'YouTube video player';
 
   const pageFormat = useContext(PageFormatContext);
-  const [videoSizes, setVideoSizes] = useState({});
-  const [videoStyle, setVideoStyle] = useState({});
+  const [videoSizes, setVideoSizes] = useState({ width: 280, height: 266 });
+  const [videoStyle, setVideoStyle] = useState({
+    ...videoStyles.common,
+    ...videoStyles.mobile,
+  });
   const isTablet = pageFormat === format.tablet;
   const isDesktop = pageFormat === format.desktop;
-  const isResponse = pageFormat === format.response;
 
   useEffect(() => {
     if (pageFormat === format.tablet) {
-      setVideoSizes({ width: 340, height: 266 });
+      setVideoSizes({ width: 352, height: 266 });
       setVideoStyle({ ...videoStyles.common, ...videoStyles.tablet });
     }
     if (pageFormat === format.desktop) {
@@ -96,29 +98,35 @@ const How = () => {
   return (
     <div className={s.howBackgroundContainer}>
       <Section
+        head={data.ru.title}
         titleHidden={true}
         titleLevel={'h3'}
         style={{ backgroundColor: '#000000' }}
         pt={paddings.pt}
         pb={paddings.pb}
       >
-        <h3 className={s.howTitle}>{data.ru.title}</h3>
+        <p className={s.howTitle}>{data.ru.suptitle}</p>
         <div
           className={isTablet || isDesktop ? `${s.howTabletFlexContainer}` : ''}
         >
-          <Video
-            videoSrcURL={videoUrl}
-            videoTitle={videoTitle}
-            width={videoSizes.width}
-            height={videoSizes.height}
-            style={videoStyle}
-          />
+          <div className={s.videoWpapper}>
+            <Video
+              videoSrcURL={videoUrl}
+              videoTitle={videoTitle}
+              width={videoSizes.width}
+              height={videoSizes.height}
+              style={videoStyle}
+            />
+          </div>
 
           <div className={s.howTextContentContainer}>
-            <ul>
+            <ul className={s.howList}>
               {data.ru.content.textContent.map((el, index) => {
                 return (
-                  <li key={index}>
+                  <li
+                    key={index}
+                    className={`${s['howItem' + index]}  ${s.howItem}`}
+                  >
                     <div
                       className={`${s['howTextBox' + index]}  ${s.howTextBox}`}
                     >
@@ -134,23 +142,6 @@ const How = () => {
                       >
                         {el.text}
                       </p>
-                      <div
-                        className={`${s['howArrowBox' + index]}  ${
-                          s.howArrowBox
-                        }`}
-                      >
-                        {index < 3 && (
-                          <img
-                            src={
-                              index === 2 && pageFormat === format.tablet
-                                ? secondaryArrow
-                                : arrow
-                            }
-                            alt={'arrow'}
-                            className={s.arrowImage}
-                          ></img>
-                        )}
-                      </div>
                     </div>
                   </li>
                 );

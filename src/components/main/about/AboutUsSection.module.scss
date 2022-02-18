@@ -1,0 +1,113 @@
+@import '../../../styles/vars';
+
+.wrapper {
+  @media screen and (min-width: 1280px) {
+    width: 1035px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.description {
+  margin-bottom: 32px;
+
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+
+  color: $placeholder-color;
+}
+
+.listPreTitle {
+  margin-bottom: 32px;
+
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.111;
+  text-align: center;
+
+  color: $placeholder-color;
+
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 26px;
+  }
+}
+
+.listBox {
+  margin-bottom: 32px;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: nowrap;
+
+    margin-right: -32px;
+  }
+}
+
+.listWrapper {
+  position: relative;
+
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 15px;
+  padding-right: 20px;
+
+  background-color: $secondary-text-color;
+
+  border-radius: 16px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    background: $linear-gradient;
+    border-radius: 18px;
+    z-index: -1;
+  }
+
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-basis: calc((100% - 64px) / 2);
+    margin-right: 32px;
+  }
+}
+
+.listTitle {
+  margin-bottom: 24px;
+
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.111;
+  text-align: center;
+
+  color: $placeholder-color;
+}
+
+.resultText {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+
+  color: $placeholder-color;
+
+  @media screen and (min-width: 768px) {
+    width: 680px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 850px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

@@ -25,6 +25,12 @@ button {
 
 body {
   font-family: $main-font;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+link {
+  outline: $main-brand-color;
 }
 
 .link {

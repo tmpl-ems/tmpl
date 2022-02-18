@@ -1,11 +1,11 @@
 import React from 'react';
 import * as s from './ResultCard.module.scss';
 
-import resultBefore_1x from '../../images/result/result-before-desktop.png';
-import resultBefore_2x from '../../images/result/result-before-desktop-x2.png';
+import resultBefore_1x from 'images/result/result-before-desktop.png';
+import resultBefore_2x from 'images/result/result-before-desktop-x2.png';
 
-import resultAfter_1x from '../../images/result/result-after-desktop.png';
-import resultAfter_2x from '../../images/result/result-after-desktop-x2.png';
+import resultAfter_1x from 'images/result/result-after-desktop.png';
+import resultAfter_2x from 'images/result/result-after-desktop-x2.png';
 
 const ResultCard = ({ textContent }) => {
   return (

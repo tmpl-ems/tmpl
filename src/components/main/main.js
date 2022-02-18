@@ -1,6 +1,7 @@
-import Results from 'components/results/Results';
-import Reviews from 'components/reviews/Reviews';
+import Results from 'components/main/results/Results';
+import Reviews from 'components/main/reviews/Reviews';
 import React from 'react';
+import { Element } from 'react-scroll';
 
 import How from './how/how';
 
@@ -10,17 +11,30 @@ import PersonalProgram from 'components/main/PersonalProgram';
 import Goals from './goals/goals';
 import MyComponent from './myComponent/myComponent';
 import Hero from '../hero/hero';
+import AboutUsSection from './about/AboutUsSection';
 
 const Main = ({ onSingUpModalOpen }) => {
   return (
     <main>
       <Hero />
+      <AboutUsSection />
       <Advantages />
-      <Goals onSingUpModalOpen={onSingUpModalOpen} />
-      <How />
-      <Results />
-      <Reviews />
-      <PersonalProgram onSingUpModalOpen={onSingUpModalOpen} />
+      <Element name={'goals'}>
+        <Goals onSingUpModalOpen={onSingUpModalOpen} />
+      </Element>
+      <Element name={'about-us'}>
+        <How />
+      </Element>
+      <Element name={'clients-result'}>
+        <Results />
+      </Element>
+      <Element name={'feedbacks'}>
+        <Reviews />
+      </Element>
+      <Element name={'programs'}>
+        <PersonalProgram onSingUpModalOpen={onSingUpModalOpen} />
+      </Element>
+
       <Enroll onSingUpModalOpen={onSingUpModalOpen} />
       <PersonalProgram />
       <MyComponent />
