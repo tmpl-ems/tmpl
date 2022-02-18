@@ -1,4 +1,4 @@
-import Results from 'components/results/Results';
+import Results from 'components/main/results/Results';
 import Reviews from 'components/reviews/Reviews';
 import React from 'react';
 

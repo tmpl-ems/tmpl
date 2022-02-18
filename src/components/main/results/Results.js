@@ -4,7 +4,7 @@ import * as s from './Results.module.scss';
 // Если в нашем компоненте нужно выполнить или нет рендеринг в зависимости от ширины экрана, берём испортируем контекст и формат. А такэе useContext
 import { PageFormatContext, format } from 'context/pageFormatContext';
 import Section from 'components/common/section/section';
-import ResultCard from 'components/resultCard/ResultCard';
+import ResultCard from 'components/main/resultCard/ResultCard';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -14,7 +14,7 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 
-import '../../styles/vendor/_swiperStyles.scss';
+import 'styles/vendor/_swiperStyles.scss';
 
 // import required modules
 import { Navigation, Pagination, Keyboard } from 'swiper';
