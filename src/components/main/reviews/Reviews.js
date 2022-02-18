@@ -14,6 +14,7 @@ import reviewsGirl_1_2x from 'images/reviews/reviews-girl1-x2.png';
 
 import reviewsGirl_2_1x from 'images/reviews/reviews-girl2.png';
 import reviewsGirl_2_2x from 'images/reviews/reviews-girl2-x2.png';
+import ReviewVideoCard from '../reviewCard/ReviewVideoCard';
 
 const Reviews = () => {
   return (
@@ -36,15 +37,7 @@ const Reviews = () => {
           />
         </SwiperSlide>
         <SwiperSlide>
-          <ReviewCard
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis
-        varius eros ac rhoncus. Phasellus volutpat sem leo, sed pulvinar lacus
-        gravida at. Proin mollis varius eros ac rhoncus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis
-        varius eros ac rhoncus. Phasellus volutpat sem leo, sed pulvinar lacus
-        gravida at. Proin mollis varius eros ac rhoncus."
-            foto_1x={reviewsGirl_1_1x}
-            foto_2x={reviewsGirl_1_2x}
-          />
+          <ReviewVideoCard />
         </SwiperSlide>
         <SwiperSlide>
           <ReviewCard

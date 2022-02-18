@@ -1,5 +1,13 @@
 import React from 'react';
-const Video = ({ videoSrcURL, videoTitle, width, height, style, ...props }) => {
+const Video = ({
+  videoSrcURL,
+  videoTitle,
+  width,
+  height,
+  style,
+  videClassStyles,
+  ...props
+}) => {
   if (videoSrcURL) {
     return (
       <iframe
@@ -7,10 +15,11 @@ const Video = ({ videoSrcURL, videoTitle, width, height, style, ...props }) => {
         height={height}
         src={videoSrcURL}
         title={videoTitle}
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope"
         allowFullScreen
         referrerPolicy="no-referrer"
         style={style}
+        className={videClassStyles}
       />
     );
   }
