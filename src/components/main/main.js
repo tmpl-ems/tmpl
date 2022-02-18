@@ -1,5 +1,5 @@
 import Results from 'components/main/results/Results';
-import Reviews from 'components/reviews/Reviews';
+import Reviews from 'components/main/reviews/Reviews';
 import React from 'react';
 
 import How from './how/how';

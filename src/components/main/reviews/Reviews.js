@@ -1,6 +1,7 @@
 import React from 'react';
 // import * as s from './Reviews.module.scss';
 
+import Section from 'components/common/section/section';
 import ReviewCard from '../reviewCard/ReviewCard';
 
 // Import Swiper React components
@@ -10,18 +11,17 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/scss';
 import 'swiper/scss/pagination';
 
-import '../../styles/vendor/_swiperStyles.scss';
+import 'styles/vendor/_swiperStyles.scss';
 
 // import required modules
 import { Pagination, Keyboard } from 'swiper';
-import Section from 'components/common/section/section';
 
 //girls foto
-import reviewsGirl_1_1x from '../../images/reviews/reviews-girl1.png';
-import reviewsGirl_1_2x from '../../images/reviews/reviews-girl1-x2.png';
+import reviewsGirl_1_1x from 'images/reviews/reviews-girl1.png';
+import reviewsGirl_1_2x from 'images/reviews/reviews-girl1-x2.png';
 
-import reviewsGirl_2_1x from '../../images/reviews/reviews-girl2.png';
-import reviewsGirl_2_2x from '../../images/reviews/reviews-girl2-x2.png';
+import reviewsGirl_2_1x from 'images/reviews/reviews-girl2.png';
+import reviewsGirl_2_2x from 'images/reviews/reviews-girl2-x2.png';
 
 const Reviews = () => {
   return (
