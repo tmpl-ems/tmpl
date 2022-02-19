@@ -1,6 +1,5 @@
 import React, { useRef, useCallback } from 'react';
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
-import LocationMarker from 'images/svg/location-pin.svg';
 
 import { defaultTheme } from './Theme';
 
@@ -10,8 +9,12 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 50.4390243,
-  lng: 30.5118283,
+  lat: 50.43951642646362,
+  lng: 30.513965945504467,
+};
+const markerPosition = {
+  lat: 50.43913471735236,
+  lng: 30.514003877665044,
 };
 
 const defaultOptions = {
@@ -50,16 +53,17 @@ export default function Map() {
 
   return (
     <div>
+      <p>qweqweqwe</p>
       {isLoaded ? (
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}
-          zoom={15}
+          zoom={16}
           onLoad={onLoad}
           onUnmount={onUnmount}
           options={defaultOptions}
         >
-          <Marker position={center} icon={LocationMarker} />
+          <Marker position={markerPosition}></Marker>
         </GoogleMap>
       ) : (
         <p>Загрузка карты...</p>
