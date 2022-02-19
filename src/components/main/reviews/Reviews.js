@@ -16,9 +16,9 @@ import reviewsGirl_2_1x from 'images/reviews/reviews-girl2.png';
 import reviewsGirl_2_2x from 'images/reviews/reviews-girl2-x2.png';
 import ReviewVideoCard from '../reviewCard/ReviewVideoCard';
 
-const Reviews = () => {
+const Reviews = ({ id }) => {
   return (
-    <Section head={'Отзывы'} darkBackground={true} titleLevel="h4">
+    <Section head={'Отзывы'} darkBackground={true} titleLevel="h4" id={id}>
       <Slider isPagination isReviewSlides sliderClass="reviewSwiper">
         <SwiperSlide>
           <ReviewCard
