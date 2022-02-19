@@ -1,12 +1,10 @@
-
 import React, { useContext } from 'react';
 import { PageFormatContext, format } from 'context/pageFormatContext';
 import { usePaddingsValues } from 'hooks/usePaddingsValues';
 import Section from 'components/common/section/section';
 import Logo from 'images/svg/logo.svg';
 
-
-import Map from './footer-components/map';
+import Map from './footer-components/Map/Map';
 import Contacts from './footer-components/contacts';
 import Networks from './footer-components/networksList';
 import CopyRightBlock from './footer-components/copyRight';
@@ -33,10 +31,10 @@ const Footer = () => {
             {/* Contacts list */}
             <Contacts />
             {/* Social networks links */}
-            <Networks/>
+            <Networks />
           </div>
         </div>
-       <CopyRightBlock/>
+        <CopyRightBlock />
       </Section>
     </footer>
   );

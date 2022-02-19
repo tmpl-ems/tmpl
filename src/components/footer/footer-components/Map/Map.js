@@ -1,10 +1,11 @@
 import React, { useRef, useCallback } from 'react';
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import * as s from '../../footer.module.scss';
 
 import { defaultTheme } from './Theme';
 
 const containerStyle = {
-  width: '608px',
+  width: '280px',
   height: '270px',
 };
 
@@ -33,7 +34,6 @@ const defaultOptions = {
 };
 
 const API_KEY = 'AIzaSyCDL1gLSaJnNhEo6Rb3fkOEgSg-qZS7XOo';
-console.log(API_KEY);
 
 export default function Map() {
   const mapRef = useRef(undefined);
@@ -52,11 +52,10 @@ export default function Map() {
   });
 
   return (
-    <div>
-      <p>qweqweqwe</p>
+    <div className={s.mapBox}>
       {isLoaded ? (
         <GoogleMap
-          mapContainerStyle={containerStyle}
+          mapContainerClassName={s.map}
           center={center}
           zoom={16}
           onLoad={onLoad}
@@ -66,7 +65,7 @@ export default function Map() {
           <Marker position={markerPosition}></Marker>
         </GoogleMap>
       ) : (
-        <p>Загрузка карты...</p>
+        <p className={s.loadMapText}>Загрузка карты...</p>
       )}
     </div>
   );
