@@ -25,7 +25,7 @@ module.exports = {
       options: {
         localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
         languages: [`uk`, `ru`],
-        defaultLanguage: `uk`,
+        // defaultLanguage: `uk`,
         // if you are using Helmet, you must include siteUrl, and make sure you add http:https
         siteUrl: `https://example.com/`,
         // you can pass any i18next options
@@ -57,6 +57,7 @@ module.exports = {
         start_url: `/`,
       },
     },
+    `gatsby-plugin-anchor-links`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
     {

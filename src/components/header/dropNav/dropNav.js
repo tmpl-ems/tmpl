@@ -1,4 +1,5 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
+import { Link } from 'gatsby';
 
 import CloseIcon from 'images/svg/btn-close.svg';
 import LogoIcon from 'images/svg/logo.svg';
@@ -17,11 +18,11 @@ const DropNav = ({ onClick }) => {
         </button>
 
         {/* ----logo------ */}
-        <a href="/" className={logoLink}>
+        <Link to="/" className={logoLink}>
           <LogoIcon width="74" height="66" />
-        </a>
+        </Link>
 
-        <NavBlock />
+        <NavBlock onModalClose={onClick} />
       </Container>
     </div>
   );

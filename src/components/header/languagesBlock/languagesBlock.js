@@ -1,17 +1,35 @@
 import React from 'react';
 // import { useTranslation } from 'gatsby-plugin-react-i18next';
-import LangButton from './languagesBtn';
-import { languagesBlock, separator } from './languagesBlock.module.scss';
-import { useI18next } from 'gatsby-plugin-react-i18next';
+import {
+  languagesBlock,
+  separator,
+  langLink,
+  active,
+} from './languagesBlock.module.scss';
+import { Link, useI18next } from 'gatsby-plugin-react-i18next';
 
 const LanguagesBlock = () => {
-  const { changeLanguage } = useI18next();
+  const { originalPath } = useI18next();
 
   return (
     <div className={languagesBlock}>
-      <LangButton content="uk" changeLanguage={changeLanguage} />
+      <Link
+        to={originalPath}
+        language={'uk'}
+        activeClassName={active}
+        className={langLink}
+      >
+        {'ua'}
+      </Link>
       <span className={separator}></span>
-      <LangButton content="ru" changeLanguage={changeLanguage} />
+      <Link
+        to={originalPath}
+        language={'ru'}
+        activeClassName={active}
+        className={langLink}
+      >
+        {'ru'}
+      </Link>
     </div>
   );
 };

@@ -10,23 +10,28 @@
   }
 }
 
-.languagesBtn {
+.langLink {
   background: $background-color;
+  text-decoration: none;
+  padding: 10px 0;
   outline: none;
   border: none;
   font-family: $main-font;
+  font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
   line-height: 1;
   text-transform: uppercase;
   color: $inactive-color;
-  cursor: pointer;
   transition: $default-transition;
   &:hover,
   &:focus {
     color: $main-brand-color;
   }
+}
+
+.active {
+  color: $main-brand-color;
 }
 
 .separator {

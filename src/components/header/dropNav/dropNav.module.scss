@@ -39,6 +39,13 @@
 
 .close-icon {
   display: block;
+  fill: $secondary-text-color;
+  transition: $default-transition;
+
+  &:hover,
+  &:focus {
+    fill: $main-brand-color;
+  }
 }
 
 .logoLink {
