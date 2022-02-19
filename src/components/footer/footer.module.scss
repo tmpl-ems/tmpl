@@ -99,7 +99,8 @@
   @include fontProperties(16, 1.25);
   &:not(:last-child) {
     margin-bottom: 8px;
-    &:hover {
+    &:hover,
+    &:focus-within {
       text-decoration: underline;
     }
   }
@@ -119,7 +120,8 @@
 }
 .mediaItem {
   color: $secondary-text-color;
-  &:hover {
+  &:hover,
+  &:focus-within {
     color: $main-brand-color;
   }
 }
