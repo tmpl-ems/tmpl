@@ -23,6 +23,15 @@
     height: 100vh;
     z-index: -1;
   }
+
+  //
+
+  transform: translateX(120%);
+  transition: transform 250ms linear;
+
+  &.show {
+    transform: translateX(0);
+  }
 }
 
 .closeBtn {

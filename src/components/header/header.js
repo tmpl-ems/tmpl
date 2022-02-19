@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'gatsby';
+import { duration } from 'styles/jsVars';
 
 // Если в нашем компоненте нужно выполнить или нет рендеринг в зависимости от ширины экрана, берём испортируем контекст и формат. А такэе useContext
 import { PageFormatContext, format } from 'context/pageFormatContext';
@@ -20,10 +21,12 @@ import {
 export default function Header() {
   const pageFormat = useContext(PageFormatContext);
   const isDesktop = pageFormat === format.desktop;
+  const [isShow, setIsShow] = useState(false);
   const [showDropNav, setShowDropNav] = useState(false);
 
   const openDropNav = () => {
     setShowDropNav(true);
+    setIsShow(true);
     window.addEventListener('keydown', closeDropNav);
     document.body.style.overflow = 'hidden';
   };
@@ -32,8 +35,11 @@ export default function Header() {
     if (e.code === 'Escape') {
       window.removeEventListener('keydown', closeDropNav);
     }
-    setShowDropNav(false);
-    document.body.style.overflow = '';
+    setIsShow(false);
+    setTimeout(() => {
+      setShowDropNav(false);
+      document.body.style.overflow = '';
+    }, duration);
   };
 
   return (
@@ -61,7 +67,9 @@ export default function Header() {
         )}
         {/* </div> */}
       </Container>
-      {!isDesktop && showDropNav && <DropNav onClick={closeDropNav} />}
+      {!isDesktop && showDropNav && (
+        <DropNav onClick={closeDropNav} isShow={isShow} />
+      )}
     </header>
   );
 }
