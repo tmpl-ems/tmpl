@@ -70,9 +70,11 @@ export default function Goals({ onSingUpModalOpen }) {
       darkBackground={true}
       containerClass={s.container}
     >
-      <p className={s.subtitle}>{data.ru.content}</p>
-      <p className={s.subtitle}>{data.ru.content2}</p>
-      <p className={s.subtitle}>{data.ru.content3}</p>
+      <div className={s.suptitlesWrapper}>
+        <p className={s.subtitle}>{data.ru.content}</p>
+        <p className={s.subtitle}>{data.ru.content2}</p>
+        <p className={s.subtitle}>{data.ru.content3}</p>
+      </div>
 
       <ul className={s.list}>
         {sortItems(data.ru.li).map(li => (
