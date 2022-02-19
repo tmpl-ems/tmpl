@@ -15,8 +15,6 @@ const styles = {
 const MyComponent = () => {
   const { t } = useI18next();
 
-  console.log('i18n', t);
-
   const pageFormat = useContext(PageFormatContext);
 
   const pad = usePaddingsValues(styles, pageFormat, format);
