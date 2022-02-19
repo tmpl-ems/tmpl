@@ -13,6 +13,11 @@
   text-transform: uppercase;
   cursor: pointer;
   transition: $default-transition;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
 }
 
 .btn1 {

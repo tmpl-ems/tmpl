@@ -31,6 +31,9 @@
   cursor: pointer;
 
   & svg {
+    width: 14px;
+    height: 14px;
+
     @media screen and (min-width: 768px) {
       top: 21px;
       left: 21px;

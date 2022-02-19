@@ -10,7 +10,7 @@ import ResultCard from 'components/main/resultCard/ResultCard';
 // Import Swiper React components
 import { SwiperSlide } from 'swiper/react';
 
-const Results = () => {
+const Results = ({ id }) => {
   // забираем значение ширины экрана, которое высчитывается в компоненте Layout и реализуем рендеринг по условию
   const pageFormat = useContext(PageFormatContext);
   const isTablet = pageFormat === format.tablet;
@@ -19,7 +19,7 @@ const Results = () => {
   const isBackground = isTablet || isDesktop;
 
   return (
-    <Section head={'Результаты наших клиентов'} titleLevel="h4">
+    <Section head={'Результаты наших клиентов'} titleLevel="h4" id={id}>
       {isBackground && <div className={s.background}></div>}
       <Slider isNavigation isPagination sliderClass="resultSwiper">
         <SwiperSlide>

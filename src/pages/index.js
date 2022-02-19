@@ -1,4 +1,10 @@
 import React, { useState } from 'react';
+import { graphql } from 'gatsby';
+
+///
+
+///
+
 import Layout from 'components/common/layout/layout';
 import Footer from 'components/footer/footer';
 import Header from 'components/header/header';
@@ -27,3 +33,17 @@ export default function IndexPage() {
     </Layout>
   );
 }
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

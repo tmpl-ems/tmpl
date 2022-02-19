@@ -21,9 +21,11 @@ const Section = ({
   darkBackground = false,
   sectionClass,
   containerClass,
+  id,
 }) => {
   return (
     <section
+      id={id}
       className={`${section} ${darkBackground && dark} ${sectionClass}`}
       style={{ paddingTop: `${pt}px`, paddingBottom: `${pb}px` }}
     >
@@ -54,4 +56,5 @@ Section.propTypes = {
   pt: PropTypes.number,
   pb: PropTypes.number,
   darkBackground: PropTypes.bool,
+  id: PropTypes.string,
 };

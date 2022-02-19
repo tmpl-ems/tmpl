@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link as ScrollLink } from 'react-scroll';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { navList, navItem, navLink } from './navBlock.module.scss';
+import { useI18next } from 'gatsby-plugin-react-i18next';
 
 const data = {
   ru: [
@@ -50,20 +51,20 @@ const data = {
   ],
 };
 
-const NavBlock = () => {
+const NavBlock = ({ onModalClose }) => {
+  const { path } = useI18next();
+
   return (
     <nav>
       <ul className={navList}>
         {data.ru.map(item => (
-          <li className={navItem} key={item.name}>
-            <ScrollLink
-              to={item.name}
+          <li className={navItem} key={item.name} onClick={onModalClose}>
+            <AnchorLink
+              to={`${path}#${item.name}`}
+              title={item.title}
+              duration={250}
               className={navLink}
-              smooth={true}
-              duration={500}
-            >
-              {item.title}
-            </ScrollLink>
+            />
           </li>
         ))}
       </ul>
