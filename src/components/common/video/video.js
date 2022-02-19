@@ -49,6 +49,7 @@ const Video = ({
           height={height}
           src={videoSrcURL}
           frameBorder="0"
+          controls="2"
           title={videoTitle}
           allow="accelerometer; autoplay; encrypted-media; gyroscope"
           allowFullScreen

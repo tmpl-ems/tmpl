@@ -22,8 +22,8 @@
   margin: 0 auto;
 
   @media screen and (min-width: 768px) {
-    width: 320px;
-    margin-left: 32px;
+    width: 336px;
+    margin-left: 28px;
   }
 
   @media screen and (min-width: 1280px) {
@@ -44,20 +44,33 @@
     margin-bottom: 60px;
   }
   @media screen and (min-width: 1280px) {
-    margin-bottom: 12px;
+    margin-bottom: 15px;
+  }
+}
+
+.how-item0 {
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 22px;
   }
 }
 
 .how-item1 {
   margin-bottom: 12px;
   @media screen and (min-width: 768px) and (max-width: 1279px) {
-    margin-bottom: 45px;
+    margin-bottom: 55px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 15px;
   }
 }
 
 .how-item2 {
   @media screen and (min-width: 768px) {
     margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 26px;
   }
 }
 
@@ -78,20 +91,25 @@
   line-height: 1;
   -webkit-text-stroke: 1px $main-brand-color;
   -webkit-text-fill-color: transparent;
+  @media screen and (min-width: 1280px) {
+    margin-bottom: -14px;
+  }
 }
 
 .howNumber2 {
   padding-left: 15px;
+  margin-bottom: -14px;
 }
 
 .howNumber3 {
   padding-left: 10px;
+  margin-bottom: -13px;
 }
 
 .howCommonText {
   font-weight: 300;
   font-size: 18px;
-  line-height: 1.33;
+  line-height: 1.333;
   color: $secondary-text-color;
 }
 
@@ -220,7 +238,7 @@
       width: 115px;
       height: 84px;
       left: -147px;
-      bottom: 20px;
+      bottom: 24px;
     }
 
     @media screen and (min-width: 1280px) {
@@ -238,15 +256,22 @@
 
 .howTextContentContainer {
   position: relative;
-  @media screen and (max-width: 767px) {
-    margin-top: 50px;
+  @media screen and (min-width: 768px) {
+    margin-top: 0px;
   }
 }
 
 .howTabletFlexContainer {
   display: flex;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    justify-content: space-between;
+  }
 }
 
 .videoWpapper {
-  padding-top: 24px;
+  padding-top: 40px;
+  padding-bottom: 26px;
+  @media screen and (min-width: 768px) {
+    padding-top: 22px;
+  }
 }
