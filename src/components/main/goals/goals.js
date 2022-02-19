@@ -1,5 +1,6 @@
 import React from 'react';
 import * as s from './goals.module.scss';
+import { useI18next } from 'gatsby-plugin-react-i18next';
 
 import Section from 'components/common/section/section';
 import Button from 'components/common/button/button';
@@ -63,10 +64,29 @@ const data = {
 };
 
 export default function Goals({ onSingUpModalOpen }) {
+  const { t } = useI18next();
+
+  const dat = t('text', { returnObjects: true });
+
+  console.log('dat', dat);
+
+  const items = [
+    t('text1'),
+    t('text2'),
+    t('text3'),
+    t('text4'),
+    t('text5'),
+    t('text6'),
+    t('text7'),
+    t('text8'),
+  ];
+
+  console.log('items', items);
+
   return (
     <Section
       titleLevel="h2"
-      head={data.ru.title}
+      head={t('title')}
       darkBackground={true}
       containerClass={s.container}
     >
@@ -75,9 +95,9 @@ export default function Goals({ onSingUpModalOpen }) {
       <p className={s.subtitle}>{data.ru.content3}</p>
 
       <ul className={s.list}>
-        {sortItems(data.ru.li).map(li => (
-          <li className={s.item} key={li.id}>
-            {li.text}
+        {sortItems(items).map((item, idx) => (
+          <li className={s.item} key={idx}>
+            {item}
           </li>
         ))}
       </ul>
