@@ -5,6 +5,7 @@ import Header from 'components/header/header';
 import Main from 'components/main/main';
 import Modal from 'components/common/Modal/Modal';
 import SingUpForm from 'components/common/SingUpForm';
+import Map from 'components/footer/footer-components/Map/Map';
 
 export default function IndexPage() {
   const [showSingUpModal, setShowSingUpModal] = useState(false);
@@ -14,9 +15,10 @@ export default function IndexPage() {
 
   return (
     <Layout>
-      <Header />
+      {/* <Header />
       <Main onSingUpModalOpen={toggleSingUpModal} />
-      <Footer />
+      <Footer /> */}
+      <Map/>
       {showSingUpModal && (
         <Modal closeModal={toggleSingUpModal}>
           <SingUpForm closeModal={toggleSingUpModal} />
