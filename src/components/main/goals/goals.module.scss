@@ -47,10 +47,9 @@
   }
 
   @media screen and (min-width: 1280px) {
-    padding-left: 107px;
-    max-width: 970px;
+    padding: 0 107px;
     display: grid;
-    gap: 32px 105px;
+    gap: 28px 32px;
     grid-template-columns: repeat(2, 1fr);
   }
 }
