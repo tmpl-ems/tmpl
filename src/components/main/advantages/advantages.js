@@ -2,9 +2,9 @@ import React from 'react';
 import * as s from './advantages.module.scss';
 import Section from 'components/common/section/section';
 import AdvIcon1 from 'images/svg/adv-comfort.svg';
-import AdvIcon2 from 'images/svg/adv-motivation.svg';
-import AdvIcon3 from 'images/svg/adv-result.svg';
-import AdvIcon4 from 'images/svg/adv-safety.svg';
+import AdvIcon3 from 'images/svg/adv-motivation.svg';
+import AdvIcon4 from 'images/svg/adv-result.svg';
+import AdvIcon2 from 'images/svg/adv-safety.svg';
 
 export default function Advantages() {
   return (
