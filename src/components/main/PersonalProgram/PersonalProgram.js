@@ -57,7 +57,7 @@ const data = {
   },
 };
 
-export default function PersonalProgram({ onSingUpModalOpen }) {
+export default function PersonalProgram({ onSingUpModalOpen, id }) {
   const [selectedProgram, setSelectedProgram] = useState(null);
 
   const getSelectedProgram = id => {
@@ -69,7 +69,7 @@ export default function PersonalProgram({ onSingUpModalOpen }) {
   };
 
   return (
-    <Section head="Программы" titleLevel="h2">
+    <Section head="Программы" titleLevel="h2" id={id}>
       <ul className={`${s.textList} list`}>
         <li className={s.textItem}>
           <p className={s.text}>{data.ru.text.t1}</p>

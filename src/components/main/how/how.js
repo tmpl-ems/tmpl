@@ -66,7 +66,7 @@ const videoStyles = {
   tablet: { display: 'block' },
 };
 
-const How = () => {
+const How = ({ id }) => {
   const videoUrl = 'https://www.youtube.com/embed/HUZLr7XmdmU';
   const videoTitle = 'YouTube video player';
 
@@ -105,6 +105,7 @@ const How = () => {
         style={{ backgroundColor: '#000000' }}
         pt={paddings.pt}
         pb={paddings.pb}
+        id={id}
       >
         <p className={s.howTitle}>{data.ru.suptitle}</p>
         <div

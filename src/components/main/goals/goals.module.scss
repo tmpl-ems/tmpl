@@ -1,5 +1,12 @@
 @import 'styles/vars';
 
+.suptitlesWrapper {
+  margin: 0 auto;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    max-width: 630px;
+  }
+}
+
 .subtitle {
   position: relative;
   z-index: 5;
@@ -102,7 +109,8 @@
   transform: rotate(0);
 
   background-image: url('images/goals/lightning-up-mobile.png');
-  background-position: top -60px right 0px;
+  background-size: 210px;
+  background-position: top -85px right 0px;
   // background-size: auto;
   background-repeat: no-repeat;
 
@@ -114,7 +122,8 @@
 
   @media (min-width: 768px) {
     background-image: url('images/goals/lightning-up-tablet.png');
-    background-position: top -200px right 0px;
+    background-size: 400px;
+    background-position: top -190px right 0px;
     // background-size: auto;
     background-repeat: no-repeat;
 
@@ -127,8 +136,9 @@
 
   @media (min-width: 1280px) {
     background-image: url('images/goals/lightning-up-desktop.png');
-    background-position: top -230px right 0px;
-    // background-size: auto;
+    background-position: top -235px right 0px;
+    background-size: 535px;
+
     background-repeat: no-repeat;
 
     @media (min-device-pixel-ratio: 2),
@@ -149,8 +159,8 @@
   transform: rotate(0);
 
   background-image: url('images/goals/lightning-down-mobile.png');
-  background-position: bottom -56px left 0px;
-  background-size: 150px;
+  background-position: bottom -97px left 0px;
+  background-size: 200px;
   background-repeat: no-repeat;
 
   @media (min-device-pixel-ratio: 2),
@@ -162,7 +172,7 @@
   @media (min-width: 768px) {
     background-image: url('images/goals/lightning-down-tablet.png');
     background-position: bottom -130px left 0px;
-    background-size: auto;
+    background-size: 375px;
     background-repeat: no-repeat;
 
     @media (min-device-pixel-ratio: 2),
@@ -174,8 +184,8 @@
 
   @media (min-width: 1280px) {
     background-image: url('images/goals/lightning-down-desktop.png');
-    background-position: bottom -240px left 0px;
-    background-size: auto;
+    background-position: bottom -235px left 0px;
+    background-size: 560px;
     background-repeat: no-repeat;
 
     @media (min-device-pixel-ratio: 2),
