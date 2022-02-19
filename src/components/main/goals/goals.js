@@ -11,8 +11,6 @@ export default function Goals({ onSingUpModalOpen, id }) {
 
   const data = t('goals', { returnObjects: true });
 
-  console.log('data', data);
-
   return (
     <Section
       id={id}
