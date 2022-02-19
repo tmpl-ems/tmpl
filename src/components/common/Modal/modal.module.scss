@@ -13,10 +13,10 @@
   pointer-events: auto;
   backdrop-filter: blur(6px);
 
-  opacity: 0;
-  transition: opacity 250ms linear;
+  // opacity: 0;
+  // transition: opacity 250ms linear;
 
-  &.show {
-    opacity: 1;
-  }
+  // &.show {
+  //   opacity: 1;
+  // }
 }

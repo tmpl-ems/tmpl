@@ -15,10 +15,10 @@ const Main = ({ onSingUpModalOpen }) => {
   return (
     <main>
       <Hero />
-      <AboutUsSection />
+      <AboutUsSection id={'about-us'} />
       <Goals onSingUpModalOpen={onSingUpModalOpen} id={'goals'} />
       <Advantages />
-      <How id={'about-us'} />
+      <How />
 
       <Results id={'clients-result'} />
 
