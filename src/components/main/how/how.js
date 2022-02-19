@@ -48,8 +48,8 @@ const data = {
 };
 
 const styles = {
-  response: { pt: 28, pb: 40 },
-  mobile: { pt: 28, pb: 40 },
+  response: { pt: 40, pb: 40 },
+  mobile: { pt: 40, pb: 40 },
   tablet: { pt: 60, pb: 84 },
   desktop: { pt: 60, pb: 53 },
 };
@@ -67,7 +67,7 @@ const videoStyles = {
 };
 
 const How = ({ id }) => {
-  const videoUrl = 'https://www.youtube.com/embed/Ihvs5qt1Ut0';
+  const videoUrl = 'https://www.youtube.com/embed/HUZLr7XmdmU';
   const videoTitle = 'YouTube video player';
 
   const pageFormat = useContext(PageFormatContext);
@@ -77,11 +77,12 @@ const How = ({ id }) => {
     ...videoStyles.mobile,
   });
   const isTablet = pageFormat === format.tablet;
+
   const isDesktop = pageFormat === format.desktop;
 
   useEffect(() => {
     if (pageFormat === format.tablet) {
-      setVideoSizes({ width: 352, height: 266 });
+      setVideoSizes({ width: 340, height: 266 });
       setVideoStyle({ ...videoStyles.common, ...videoStyles.tablet });
     }
     if (pageFormat === format.desktop) {
