@@ -1,5 +1,6 @@
 import React, { useRef, useCallback } from 'react';
-import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import MapBackground from '../mapBackground';
 import { CustomMarker } from './CustomMarker';
 import * as s from '../../footer.module.scss';
 import { defaultTheme } from './Theme';
@@ -60,7 +61,7 @@ export default function MapGoogle() {
           <CustomMarker position={markerPosition} />
         </GoogleMap>
       ) : (
-        <p className={s.loadMapText}>Загрузка карты...</p>
+          <MapBackground />
       )}
     </div>
   );
