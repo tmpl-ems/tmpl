@@ -1,4 +1,15 @@
 {
+  "common": {
+    "button": "Записаться",
+
+    "singUpForm": {
+      "text": "Для того, чтобы записаться, пожалуйста, введите свое имя и номер телефона",
+      "namePlaceholder": "Имя",
+      "numberPlaceholder": "Номер",
+      "button": "Отправить"
+    }
+  },
+
   "goals": {
     "title": "Цели",
     "suptitle1": "ЕМС подходит для тех, кто ценит свое время и хочет прийти в форму безопасно и не изнуряя себя.",
@@ -42,6 +53,44 @@
     }
   },
 
+  "personalPrograms": {
+    "title": "Программы",
+    "subtitle1": "Вы строите свою индивидуальную программу совместно с тренером под ваши личные цели и пожелания.",
+    "subtitle2": "Выбирайте, что вас интересует больше всего, и записывайтесь на пробное занятие:",
+    "programs": [
+      {
+        "id": 1,
+        "title": "Похудение и антицеллюлит",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio pellentesque lacus, semper tincidunt ipsum egestas nulla. Egestas facilisi consectetur luctus a."
+      },
+      {
+        "id": 2,
+        "title": "Мышечная масса и рельеф",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio pellentesque lacus, semper tincidunt ipsum egestas nulla. Egestas facilisi consectetur luctus a."
+      },
+      {
+        "id": 3,
+        "title": "Упругие ягодицы и идеальный пресс",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio pellentesque lacus, semper tincidunt ipsum egestas nulla. Egestas facilisi consectetur luctus a."
+      },
+      {
+        "id": 4,
+        "title": "Восстановление после родов",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio pellentesque lacus, semper tincidunt ipsum egestas nulla. Egestas facilisi consectetur luctus a."
+      },
+      {
+        "id": 5,
+        "title": "Здоровая спина и прямая осанка",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio pellentesque lacus, semper tincidunt ipsum egestas nulla. Egestas facilisi consectetur luctus a."
+      },
+      {
+        "id": 6,
+        "title": "Реабилитация после травм",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio pellentesque lacus, semper tincidunt ipsum egestas nulla. Egestas facilisi consectetur luctus a."
+      }
+    ]
+  },
+
   "about": {
     "title": "О нас",
     "description":
@@ -66,5 +115,6 @@
     ],
     "resultText":
       "2 ЕМС-тренировки в неделю по 30 минут  — и ваше тело станет подтянутым, уйдет лишняя жидкость и токсины, улучшится самочувствие и сон, повысится уровень стрессоустойчивости и здоровье организма в целом."
+
   }
 }

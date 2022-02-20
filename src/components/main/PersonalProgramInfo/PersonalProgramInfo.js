@@ -10,6 +10,15 @@ import ProgramIcon6 from 'images/svg/program6.svg';
 import CloseIcon from 'images/svg/btn-close.svg';
 import * as s from './PersonalProgramInfo.module.scss';
 
+const icons = [
+  <ProgramIcon1 />,
+  <ProgramIcon2 />,
+  <ProgramIcon3 />,
+  <ProgramIcon4 />,
+  <ProgramIcon5 />,
+  <ProgramIcon6 />,
+];
+
 export default function PersonalProgramInfo({
   selectedProgram,
   closeInfoModal,
@@ -26,16 +35,11 @@ export default function PersonalProgramInfo({
         <CloseIcon />
       </button>
 
-      {selectedProgram?.id === 1 && <ProgramIcon1 className={s.icon} />}
-      {selectedProgram?.id === 2 && <ProgramIcon2 className={s.icon} />}
-      {selectedProgram?.id === 3 && <ProgramIcon3 className={s.icon} />}
-      {selectedProgram?.id === 4 && <ProgramIcon4 className={s.icon} />}
-      {selectedProgram?.id === 5 && <ProgramIcon5 className={s.icon} />}
-      {selectedProgram?.id === 6 && <ProgramIcon6 className={s.icon} />}
+      {icons[selectedProgram.index]}
 
-      <h3 className={s.title}>{selectedProgram.title}</h3>
+      <h3 className={s.title}>{selectedProgram.item.title}</h3>
 
-      <p className={s.text}>{selectedProgram.desc}</p>
+      <p className={s.text}>{selectedProgram.item.desc}</p>
 
       <Button classType={3} onBtnClick={() => singUpHandler()} />
     </div>
