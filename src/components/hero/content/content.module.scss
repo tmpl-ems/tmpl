@@ -7,34 +7,38 @@
   align-items: flex-start;
 }
 .sectionTitle {
-  @include textStyleHeader;
+  width: 280px;
+  margin-top: 18px;
   margin-bottom: 28px;
+  @include textStyleHeader;
   font-size: 28px;
   line-height: 31px;
   letter-spacing: 0.01em;
   color: $main-brand-color;
   @media screen and (min-width: 768px) {
+    width: 501px;
     font-size: 48px;
     line-height: 64px;
+    margin-top: 35px;
     margin-bottom: 36px;
   }
   @media screen and (min-width: 1280px) {
-    margin-top: 60px;
+    margin-top: 50px;
   }
 }
 .text1 {
   display: block;
   width: 200px;
+  margin-bottom: 16px;
   @include textStyleHeader;
   font-weight: 600;
   color: $secondary-text-color;
-  margin-bottom: 16px;
   @media screen and (min-width: 768px) {
     width: 100%;
+    margin-bottom: 8px;
     font-weight: normal;
     font-size: 16px;
     line-height: 33px;
-    margin-top: 36px;
     margin-bottom: 8px;
   }
 }
@@ -54,6 +58,7 @@
 .text2 {
   position: relative;
   display: block;
+  width: 240px;
   margin-bottom: 16px;
   padding-top: 120px;
   @include textStyleHeader;
@@ -61,6 +66,7 @@
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   @media screen and (min-width: 768px) {
+    width: 250px;
     font-weight: 300;
     font-size: 16px;
     line-height: 20px;
@@ -72,11 +78,13 @@
   }
   & .text2_span {
     padding-left: 10px;
+    font-size: 12px;
     font-weight: 300;
     opacity: 0.5;
     text-decoration: line-through;
     @media screen and (min-width: 768px) {
       font-size: 16px;
+      text-decoration: line-through;
     }
   }
   &::before {

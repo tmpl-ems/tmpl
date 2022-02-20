@@ -11,12 +11,7 @@ import BurgerIcon from 'images/svg/button-burger.svg';
 import DropNav from './dropNav/dropNav';
 import NavBlock from './navBlock/navBlock';
 import LanguagesBlock from './languagesBlock/languagesBlock';
-import {
-  header,
-  headerContainer,
-  logoLink,
-  burgerOpenBtn,
-} from './header.module.scss';
+import * as s from './header.module.scss';
 
 export default function Header() {
   const pageFormat = useContext(PageFormatContext);
@@ -43,10 +38,10 @@ export default function Header() {
   };
 
   return (
-    <header className={header} id="header">
-      <Container addClass={headerContainer}>
+    <header className={s.header} id="header">
+      <Container addClass={s.headerContainer}>
         {/* //----logo------ */}
-        <Link to="/" className={logoLink}>
+        <Link to="/" className={s.logoLink}>
           <LogoIcon width="74" height="66" />
         </Link>
         {isDesktop && <NavBlock />}
@@ -55,7 +50,7 @@ export default function Header() {
         {/* //---BurgerBtn--- */}
         {!isDesktop && (
           <button
-            className={burgerOpenBtn}
+            className={s.burgerOpenBtn}
             type="button"
             onClick={openDropNav}
             aria-label="Кнопка открытия мобильного меню"
