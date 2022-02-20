@@ -37,7 +37,6 @@ export default function PersonalProgram({ onSingUpModalOpen, id }) {
   const closeInfoModal = () => {
     setSelectedProgram(null);
   };
-  console.log(selectedProgram);
 
   return (
     <Section head={data.title} titleLevel="h2" id={id}>
