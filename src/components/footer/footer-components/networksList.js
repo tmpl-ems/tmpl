@@ -9,22 +9,22 @@ const Networks = () => {
   const data = [
     {
       id: 'Telegram',
-      href: '@goitmarathon_bot',
+      href: 'https://telegram.org/',
       svg: <Telegram />,
     },
     {
       id: 'Youtube',
-      href: '@goitmarathon_bot',
+      href: 'https://www.youtube.com/channel/UCT84NPFSrpWU8xnGIhpqDpQ',
       svg: <Youtube />,
     },
     {
       id: 'Facebook',
-      href: '@goitmarathon_bot',
+      href: 'https://www.facebook.com/',
       svg: <Facebook />,
     },
     {
       id: 'Instagram',
-      href: '@goitmarathon_bot',
+      href: 'https://www.instagram.com/startpage/',
       svg: <Instagram />,
     },
   ];
@@ -37,6 +37,7 @@ const Networks = () => {
               href={item.href}
               target="_blank"
               rel="noopener noreferrer nofollow"
+              aria-label={item.id}
               className={`${s.mediaItem} link`}
             >
               {item.svg}

@@ -1,7 +1,11 @@
 import React from 'react';
+import { useI18next } from 'gatsby-plugin-react-i18next';
 import * as s from '../footer.module.scss';
 
+
 const Contacts = () => {
+  const { t } = useI18next();
+  const data = t('footer', { returnObjects: true });
   return (
     <ul className={`${s.contactsList} list`}>
       <li className={`${s.contactItem}`}>
@@ -15,7 +19,7 @@ const Contacts = () => {
         </a>
       </li>
       <li className={`${s.contactItem}`}>
-        <address className={'link'}>г. Киев, ул. Антоновича 3, офис 3</address>
+        <address className={'link'}>{ data.address}</address>
       </li>
     </ul>
   );
