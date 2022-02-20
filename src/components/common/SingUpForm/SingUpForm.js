@@ -1,10 +1,14 @@
 import React from 'react';
+import { useI18next } from 'gatsby-plugin-react-i18next';
 
 import Button from 'components/common/button/button';
 import CloseIcon from 'images/svg/btn-close.svg';
 import * as s from './SingUpForm.module.scss';
 
 export default function SingUpForm({ closeModal }) {
+  const { t } = useI18next();
+  const data = t('common', { returnObjects: true });
+
   const handleSubmit = e => {
     e.preventDefault();
     closeModal();
@@ -16,10 +20,7 @@ export default function SingUpForm({ closeModal }) {
         <CloseIcon />
       </button>
 
-      <p className={s.text}>
-        Для того, чтобы записаться, пожалуйста, введите свое имя и номер
-        телефона
-      </p>
+      <p className={s.text}>{data.singUpForm.text}</p>
 
       <form className={s.form} onSubmit={e => handleSubmit(e)}>
         <input
@@ -29,7 +30,7 @@ export default function SingUpForm({ closeModal }) {
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
-          placeholder="Имя"
+          placeholder={data.singUpForm.namePlaceholder}
         />
         <input
           className={s.input}
@@ -38,10 +39,10 @@ export default function SingUpForm({ closeModal }) {
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
-          placeholder="Номер"
+          placeholder={data.singUpForm.numberPlaceholder}
         />
 
-        <Button type="submit" classType={3} text="Отправить" />
+        <Button type="submit" classType={3} text={data.singUpForm.button} />
       </form>
     </div>
   );
