@@ -3,49 +3,9 @@ import Section from 'components/common/section/section';
 import Video from 'components/common/video/video';
 import { PageFormatContext, format } from 'context/pageFormatContext';
 import { usePaddingsValues } from 'hooks/usePaddingsValues';
+import { useI18next } from 'gatsby-plugin-react-i18next';
 
 import * as s from './how.module.scss';
-
-const data = {
-  ru: {
-    title: 'Тренировки',
-    suptitle: 'Как проходит 30-минутная тренировка индивидуально с тренером:',
-    content: {
-      textContent: [
-        {
-          number: 10,
-          text: 'минут — легкий кардио-тренинг',
-        },
-        {
-          number: 10,
-          text: 'минут — силовой тренинг с небольшими весами',
-        },
-        {
-          number: 5,
-          text: 'минут  — массаж лимфодренажный',
-        },
-        {
-          number: 5,
-          text: 'минут  — дополнительная проработка “проблемной” зоны',
-        },
-      ],
-    },
-  },
-  // just an example of Ukrainian version of  the section. WARNING THIS DATA`S TRANSLATION SHOULD BE CHECKED
-  ukr: {
-    title: 'Тренування',
-    suptitle: 'Як проходить 30-хвилинне тренування індивідуально з тренером',
-    content: {
-      styledNumbers: [10, 10, 5, 5],
-      textContent: [
-        'хвилин — легкий кардіо тренінг',
-        'хвилин — силовий тренінг з невеликими навантаженнями',
-        'хвилин  — масаж лімфодренажний',
-        'хвилин  — додаткове відпрацювання “проблемних” зон',
-      ],
-    },
-  },
-};
 
 const styles = {
   response: { pt: 40, pb: 40 },
@@ -69,6 +29,9 @@ const videoStyles = {
 const How = ({ id }) => {
   const videoUrl = 'https://www.youtube.com/embed/HUZLr7XmdmU';
   const videoTitle = 'YouTube video player';
+
+  const { t } = useI18next();
+  const data = t('how', { returnObjects: true });
 
   const pageFormat = useContext(PageFormatContext);
   const [videoSizes, setVideoSizes] = useState({ width: 280, height: 266 });
@@ -99,7 +62,7 @@ const How = ({ id }) => {
   return (
     <div className={s.howBackgroundContainer}>
       <Section
-        head={data.ru.title}
+        head={data.title}
         titleHidden={true}
         titleLevel={'h3'}
         style={{ backgroundColor: '#000000' }}
@@ -107,7 +70,7 @@ const How = ({ id }) => {
         pb={paddings.pb}
         id={id}
       >
-        <p className={s.howTitle}>{data.ru.suptitle}</p>
+        <p className={s.howTitle}>{data.suptitle}</p>
         <div
           className={isTablet || isDesktop ? `${s.howTabletFlexContainer}` : ''}
         >
@@ -123,7 +86,7 @@ const How = ({ id }) => {
 
           <div className={s.howTextContentContainer}>
             <ul className={s.howList}>
-              {data.ru.content.textContent.map((el, index) => {
+              {data.content.textContent.map((el, index) => {
                 return (
                   <li
                     key={index}
