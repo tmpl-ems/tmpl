@@ -58,7 +58,7 @@ export default function MapGoogle() {
           onUnmount={onUnmount}
           options={defaultOptions}
         >
-          <CustomMarker position={markerPosition} />
+          <CustomMarker position={markerPosition}/>
         </GoogleMap>
       ) : (
           <MapBackground />
