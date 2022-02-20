@@ -1,4 +1,15 @@
 {
+  "common": {
+    "button": "Записатися",
+
+    "singUpForm": {
+      "text": "Для того, щоб записатися, будь ласка, введіть своє ім'я та номер телефону",
+      "namePlaceholder": "Ім'я",
+      "numberPlaceholder": "Номер",
+      "button": "Відправити"
+    }
+  },
+
   "goals": {
     "title": "Цілі",
     "suptitle1": "ЕМС підходить для тих, хто цінує свій час і хоче прийти у форму безпечно і не виснажуючи себе.",
@@ -39,5 +50,43 @@
         }
       ]
     }
+  },
+
+  "personalPrograms": {
+    "title": "Програми",
+    "subtitle1": "Ви будуєте свою індивідуальну програму спільно з тренером під ваші особисті цілі та побажання.",
+    "subtitle2": "Обирайте, що вас цікавить найбільше, і записуйтеся на пробне заняття:",
+    "programs": [
+      {
+        "id": 1,
+        "title": "Схуднення та антицелюліт",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio pellentesque lacus, semper tincidunt ipsum egestas nulla. Egestas facilisi consectetur luctus a."
+      },
+      {
+        "id": 2,
+        "title": "М'язова маса та рельєф",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio pellentesque lacus, semper tincidunt ipsum egestas nulla. Egestas facilisi consectetur luctus a."
+      },
+      {
+        "id": 3,
+        "title": "Пружні сідниці та ідеальний прес",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio pellentesque lacus, semper tincidunt ipsum egestas nulla. Egestas facilisi consectetur luctus a."
+      },
+      {
+        "id": 4,
+        "title": "Відновлення після пологів",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio pellentesque lacus, semper tincidunt ipsum egestas nulla. Egestas facilisi consectetur luctus a."
+      },
+      {
+        "id": 5,
+        "title": "Здорова спина і пряма постава",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio pellentesque lacus, semper tincidunt ipsum egestas nulla. Egestas facilisi consectetur luctus a."
+      },
+      {
+        "id": 6,
+        "title": "Реабілітація після травм",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio pellentesque lacus, semper tincidunt ipsum egestas nulla. Egestas facilisi consectetur luctus a."
+      }
+    ]
   }
 }

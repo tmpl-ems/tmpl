@@ -18,6 +18,11 @@
     padding: 40px 75px;
     width: 608px;
   }
+
+  & > svg {
+    fill: $main-brand-color;
+    margin-bottom: 20px;
+  }
 }
 
 .closeBtn {
@@ -30,7 +35,7 @@
   background-color: transparent;
   cursor: pointer;
 
-  & svg {
+  & > svg {
     width: 14px;
     height: 14px;
 
@@ -41,11 +46,6 @@
       height: 18px;
     }
   }
-}
-
-.icon {
-  fill: $main-brand-color;
-  margin-bottom: 20px;
 }
 
 .title {
