@@ -16,7 +16,7 @@ const Main = ({ onSingUpModalOpen }) => {
     <main>
       <Hero />
       <AboutUsSection id={'about-us'} />
-      <Goals onSingUpModalOpen={onSingUpModalOpen} id={'goals'} />
+      {/* <Goals onSingUpModalOpen={onSingUpModalOpen} id={'goals'} /> */}
       <Advantages />
       <How />
 
