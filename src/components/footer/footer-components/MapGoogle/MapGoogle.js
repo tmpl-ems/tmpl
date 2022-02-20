@@ -29,7 +29,9 @@ const defaultOptions = {
   styles: defaultTheme,
 };
 
-const API_KEY = 'AIzaSyCDL1gLSaJnNhEo6Rb3fkOEgSg-qZS7XOo';
+const API_KEY = process.env.API_KEY;
+
+console.log('API_KEY', API_KEY);
 
 export default function MapGoogle() {
   const mapRef = useRef(undefined);
@@ -58,10 +60,10 @@ export default function MapGoogle() {
           onUnmount={onUnmount}
           options={defaultOptions}
         >
-          <CustomMarker position={markerPosition}/>
+          <CustomMarker position={markerPosition} />
         </GoogleMap>
       ) : (
-          <MapBackground />
+        <MapBackground />
       )}
     </div>
   );
