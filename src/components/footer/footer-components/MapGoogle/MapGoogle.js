@@ -1,13 +1,9 @@
 import React, { useRef, useCallback } from 'react';
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import { CustomMarker } from './CustomMarker';
 import * as s from '../../footer.module.scss';
-
+import Pin from './location-pin.svg'
 import { defaultTheme } from './Theme';
-
-const containerStyle = {
-  width: '280px',
-  height: '270px',
-};
 
 const center = {
   lat: 50.43951642646362,
@@ -35,7 +31,7 @@ const defaultOptions = {
 
 const API_KEY = 'AIzaSyCDL1gLSaJnNhEo6Rb3fkOEgSg-qZS7XOo';
 
-export default function Map() {
+export default function MapGoogle() {
   const mapRef = useRef(undefined);
 
   const onLoad = useCallback(function callback(map) {
@@ -62,7 +58,10 @@ export default function Map() {
           onUnmount={onUnmount}
           options={defaultOptions}
         >
-          <Marker position={markerPosition}></Marker>
+         
+          <CustomMarker position={markerPosition}/>
+     
+         
         </GoogleMap>
       ) : (
         <p className={s.loadMapText}>Загрузка карты...</p>
