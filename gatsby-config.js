@@ -9,6 +9,12 @@ require('dotenv').config({
 });
 
 module.exports = {
+  siteMetadata: {
+    siteUrl: `https://example.com/`,
+    title: 'TMPL',
+    description: `EMS-тренування в Києві`,
+    author: `GoWeb`,
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -27,14 +33,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
-        localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
+        localeJsonSourceName: `locale`, // name given to
         languages: [`uk`, `ru`],
-        // defaultLanguage: `uk`,
-        // if you are using Helmet, you must include siteUrl, and make sure you add http:https
+        defaultLanguage: `uk`,
+
         siteUrl: `https://example.com/`,
         i18nextOptions: {
           interpolation: {
-            escapeValue: false, // not needed for react
+            escapeValue: false,
           },
           // keySeparator: false,
           nsSeparator: false,

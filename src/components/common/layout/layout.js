@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { useI18next } from 'gatsby-plugin-react-i18next';
+
 import { PageFormatContext, format } from 'context/pageFormatContext';
+import SEO from 'components/seo/seo';
 
 const breakPoints = {
   response: 479,
@@ -10,6 +13,9 @@ const breakPoints = {
 
 const Layout = ({ children }) => {
   const [pageFormat, setPageFormat] = useState(format.response);
+  const { t } = useI18next();
+
+  const data = t('seo', { returnObjects: true });
 
   useEffect(() => {
     const onHandleResize = () => {
@@ -45,6 +51,7 @@ const Layout = ({ children }) => {
 
   return (
     <PageFormatContext.Provider value={pageFormat}>
+      <SEO title={data.title} description={data.description} lang={data.lang} />
       {children}
     </PageFormatContext.Provider>
   );
