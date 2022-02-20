@@ -4,7 +4,9 @@ import { usePaddingsValues } from 'hooks/usePaddingsValues';
 import Section from 'components/common/section/section';
 import Logo from 'images/svg/logo.svg';
 
-import Map from './footer-components/Map/Map';
+import MapGoogle from './footer-components/MapGoogle/MapGoogle';
+// in case Google Maps won't support
+// import MapBackground from './footer-components/mapBackground';
 import Contacts from './footer-components/contacts';
 import Networks from './footer-components/networksList';
 import CopyRightBlock from './footer-components/copyRight';
@@ -25,7 +27,8 @@ const Footer = () => {
     <footer>
       <Section darkBackground={true} pt={pad.pt} pb={pad.pb}>
         <div className={`${s.footerWrapper}`}>
-          <Map />
+          <MapGoogle />
+          {/* <MapBackground /> */}
           <div>
             <Logo className={`${s.logo}`} />
             {/* Contacts list */}

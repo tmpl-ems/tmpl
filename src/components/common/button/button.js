@@ -1,15 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { useI18next } from 'gatsby-plugin-react-i18next';
 import * as s from './button.module.scss';
-
-const data = {
-  ru: {
-    text: 'Записаться',
-  },
-  ukr: {
-    text: 'Записатися',
-  },
-};
 
 /* 
 How to use
@@ -28,6 +20,8 @@ const Button = ({
   ...props
 }) => {
   const [nameOfClass, setNameOfClass] = useState(s.btn1);
+  const { t } = useI18next();
+  const data = t('common', { returnObjects: true });
 
   useEffect(() => {
     const getClass = classType => {
@@ -44,7 +38,7 @@ const Button = ({
       className={`${nameOfClass} ${addClass}`}
       onClick={onBtnClick}
     >
-      {text ? text : data.ru.text}
+      {text ? text : data.button}
     </button>
   );
 };

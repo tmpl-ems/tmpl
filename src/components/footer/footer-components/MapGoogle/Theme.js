@@ -3,7 +3,7 @@ export const defaultTheme = [
     elementType: 'geometry',
     stylers: [
       {
-        color: '#212121',
+        color: '#343332',
       },
     ],
   },
@@ -19,7 +19,7 @@ export const defaultTheme = [
     elementType: 'labels.text.fill',
     stylers: [
       {
-        color: '#757575',
+        color: '#bfbfbf',
       },
     ],
   },
@@ -27,7 +27,7 @@ export const defaultTheme = [
     elementType: 'labels.text.stroke',
     stylers: [
       {
-        color: '#212121',
+        color: '#252727',
       },
     ],
   },
@@ -62,16 +62,50 @@ export const defaultTheme = [
     elementType: 'labels.text.fill',
     stylers: [
       {
-        color: '#bdbdbd',
+        color: '#bfbfbf',
       },
     ],
   },
+
+
+
+  {
+    featureType: 'landscape.man_made',
+    elementType: 'geometry.fill',
+    stylers: [
+      {
+        color: '#32312f',
+      },
+    ],
+  },
+ {
+    featureType: 'landscape.man_made',
+    elementType: 'labels.text',
+    stylers: [
+      {
+        visibility: 'off'
+        
+      },
+    ],
+  },
+{
+    featureType: 'landscape.natural.terrain',
+    elementType: 'geometry.fill',
+    stylers: [
+      {
+        color: '#454545',
+      },
+    ],
+  },
+
+
+
   {
     featureType: 'poi',
     elementType: 'geometry.fill',
     stylers: [
       {
-        color: '#32312f',
+        color: '#343332',
       },
     ],
   },
@@ -89,7 +123,7 @@ export const defaultTheme = [
     elementType: 'geometry',
     stylers: [
       {
-        color: '#181818',
+        color: '#343332',
       },
     ],
   },
@@ -134,7 +168,7 @@ export const defaultTheme = [
     elementType: 'geometry',
     stylers: [
       {
-        color: '#373737',
+        color: '#454545',
       },
     ],
   },
@@ -143,7 +177,7 @@ export const defaultTheme = [
     elementType: 'geometry',
     stylers: [
       {
-        color: '#3c3c3c',
+        color: '#454545',
       },
     ],
   },
@@ -152,7 +186,7 @@ export const defaultTheme = [
     elementType: 'geometry',
     stylers: [
       {
-        color: '#4e4e4e',
+        color: '#454545',
       },
     ],
   },
