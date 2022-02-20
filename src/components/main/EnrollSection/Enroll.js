@@ -1,25 +1,22 @@
 import React from 'react';
+import { useI18next } from 'gatsby-plugin-react-i18next';
 import Button from 'components/common/button/button';
 import { enrollSection, enrollButton, text } from './enroll.module.scss';
 import Section from 'components/common/section/section';
 
 export const Enroll = ({ onSingUpModalOpen }) => {
-  const enroll = {
-    ru: {
-      title: '',
-      text: [
-        'Цените свое время?',
-        'Хотите гарантированно получить идеальные формы?',
-        'Мечтаете закрепить этот результат надолго?',
-        'Хотите заниматься в удовольствие?',
-        'Тогда записывайтесь на пробную тренировку уже сейчас:',
-      ],
-    },
-    ukr: {},
-  };
+  const { t } = useI18next();
+
+  const data = t('enroll', { returnObjects: true });
+
   return (
-    <Section titleLevel="h2" sectionClass={enrollSection}>
-      {enroll.ru.text.map(item => (
+    <Section
+      head={data.title}
+      titleHidden={true}
+      titleLevel="h2"
+      sectionClass={enrollSection}
+    >
+      {data.text.map(item => (
         <p className={text} key={item}>
           {item}
         </p>
