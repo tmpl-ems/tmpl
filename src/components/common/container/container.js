@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 
 const Container = ({ children, addClass }) => {
   return (
-    <div style={{ filter: 'none' }} className={`${container} ${addClass}`}>
-      {children}
-    </div>
+    <div className={`${container} ${addClass ? addClass : ''}`}>{children}</div>
   );
 };
 

@@ -34,8 +34,6 @@ const DropNav = ({ onClick, isShow }) => {
           type="button"
           onClick={onClick}
           aria-label={data.closeBtn}
-          aria-expanded={showComp}
-          aria-controls="mobile-menu"
         >
           <CloseIcon width="18" height="18" className={closeIcon} />
         </button>
