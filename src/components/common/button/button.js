@@ -38,8 +38,6 @@ const Button = ({
     onBtnClick();
   };
 
-  console.log('isExpanded', isExpanded);
-
   return (
     <button
       type={type}
