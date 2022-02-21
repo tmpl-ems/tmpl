@@ -38,6 +38,7 @@ export default function SingUpForm({ closeModal }) {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
           placeholder={data.singUpForm.namePlaceholder}
+          autoComplete="off"
         />
         <input
           className={s.input}
@@ -47,6 +48,7 @@ export default function SingUpForm({ closeModal }) {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
           placeholder={data.singUpForm.numberPlaceholder}
+          autoComplete="off"
         />
 
         <Button type="submit" classType={3} text={data.singUpForm.button} />

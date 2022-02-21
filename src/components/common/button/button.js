@@ -35,6 +35,7 @@ const Button = ({
 
   const handleClick = () => {
     setIsExpanded(true);
+    if (!onBtnClick) return;
     onBtnClick();
   };
 
