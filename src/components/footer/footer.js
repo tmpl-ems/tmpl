@@ -1,7 +1,5 @@
-import React, { useContext } from 'react';
-import { PageFormatContext, format } from 'context/pageFormatContext';
-import { usePaddingsValues } from 'hooks/usePaddingsValues';
-import Section from 'components/common/section/section';
+import React from 'react';
+
 import Logo from 'images/svg/logo.svg';
 
 import MapGoogle from './footer-components/MapGoogle/MapGoogle';
@@ -12,21 +10,13 @@ import Networks from './footer-components/networksList';
 import CopyRightBlock from './footer-components/copyRight';
 
 import * as s from './footer.module.scss';
-
-const styles = {
-  response: { pt: 32, pb: 16 },
-  mobile: { pt: 32, pb: 16 },
-  tablet: { pt: 60, pb: 16 },
-  desktop: { pt: 60, pb: 16 },
-};
+import Container from 'components/common/container/container';
 
 const Footer = () => {
-  const pageFormat = useContext(PageFormatContext);
-  const pad = usePaddingsValues(styles, pageFormat, format);
   return (
-    <footer>
-      <Section darkBackground={true} pt={pad.pt} pb={pad.pb}>
-        <div className={`${s.footerWrapper}`}>
+    <footer className={s.footer}>
+      <Container>
+        <div className={s.footerWrapper}>
           <MapGoogle />
           {/* <MapBackground /> */}
           <div>
@@ -38,7 +28,7 @@ const Footer = () => {
           </div>
         </div>
         <CopyRightBlock />
-      </Section>
+      </Container>
     </footer>
   );
 };
