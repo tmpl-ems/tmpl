@@ -33,6 +33,7 @@ const SEO = ({ description, title, children, lang }) => {
       <meta name="title" content={title} />
       <meta name="type" content="website" />
       <meta name="creator" content={site.siteMetadata.author} />
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
       <link
         rel="preload"
         href="fonts/Comfortaa-Light.woff2"
