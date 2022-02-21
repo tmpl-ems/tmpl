@@ -61,8 +61,6 @@ export default function Header() {
             type="button"
             onClick={openDropNav}
             aria-label={data.openBtn}
-            aria-expanded={showDropNav}
-            aria-controls="mobile-menu"
           >
             <BurgerIcon width="30" height="16" />
           </button>
