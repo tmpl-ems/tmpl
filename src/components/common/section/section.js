@@ -23,11 +23,20 @@ const Section = ({
   containerClass,
   id,
 }) => {
+  const getStyles = () => {
+    const padTop = pt ? { paddingTop: `${pt}px` } : {};
+    const padBot = pb ? { paddingTop: `${pb}px` } : {};
+    return { ...padTop, ...padBot };
+  };
+
   return (
     <section
       id={id}
-      className={`${section} ${darkBackground && dark} ${sectionClass}`}
-      style={{ paddingTop: `${pt}px`, paddingBottom: `${pb}px` }}
+      className={`${section} ${darkBackground ? dark : ''} ${
+        sectionClass ? sectionClass : ''
+      }`}
+      // style={{ paddingTop: `${pt}px`, paddingBottom: `${pb}px` }}
+      style={getStyles()}
     >
       <Container addClass={containerClass}>
         {head && (
