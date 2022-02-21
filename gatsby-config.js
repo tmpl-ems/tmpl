@@ -10,7 +10,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://example.com/`,
+    siteUrl: `https://tmpl-gi-tp.gatsbyjs.io/`,
     title: 'TMPL',
     description: `EMS-тренування в Києві`,
     author: `GoWeb`,
@@ -37,7 +37,7 @@ module.exports = {
         languages: [`uk`, `ru`],
         defaultLanguage: `uk`,
 
-        siteUrl: `https://example.com/`,
+        siteUrl: `https://tmpl-gi-tp.gatsbyjs.io/`,
         i18nextOptions: {
           interpolation: {
             escapeValue: false,
