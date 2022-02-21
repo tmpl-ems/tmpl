@@ -35,7 +35,7 @@ module.exports = {
       options: {
         localeJsonSourceName: `locale`, // name given to
         languages: [`uk`, `ru`],
-        defaultLanguage: `uk`,
+        // defaultLanguage: `uk`,
 
         siteUrl: `https://example.com/`,
         i18nextOptions: {
@@ -66,6 +66,7 @@ module.exports = {
         start_url: `/`,
       },
     },
+    `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-anchor-links`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,

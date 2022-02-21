@@ -31,8 +31,6 @@ const defaultOptions = {
 
 const API_KEY = process.env.API_KEY;
 
-console.log('API_KEY', API_KEY);
-
 export default function MapGoogle() {
   const mapRef = useRef(undefined);
 

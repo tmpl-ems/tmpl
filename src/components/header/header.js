@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { useI18next } from 'gatsby-plugin-react-i18next';
 import { Link } from 'gatsby';
 import { duration } from 'styles/jsVars';
 
@@ -18,18 +19,24 @@ export default function Header() {
   const isDesktop = pageFormat === format.desktop;
   const [isShow, setIsShow] = useState(false);
   const [showDropNav, setShowDropNav] = useState(false);
+  const { t } = useI18next();
+
+  const data = t('aria', { returnObjects: true });
 
   const openDropNav = () => {
     setShowDropNav(true);
     setIsShow(true);
-    window.addEventListener('keydown', closeDropNav);
+    window.addEventListener('keydown', handleKeyDown);
     document.body.style.overflow = 'hidden';
   };
 
-  const closeDropNav = e => {
-    if (e.code === 'Escape') {
-      window.removeEventListener('keydown', closeDropNav);
-    }
+  const handleKeyDown = e => {
+    if (e.code !== 'Escape') return;
+    window.removeEventListener('keydown', handleKeyDown);
+    closeDropNav();
+  };
+
+  const closeDropNav = () => {
     setIsShow(false);
     setTimeout(() => {
       setShowDropNav(false);
@@ -44,7 +51,7 @@ export default function Header() {
         <Link to="/" className={s.logoLink}>
           <LogoIcon width="74" height="66" />
         </Link>
-        {isDesktop && <NavBlock />}
+        {isDesktop && <NavBlock onMenuClose={closeDropNav} />}
         {/* <div className={navMobileBlock}> */}
         <LanguagesBlock />
         {/* //---BurgerBtn--- */}
@@ -53,7 +60,7 @@ export default function Header() {
             className={s.burgerOpenBtn}
             type="button"
             onClick={openDropNav}
-            aria-label="Кнопка открытия мобильного меню"
+            aria-label={data.openBtn}
             aria-expanded={showDropNav}
             aria-controls="mobile-menu"
           >
