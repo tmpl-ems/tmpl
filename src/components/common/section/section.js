@@ -26,8 +26,13 @@ const Section = ({
   return (
     <section
       id={id}
-      className={`${section} ${darkBackground && dark} ${sectionClass}`}
-      style={{ paddingTop: `${pt}px`, paddingBottom: `${pb}px` }}
+      className={`${section} ${darkBackground ? dark : ''} ${
+        sectionClass ? sectionClass : ''
+      }`}
+      style={{
+        paddingTop: `${pt ? pt : 0}px`,
+        paddingBottom: `${pb ? pb : 0}px`,
+      }}
     >
       <Container addClass={containerClass}>
         {head && (
