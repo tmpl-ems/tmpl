@@ -1,4 +1,4 @@
-import React, { createRef, useState, useEffect } from 'react';
+import React, { createRef, useState, useEffect, useRef } from 'react';
 
 const Video = ({
   videoSrcURL,
@@ -13,6 +13,8 @@ const Video = ({
   const [showVideo, setShowVideo] = useState(false);
   const container = createRef();
 
+  const observer = useRef();
+
   const onVideoIntersection = entries => {
     if (!entries || entries.length <= 0) {
       return;
@@ -20,19 +22,26 @@ const Video = ({
 
     if (entries[0].isIntersecting) {
       setShowVideo(true);
-      videoObserver.disconnect();
+      observer.current.disconnect();
     }
   };
 
-  const videoObserver = new IntersectionObserver(onVideoIntersection, {
-    rootMargin: '100px 0px',
-    threshold: 0.25,
-  });
+  useEffect(() => {
+    observer.current = new IntersectionObserver(onVideoIntersection, {
+      rootMargin: '100px 0px',
+      threshold: 0.25,
+    });
+  }, []);
+
+  // const observer.current = new IntersectionObserver(onVideoIntersection, {
+  //   rootMargin: '100px 0px',
+  //   threshold: 0.25,
+  // });
 
   useEffect(() => {
     if (window && 'IntersectionObserver' in window) {
       if (container && container.current) {
-        videoObserver.observe(container.current);
+        observer.current.observe(container.current);
       }
     } else {
       setShowVideo(true);

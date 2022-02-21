@@ -66,6 +66,7 @@ module.exports = {
         start_url: `/`,
       },
     },
+    `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-anchor-links`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,

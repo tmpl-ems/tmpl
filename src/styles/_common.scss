@@ -23,6 +23,10 @@ button {
   display: block;
 }
 
+a {
+  outline: none;
+}
+
 body {
   font-family: $main-font;
   width: 100vw;
@@ -30,15 +34,10 @@ body {
   // background-color: grey;
 }
 
-link {
-  outline: $main-brand-color;
-}
-
 .link {
   text-decoration: none;
   font-style: normal;
   color: inherit;
-  transition: color 250ms linear;
 }
 
 .list {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 
 import Button from 'components/common/button/button';
@@ -6,6 +6,12 @@ import CloseIcon from 'images/svg/btn-close.svg';
 import * as s from './SingUpForm.module.scss';
 
 export default function SingUpForm({ closeModal }) {
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
   const { t } = useI18next();
   const data = t('common', { returnObjects: true });
 
@@ -24,6 +30,7 @@ export default function SingUpForm({ closeModal }) {
 
       <form className={s.form} onSubmit={e => handleSubmit(e)}>
         <input
+          ref={inputRef}
           className={s.input}
           type="text"
           name="name"

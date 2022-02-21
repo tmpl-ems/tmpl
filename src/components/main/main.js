@@ -14,7 +14,7 @@ import AboutUsSection from './about/AboutUsSection';
 const Main = ({ onSingUpModalOpen }) => {
   return (
     <main>
-      <Hero />
+      <Hero onSingUpModalOpen={onSingUpModalOpen} />
       <AboutUsSection id={'about-us'} />
       <Goals onSingUpModalOpen={onSingUpModalOpen} id={'goals'} />
       <Advantages />

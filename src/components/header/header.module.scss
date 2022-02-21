@@ -12,6 +12,10 @@
 }
 .logoLink {
   margin-right: auto;
+  &:hover,
+  &:focus {
+    outline: none;
+  }
 }
 
 .burgerOpenBtn {
@@ -22,6 +26,13 @@
   cursor: pointer;
   background: $background-color;
   stroke: transparent;
+  fill: $secondary-text-color;
+  transition: $default-transition;
+
+  &:hover,
+  &:focus {
+    fill: $main-brand-color;
+  }
 
   @media screen and (min-width: 768px) {
     margin-left: 40px;
