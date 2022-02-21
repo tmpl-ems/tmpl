@@ -2,9 +2,9 @@
 
 :root {
   --swiper-navigation-size: 12px;
-  --swiper-navigation-color: $main-text-color;
-  --swiper-pagination-color: $main-brand-color;
-  --swiper-pagination-bullet-inactive-color: $secondary-text-color;
+  --swiper-navigation-color: #000000;
+  --swiper-pagination-color: #00af87;
+  --swiper-pagination-bullet-inactive-color: #ffffff;
   --swiper-pagination-bullet-inactive-opacity: 1;
 
   --swiper-pagination-bullet-width: 12px;
@@ -54,5 +54,5 @@
 }
 
 .reviewSwiper {
-  --swiper-pagination-bullet-inactive-color: $background-color;
+  --swiper-pagination-bullet-inactive-color: #000000;
 }
