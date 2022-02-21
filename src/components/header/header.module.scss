@@ -12,6 +12,10 @@
 }
 .logoLink {
   margin-right: auto;
+  &:hover,
+  &:focus {
+    outline: none;
+  }
 }
 
 .burgerOpenBtn {

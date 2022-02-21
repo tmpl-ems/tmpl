@@ -5,7 +5,7 @@ import Button from 'components/common/button/button';
 import List from './list/list';
 import * as s from './content.module.scss';
 
-const Content = () => {
+const Content = ({ onSingUpModalOpen }) => {
   const pageFormat = useContext(PageFormatContext);
   const isTablet = pageFormat === format.tablet;
   const isDesktop = pageFormat === format.desktop;
@@ -18,9 +18,9 @@ const Content = () => {
       <p className={s.text1}>{data.text1}</p>
       {(isDesktop || isTablet) && <List data={data.list} />}
       {isDesktop || isTablet ? (
-        <Button classType={1} type={'button'} />
+        <Button classType={1} onBtnClick={onSingUpModalOpen} />
       ) : (
-        <Button classType={4} type={'button'} />
+        <Button classType={4} onBtnClick={onSingUpModalOpen} />
       )}
 
       <div className={s.offerBlock}>

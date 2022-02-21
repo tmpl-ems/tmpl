@@ -23,7 +23,7 @@ const Modal = ({ children, closeModal }) => {
   };
 
   return (
-    <div className={overlay} onClick={handleBackdropClick}>
+    <div className={overlay} onClick={handleBackdropClick} id="modal-window">
       {children}
     </div>
   );

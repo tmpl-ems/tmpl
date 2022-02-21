@@ -41,6 +41,15 @@
   background: transparent;
   color: $secondary-text-color;
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    .close-icon {
+      fill: $main-brand-color;
+    }
+  }
 }
 
 .close-icon {
@@ -58,4 +67,5 @@
   text-align: center;
   margin: 0 auto;
   margin-bottom: 40px;
+  outline: none;
 }

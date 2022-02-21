@@ -15,7 +15,7 @@ const NavBlock = ({ onMenuClose }) => {
             <AnchorLink
               to={`${path}#${item.name}`}
               title={item.title}
-              duration={250}
+              duration={500}
               className={navLink}
             />
           </li>

@@ -20,6 +20,7 @@ const Button = ({
   ...props
 }) => {
   const [nameOfClass, setNameOfClass] = useState(s.btn1);
+  const [isExpanded, setIsExpanded] = useState(false);
   const { t } = useI18next();
   const data = t('common', { returnObjects: true });
 
@@ -32,11 +33,20 @@ const Button = ({
     getClass(classType);
   }, [classType]);
 
+  const handleClick = () => {
+    setIsExpanded(true);
+    onBtnClick();
+  };
+
+  console.log('isExpanded', isExpanded);
+
   return (
     <button
       type={type}
       className={`${nameOfClass} ${addClass}`}
-      onClick={onBtnClick}
+      onClick={handleClick}
+      aria-expanded={isExpanded}
+      aria-controls="modal-window"
     >
       {text ? text : data.button}
     </button>

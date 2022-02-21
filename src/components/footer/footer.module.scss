@@ -144,3 +144,13 @@
 .copyRightSign {
   margin-right: 4px;
 }
+.link {
+  text-decoration: none;
+  color: $secondary-text-color;
+  transition: $default-transition;
+  &:hover,
+  &:focus {
+    color: $main-brand-color;
+    text-decoration: none;
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useI18next } from 'gatsby-plugin-react-i18next';
 
 import Button from 'components/common/button/button';
 import ProgramIcon1 from 'images/svg/program1.svg';
@@ -24,6 +25,9 @@ export default function PersonalProgramInfo({
   closeInfoModal,
   onSingUpModalOpen,
 }) {
+  const { t } = useI18next();
+  const data = t('aria', { returnObjects: true });
+
   const singUpHandler = () => {
     onSingUpModalOpen();
     closeInfoModal();
@@ -31,7 +35,11 @@ export default function PersonalProgramInfo({
 
   return (
     <div className={s.modalContent}>
-      <button className={s.closeBtn} onClick={() => closeInfoModal()}>
+      <button
+        className={s.closeBtn}
+        onClick={closeInfoModal}
+        aria-label={data.closeModalBtn}
+      >
         <CloseIcon />
       </button>
 
@@ -41,7 +49,7 @@ export default function PersonalProgramInfo({
 
       <p className={s.text}>{selectedProgram.item.desc}</p>
 
-      <Button classType={3} onBtnClick={() => singUpHandler()} />
+      <Button classType={3} onBtnClick={singUpHandler} />
     </div>
   );
 }
