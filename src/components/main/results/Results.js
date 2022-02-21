@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import * as s from './Results.module.scss';
+import { useI18next } from 'gatsby-plugin-react-i18next';
 
 // Если в нашем компоненте нужно выполнить или нет рендеринг в зависимости от ширины экрана, берём испортируем контекст и формат. А такэе useContext
 import { PageFormatContext, format } from 'context/pageFormatContext';
@@ -11,6 +12,10 @@ import ResultCard from 'components/main/resultCard/ResultCard';
 import { SwiperSlide } from 'swiper/react';
 
 const Results = ({ id }) => {
+  //Текст для секции
+  const { t } = useI18next();
+  const data = t('results', { returnObjects: true });
+
   // забираем значение ширины экрана, которое высчитывается в компоненте Layout и реализуем рендеринг по условию
   const pageFormat = useContext(PageFormatContext);
   const isTablet = pageFormat === format.tablet;
@@ -19,18 +24,14 @@ const Results = ({ id }) => {
   const isBackground = isTablet || isDesktop;
 
   return (
-    <Section head={'Результаты наших клиентов'} titleLevel="h4" id={id}>
+    <Section head={data.title} titleLevel="h4" id={id}>
       {isBackground && <div className={s.background}></div>}
       <Slider isNavigation isPagination sliderClass="resultSwiper">
-        <SwiperSlide>
-          <ResultCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ResultCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ResultCard />
-        </SwiperSlide>
+        {data.resultCards.map(card => (
+          <SwiperSlide key={card.id}>
+            <ResultCard textContent={card} />
+          </SwiperSlide>
+        ))}
       </Slider>
     </Section>
   );
