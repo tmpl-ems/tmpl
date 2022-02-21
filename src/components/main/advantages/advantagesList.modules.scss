@@ -1,0 +1,15 @@
+@import 'styles/vars';
+
+.list {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.item {
+  margin-bottom: 12px;
+}
+
+.item::before {
+  content: '\2014';
+}
