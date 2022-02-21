@@ -67,9 +67,7 @@ export default function Advantages() {
               <h4 className={s.title}>Видимый результат</h4>
               <ul className={`${s.list} list`}>
                 <li className={s.item}>— Эффект с 4-й тренировки</li>
-                <li className={s.item}>
-                  В 5-18 раз эффективнее тренировок в зале
-                </li>
+                <li className={s.item}>— В 5-18 раз эффективнее тренировок в зале</li>
               </ul>
             </li>
           </ul>
