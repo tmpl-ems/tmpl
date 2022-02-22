@@ -1,14 +1,20 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
-
+import PropTypes from 'prop-types';
+import { Helmet } from 'gatsby-plugin-react-i18next';
 import { useStaticQuery, graphql } from 'gatsby';
+import image from 'images/etc/header-img.png';
+import lightFont from 'fonts/Comfortaa-Light.woff2';
+import mediumFont from 'fonts/Comfortaa-Medium.woff2';
+import regularFont from 'fonts/Comfortaa-Regular.woff2';
 
-const SEO = ({ description, title, children, lang }) => {
+function SEO({ description, meta, title }) {
+  console.log('image', regularFont);
   const { site } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
+            siteUrl
             title
             description
             author
@@ -23,38 +29,69 @@ const SEO = ({ description, title, children, lang }) => {
   return (
     <Helmet
       title={title}
-      // titleTemplate={`%s | ${site.siteMetadata.title}`}
       titleTemplate={`${site.siteMetadata.title}`}
-      htmlAttributes={{
-        lang,
-      }}
+      // titleTemplate={`%s | ${site.siteMetadata.title}`}
+      meta={[
+        {
+          name: `description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:title`,
+          content: title,
+        },
+        {
+          property: `og:description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:type`,
+          content: `website`,
+        },
+        {
+          property: `og:image`,
+          content: image,
+        },
+        {
+          name: `twitter:card`,
+          content: `summary`,
+        },
+        {
+          name: `twitter:creator`,
+          content: site.siteMetadata.author,
+        },
+        {
+          name: `twitter:title`,
+          content: title,
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription,
+        },
+      ].concat(meta)}
     >
+      <link as="font" href={lightFont} rel="preload" crossorigin="anonymous" />
+      <link as="font" href={mediumFont} rel="preload" crossorigin="anonymous" />
       <link
         as="font"
-        href="/static/Comfortaa-Medium-1f961fbe31333ef7dbde4c8cc4479da8.woff2"
+        href={regularFont}
         rel="preload"
         crossorigin="anonymous"
       />
-      <link
-        as="font"
-        href="/static/Comfortaa-Regular-c3e336750e5922b4ee8b94c1544ab762.woff2"
-        rel="preload"
-        crossorigin="anonymous"
-      />
-      <link
-        as="font"
-        href="/static/Comfortaa-Light-881f76691f2eaa63205dd9a1d77b334a.woff2"
-        rel="preload"
-        crossorigin="anonymous"
-      />
-      <meta name="description" content={metaDescription} />
-      <meta name="title" content={title} />
-      <meta name="type" content="website" />
-      <meta name="creator" content={site.siteMetadata.author} />
-      <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
-      {children}
     </Helmet>
   );
+}
+
+SEO.defaultProps = {
+  meta: [],
+  description: ``,
+};
+
+SEO.propTypes = {
+  description: PropTypes.string,
+  lang: PropTypes.string,
+  meta: PropTypes.arrayOf(PropTypes.object),
+  title: PropTypes.string.isRequired,
 };
 
 export default SEO;
