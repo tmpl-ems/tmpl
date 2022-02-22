@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'gatsby-plugin-react-i18next';
 import { useStaticQuery, graphql } from 'gatsby';
 import image from 'images/etc/header-img.png';
-import lightFont from 'fonts/Comfortaa-Light.woff2';
-import mediumFont from 'fonts/Comfortaa-Medium.woff2';
-import regularFont from 'fonts/Comfortaa-Regular.woff2';
+// import lightFont from 'fonts/Comfortaa-Light.woff2';
+// import mediumFont from 'fonts/Comfortaa-Medium.woff2';
+// import regularFont from 'fonts/Comfortaa-Regular.woff2';
 
 function SEO({ description, meta, title }) {
   const { site } = useStaticQuery(
