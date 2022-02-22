@@ -29,7 +29,6 @@ const SEO = ({ description, title, children, lang }) => {
         lang,
       }}
     >
-      <link as="font" href="s" rel="preload" crossorigin="anonymous" />
       <link
         as="font"
         href="/static/Comfortaa-Medium-1f961fbe31333ef7dbde4c8cc4479da8.woff2"
