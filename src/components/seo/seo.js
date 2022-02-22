@@ -29,21 +29,22 @@ const SEO = ({ description, title, children, lang }) => {
         lang,
       }}
     >
+      <link as="font" href="s" rel="preload" crossorigin="anonymous" />
       <link
         as="font"
-        href="fonts/Comfortaa-Regular.woff2"
+        href="/static/Comfortaa-Medium-1f961fbe31333ef7dbde4c8cc4479da8.woff2"
         rel="preload"
         crossorigin="anonymous"
       />
       <link
         as="font"
-        href="fonts/Comfortaa-Medium.woff2"
+        href="/static/Comfortaa-Regular-c3e336750e5922b4ee8b94c1544ab762.woff2"
         rel="preload"
         crossorigin="anonymous"
       />
       <link
         as="font"
-        href="fonts/Comfortaa-Light.woff2"
+        href="/static/Comfortaa-Light-881f76691f2eaa63205dd9a1d77b334a.woff2"
         rel="preload"
         crossorigin="anonymous"
       />
