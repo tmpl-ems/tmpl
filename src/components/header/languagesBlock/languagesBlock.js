@@ -10,6 +10,7 @@ import { Link, useI18next } from 'gatsby-plugin-react-i18next';
 
 const LanguagesBlock = () => {
   const { originalPath } = useI18next();
+  // const { originalPath, language } = useI18next();
 
   return (
     <div className={languagesBlock}>
@@ -18,6 +19,7 @@ const LanguagesBlock = () => {
         language={'uk'}
         activeClassName={active}
         className={langLink}
+        // className={`${langLink} ${language === 'uk' ? active : ''}`}
       >
         {'ua'}
       </Link>
