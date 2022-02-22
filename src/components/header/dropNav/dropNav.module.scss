@@ -23,8 +23,8 @@
   //   height: 100vh;
   //   z-index: -1;
   // }
-  transform: translateX(120%);
-  transition: transform 250ms linear;
+  transform: translateX(105%);
+  transition: transform 400ms ease-out;
 
   &.show {
     transform: translateX(0);
