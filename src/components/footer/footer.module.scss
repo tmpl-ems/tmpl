@@ -110,13 +110,15 @@
   margin-left: auto;
   font-family: $secondary-font;
   font-style: normal;
+  transition: $default-transition;
   @include fontProperties(16, 1.25);
   &:not(:last-child) {
     margin-bottom: 8px;
     &:hover,
     &:focus-within {
+      color: $main-brand-color;
+      text-decoration: none;
       text-decoration: underline;
-      outline: #000;
     }
   }
   @media screen and (min-width: 768px) {
@@ -135,10 +137,11 @@
 }
 .mediaItem {
   color: $secondary-text-color;
+  transition: $default-transition;
   &:hover,
   &:focus-within {
     color: $main-brand-color;
-    outline: none;
+    text-decoration: none;
   }
 }
 .mediaItem svg {
@@ -153,14 +156,4 @@
 }
 .copyRightSign {
   margin-right: 4px;
-}
-.link {
-  text-decoration: none;
-  color: $secondary-text-color;
-  transition: $default-transition;
-  &:hover,
-  &:focus {
-    color: $main-brand-color;
-    text-decoration: none;
-  }
 }
