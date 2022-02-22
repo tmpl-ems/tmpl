@@ -44,9 +44,10 @@
       url('images/header/triangle-fon2.png'),
       url('images/header/triangle-fon3.png'),
       url('images/header/triangle-fon4.png');
-    background-size: contain, 47px, 47px, 59px, 37px;
-    background-position: top 0 right 0, top 64px right 600px,
-      top 254px right 681px, top 360px right 780px, top 489px right 666px;
+    background-size: contain, 44px, 47px, 59px, 34px;
+
+    background-position: top 0 right 0, top 64px right 710px,
+      top 265px right 710px, top 390px right 800px, top 510px right 700px;
   }
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
