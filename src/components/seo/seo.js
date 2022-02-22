@@ -8,7 +8,6 @@ import mediumFont from 'fonts/Comfortaa-Medium.woff2';
 import regularFont from 'fonts/Comfortaa-Regular.woff2';
 
 function SEO({ description, meta, title }) {
-  console.log('image', regularFont);
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -70,14 +69,14 @@ function SEO({ description, meta, title }) {
         },
       ].concat(meta)}
     >
-      <link as="font" href={lightFont} rel="preload" crossorigin="anonymous" />
+      {/* <link as="font" href={lightFont} rel="preload" crossorigin="anonymous" />
       <link as="font" href={mediumFont} rel="preload" crossorigin="anonymous" />
       <link
         as="font"
         href={regularFont}
         rel="preload"
         crossorigin="anonymous"
-      />
+      /> */}
     </Helmet>
   );
 }
