@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'gatsby-plugin-react-i18next';
 import { useStaticQuery, graphql } from 'gatsby';
 import image from 'images/etc/header-img.png';
-// import lightFont from 'fonts/Comfortaa-Light.woff2';
-// import mediumFont from 'fonts/Comfortaa-Medium.woff2';
-// import regularFont from 'fonts/Comfortaa-Regular.woff2';
 
 function SEO({ description, meta, title }) {
   const { site } = useStaticQuery(
@@ -49,7 +46,7 @@ function SEO({ description, meta, title }) {
         },
         {
           property: `og:image`,
-          content: image,
+          content: site.siteMetadata.siteUrl + '/' + image,
         },
         {
           name: `twitter:card`,
@@ -68,16 +65,7 @@ function SEO({ description, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    >
-      {/* <link as="font" href={lightFont} rel="preload" crossorigin="anonymous" />
-      <link as="font" href={mediumFont} rel="preload" crossorigin="anonymous" />
-      <link
-        as="font"
-        href={regularFont}
-        rel="preload"
-        crossorigin="anonymous"
-      /> */}
-    </Helmet>
+    ></Helmet>
   );
 }
 
