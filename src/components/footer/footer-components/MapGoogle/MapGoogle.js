@@ -29,8 +29,6 @@ const defaultOptions = {
   styles: defaultTheme,
 };
 
-const API_KEY = process.env.API_KEY;
-
 export default function MapGoogle() {
   const mapRef = useRef(undefined);
 
@@ -44,7 +42,7 @@ export default function MapGoogle() {
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: API_KEY,
+    googleMapsApiKey: process.env.GATSBY_API_KEY,
   });
 
   return (
