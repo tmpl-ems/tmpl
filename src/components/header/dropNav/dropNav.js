@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 
-import CloseIcon from 'images/svg/btn-close.svg';
-import LogoIcon from 'images/svg/logo.svg';
+import CloseIcon from 'images/svg/btn-close.inline.svg';
+import LogoIcon from 'images/svg/logo.inline.svg';
 import NavBlock from '../navBlock/navBlock';
 
 import {

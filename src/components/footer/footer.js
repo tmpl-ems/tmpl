@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Logo from 'images/svg/logo.svg';
+import Logo from 'images/svg/logo.inline.svg';
 
 import MapGoogle from './footer-components/MapGoogle/MapGoogle';
 // in case Google Maps won't support

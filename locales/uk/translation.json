@@ -255,5 +255,24 @@
     "openBtn": "кнопка відкриття мобільного меню",
     "closeBtn": "кнопка закриття мобільного меню",
     "closeModalBtn": "кнопка закриття модального вікна"
+  },
+  "reviews": {
+    "head": "Відгуки",
+    "ReviewCard1": {
+      "name": "Ірина",
+      "feedback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis varius eros ac rhoncus. Phasellus volutpat sem leo, sed pulvinar lacus gravida."
+    },
+    "ReviewCard2": {
+      "name": "Анастасія",
+      "feedback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis varius eros ac rhoncus. Phasellus volutpat sem leo, sed pulvinar lacus gravida."
+    },
+    "ReviewCard3": {
+      "name": "Жорік",
+      "feedback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis varius eros ac rhoncus. Phasellus volutpat sem leo, sed pulvinar lacus gravida."
+    },
+    "ReviewCard4": {
+      "name": "Катерина",
+      "feedback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis varius eros ac rhoncus. Phasellus volutpat sem leo, sed pulvinar lacus gravida."
+    }
   }
 }

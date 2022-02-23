@@ -254,5 +254,24 @@
     "openBtn": "кнопка открытия мобильного меню",
     "closeBtn": "кнопка закрития мобильного меню",
     "closeModalBtn": "кнопка закрытия модального окна"
+  },
+  "reviews": {
+    "head": "Отзывы",
+    "ReviewCard1": {
+      "name": "Ирина",
+      "feedback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis varius eros ac rhoncus. Phasellus volutpat sem leo, sed pulvinar lacus gravida."
+    },
+    "ReviewCard2": {
+      "name": "Анастасия",
+      "feedback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis varius eros ac rhoncus. Phasellus volutpat sem leo, sed pulvinar lacus gravida."
+    },
+    "ReviewCard3": {
+      "name": "Жора",
+      "feedback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis varius eros ac rhoncus. Phasellus volutpat sem leo, sed pulvinar lacus gravida."
+    },
+    "ReviewCard4": {
+      "name": "Катя",
+      "feedback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis varius eros ac rhoncus. Phasellus volutpat sem leo, sed pulvinar lacus gravida."
+    }
   }
 }

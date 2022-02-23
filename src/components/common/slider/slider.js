@@ -47,7 +47,7 @@ const Slider = ({
             },
           }}
           navigation={isNavigation}
-          pagination={isPagination}
+          pagination={{ clickable: true }}
           modules={modulesArray()}
           className={sliderClass}
         >
@@ -56,7 +56,7 @@ const Slider = ({
       ) : (
         <Swiper
           navigation={isNavigation}
-          pagination={isPagination}
+          pagination={{ clickable: true }}
           modules={modulesArray()}
           className={sliderClass}
         >
