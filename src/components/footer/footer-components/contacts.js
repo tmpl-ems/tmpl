@@ -8,12 +8,12 @@ const Contacts = () => {
   return (
     <ul className={`${s.contactsList} list`}>
       <li className={`${s.contactItem}`}>
-        <a href="tel:+380983446742" className={`link ${s.link}`}>
+        <a href="tel:+380983446742" className={`link`}>
           + 38 (098) 344 67 42
         </a>
       </li>
       <li className={`${s.contactItem}`}>
-        <a href="mailto:benefitstudio98@gmal.com" className={`link ${s.link}`}>
+        <a href="mailto:benefitstudio98@gmal.com" className={`link`}>
           benefitstudio98@gmal.com
         </a>
       </li>
