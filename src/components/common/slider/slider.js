@@ -47,7 +47,9 @@ const Slider = ({
             },
           }}
           navigation={isNavigation}
-          pagination={isPagination}
+          pagination={isPagination ? {
+            clickable: true
+          }:false}
           modules={modulesArray()}
           className={sliderClass}
         >
