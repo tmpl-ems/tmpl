@@ -4,7 +4,8 @@ import { navList, navItem, navLink } from './navBlock.module.scss';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 
 const NavBlock = ({ onMenuClose }) => {
-  const { t, path } = useI18next();
+  // const { t, path } = useI18next();
+  const { t } = useI18next();
   const data = t('header', { returnObjects: true });
 
   return (
@@ -13,10 +14,12 @@ const NavBlock = ({ onMenuClose }) => {
         {data.nav.map(item => (
           <li className={navItem} key={item.name} onClick={onMenuClose}>
             <AnchorLink
-              to={`${path}#${item.name}`}
+              to={`#${item.name}`}
+              // to={`${path}#${item.name}`}
               title={item.title}
               duration={1000}
               className={navLink}
+              stripHash={true}
             />
           </li>
         ))}
