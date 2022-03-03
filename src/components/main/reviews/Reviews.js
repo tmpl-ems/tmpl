@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useI18next } from 'gatsby-plugin-react-i18next';
-// import * as s from './Reviews.module.scss';
 
 import Section from 'components/common/section/section';
 import Slider from 'components/common/slider/slider';
@@ -17,29 +16,8 @@ import reviewsGirl_2_1x from 'images/reviews/reviews-girl2.png';
 import reviewsGirl_2_2x from 'images/reviews/reviews-girl2-x2.png';
 import ReviewVideoCard from '../reviewCard/ReviewVideoCard';
 
-const dblTouchTapMaxDelay = 300;
-let latestTouchTap = {
-  time: 0,
-  target: null,
-};
-
-function isDblTouchTap(event) {
-  const touchTap = {
-    time: new Date().getTime(),
-    target: event.currentTarget,
-  };
-  const isFastDblTouchTap =
-    touchTap.target === latestTouchTap.target &&
-    touchTap.time - latestTouchTap.time < dblTouchTapMaxDelay;
-  latestTouchTap = touchTap;
-  return isFastDblTouchTap;
-}
-
 const Reviews = ({ id }) => {
   const { t } = useI18next();
-  const [activateVideoClass, setActivateVideoClass] =
-    useState('video-container');
-
   const data = t('reviews', { returnObjects: true });
 
   return (
@@ -61,24 +39,12 @@ const Reviews = ({ id }) => {
             foto_2x={reviewsGirl_2_2x}
           />
         </SwiperSlide>
+
+        {/* videreview */}
         <SwiperSlide>
-          <div
-            className={activateVideoClass}
-            onDoubleClick={() => {
-              setActivateVideoClass(null);
-            }}
-            onTouchEnd={e => {
-              if (isDblTouchTap(e)) {
-                setActivateVideoClass(null);
-              }
-            }}
-            onTouchMove={() => {
-              setActivateVideoClass('video-container');
-            }}
-          >
-            <ReviewVideoCard />
-          </div>
+          <ReviewVideoCard />
         </SwiperSlide>
+
         <SwiperSlide>
           <ReviewCard
             foto_1x={reviewsGirl_2_1x}
@@ -104,5 +70,3 @@ const Reviews = ({ id }) => {
 };
 
 export default Reviews;
-
-//.iframe-container-div::after { content: ""; background: transparent; width: 100%; height: 100%; min-height: 1px; position: absolute; top: 0; }
