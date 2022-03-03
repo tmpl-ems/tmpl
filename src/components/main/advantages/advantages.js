@@ -1,10 +1,10 @@
 import React from 'react';
 import * as s from './advantages.module.scss';
 import Section from 'components/common/section/section';
-import AdvIcon1 from 'images/svg/adv-comfort.svg';
-import AdvIcon3 from 'images/svg/adv-motivation.svg';
-import AdvIcon4 from 'images/svg/adv-result.svg';
-import AdvIcon2 from 'images/svg/adv-safety.svg';
+import AdvIcon1 from 'images/svg/adv-comfort.inline.svg';
+import AdvIcon3 from 'images/svg/adv-motivation.inline.svg';
+import AdvIcon4 from 'images/svg/adv-result.inline.svg';
+import AdvIcon2 from 'images/svg/adv-safety.inline.svg';
 import AdvantagesList from './advantagesList';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 

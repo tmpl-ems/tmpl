@@ -4,16 +4,16 @@ import { useI18next } from 'gatsby-plugin-react-i18next';
 import Section from 'components/common/section/section';
 import Modal from 'components/common/Modal/Modal';
 import PersonalProgramInfo from 'components/main/PersonalProgramInfo';
-import ProgramIcon1 from 'images/svg/program1.svg';
-import ProgramIcon2 from 'images/svg/program2.svg';
-import ProgramIcon3 from 'images/svg/program3.svg';
-import ProgramIcon4 from 'images/svg/program4.svg';
-import ProgramIcon5 from 'images/svg/program5.svg';
-import ProgramIcon6 from 'images/svg/program6.svg';
-import FoneIcon1 from 'images/svg/program-polygon7.svg';
-import FoneIcon2 from 'images/svg/program-polygon9.svg';
-import FoneIcon3 from 'images/svg/program-polygon6.svg';
-import FoneIcon4 from 'images/svg/program-polygon10.svg';
+import ProgramIcon1 from 'images/svg/program1.inline.svg';
+import ProgramIcon2 from 'images/svg/program2.inline.svg';
+import ProgramIcon3 from 'images/svg/program3.inline.svg';
+import ProgramIcon4 from 'images/svg/program4.inline.svg';
+import ProgramIcon5 from 'images/svg/program5.inline.svg';
+import ProgramIcon6 from 'images/svg/program6.inline.svg';
+import FoneIcon1 from 'images/svg/program-polygon7.inline.svg';
+import FoneIcon2 from 'images/svg/program-polygon9.inline.svg';
+import FoneIcon3 from 'images/svg/program-polygon6.inline.svg';
+import FoneIcon4 from 'images/svg/program-polygon10.inline.svg';
 import * as s from './PersonalProgram.module.scss';
 
 const icons = [

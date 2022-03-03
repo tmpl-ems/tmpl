@@ -1,6 +1,6 @@
 import React from 'react';
 
-import LightIcon from 'images/svg/about-list-mark-lightning.svg';
+import LightIcon from 'images/svg/about-list-mark-lightning.inline.svg';
 
 import * as s from './AboutUsList.module.scss';
 

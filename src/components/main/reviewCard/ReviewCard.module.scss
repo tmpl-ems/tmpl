@@ -52,8 +52,7 @@
 
 .videoBlock {
   position: relative;
-  padding-bottom: 145%;
-  height: 0;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -68,18 +67,3 @@
   width: 100%;
   height: 100%;
 }
-
-// //tablet
-// @media (min-width: 768px) {
-//   .slider {
-//     height: 5px;
-//   }
-// }
-
-// //Desktop
-
-// @media (min-width: 1280px) {
-//   .slider {
-//     height: 24px;
-//   }
-// }

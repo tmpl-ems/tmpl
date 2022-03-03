@@ -1,9 +1,9 @@
 import React from 'react';
 import * as s from '../footer.module.scss';
-import Telegram from 'images/svg/footer-telegram.svg';
-import Youtube from 'images/svg/footer-youtube.svg';
-import Facebook from 'images/svg/footer-facebook.svg';
-import Instagram from 'images/svg/footer-instagram.svg';
+import Telegram from 'images/svg/footer-telegram.inline.svg';
+import Youtube from 'images/svg/footer-youtube.inline.svg';
+import Facebook from 'images/svg/footer-facebook.inline.svg';
+import Instagram from 'images/svg/footer-instagram.inline.svg';
 
 const Networks = () => {
   const data = [

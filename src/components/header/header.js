@@ -7,8 +7,8 @@ import { duration } from 'styles/jsVars';
 import { PageFormatContext, format } from 'context/pageFormatContext';
 import Container from 'components/common/container/container';
 
-import LogoIcon from 'images/svg/logo.svg';
-import BurgerIcon from 'images/svg/button-burger.svg';
+import LogoIcon from 'images/svg/logo.inline.svg';
+import BurgerIcon from 'images/svg/button-burger.inline.svg';
 import DropNav from './dropNav/dropNav';
 import NavBlock from './navBlock/navBlock';
 import LanguagesBlock from './languagesBlock/languagesBlock';
