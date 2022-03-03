@@ -1,6 +1,6 @@
 import React from 'react';
 import * as s from '../footer.module.scss';
-import Pin from 'images/svg/location-pin.svg';
+import Pin from 'images/svg/location-pin.inline.svg';
 
 const MapBackground = () => {
   return (

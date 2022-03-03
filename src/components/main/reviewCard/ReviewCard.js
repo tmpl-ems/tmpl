@@ -1,7 +1,12 @@
 import React from 'react';
 import * as s from './ReviewCard.module.scss';
 
-const ReviewCard = ({ text, foto_1x, foto_2x, girlName }) => {
+const ReviewCard = ({
+  text = 'Default text',
+  foto_1x,
+  foto_2x,
+  girlName = 'Default name',
+}) => {
   return (
     <div className={s.slider}>
       <div className={s.imgWrapper}>
@@ -10,14 +15,11 @@ const ReviewCard = ({ text, foto_1x, foto_2x, girlName }) => {
           src={foto_1x}
           alt="girls foto"
         />
-        <p className={s.card}>{girlName || 'Ирина'}</p>
+        <p className={s.card}>{girlName}</p>
       </div>
 
       <div className={s.contentWrapper}>
-        <p className={s.cardContent}>
-          {text ||
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis'}
-        </p>
+        <p className={s.cardContent}>{text}</p>
         <p className={`${s.card} ${s.date}`}>14.10.2021</p>
       </div>
     </div>

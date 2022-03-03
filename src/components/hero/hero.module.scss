@@ -40,10 +40,10 @@
   @media screen and (min-width: 1280px) {
     width: $desktop;
     background-image: url('images/header/header-img-desktop.png'),
-      url('images/header/triangle-fon1.png'),
-      url('images/header/triangle-fon2.png'),
-      url('images/header/triangle-fon3.png'),
-      url('images/header/triangle-fon4.png');
+      url('images/svg/header-triangle-mid-up.svg'),
+      url('images/svg/header-triangle-mid-low.svg'),
+      url('images/svg/header-triangle-small.svg'),
+      url('images/svg/header-triangle-big.svg');
     background-size: contain, 44px, 47px, 59px, 34px;
 
     background-position: top 0 right 0, top 64px right 710px,

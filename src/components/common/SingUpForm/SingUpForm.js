@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 
 import Button from 'components/common/button/button';
-import CloseIcon from 'images/svg/btn-close.svg';
+import CloseIcon from 'images/svg/btn-close.inline.svg';
 import * as s from './SingUpForm.module.scss';
 
 export default function SingUpForm({ closeModal }) {
