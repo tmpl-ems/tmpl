@@ -273,5 +273,13 @@
       "name": "Катя",
       "feedback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis varius eros ac rhoncus. Phasellus volutpat sem leo, sed pulvinar lacus gravida."
     }
+  },
+  "notFoundPage": {
+    "title": "Страница не была найдена (404)",
+    "button": "Вернуться на главную",
+    "par": "Запрашиваемая страница не была найдена",
+    "redirectMsg": "Вы будете автоматически перенаправлены на главную страницу через",
+    "timer": "секунд",
+    "redirectStatus": "Перенаправление"
   }
 }

@@ -4,8 +4,7 @@ import * as s from './videoReview.module.scss';
 
 const VideoReview = ({ videoSrcID, videoTitle }) => {
   const [showVideo, setShowVideo] = useState(false);
-  const [isPlaing, setIsPlaing] = useState(false);
-  console.log('isPlaing: ', isPlaing);
+  const [isPlaying, setIsPlaying] = useState(false);
   const container = useRef();
   const videoPlayer = useRef(null);
   const observer = useRef();
@@ -57,15 +56,15 @@ const VideoReview = ({ videoSrcID, videoTitle }) => {
   };
 
   const handleOnPlay = () => {
-    setIsPlaing(true);
+    setIsPlaying(true);
   };
 
   const handleOnPause = () => {
-    setIsPlaing(false);
+    setIsPlaying(false);
   };
 
   const handleClick = () => {
-    if (isPlaing) {
+    if (isPlaying) {
       videoPlayer.current.pauseVideo();
     } else {
       videoPlayer.current.playVideo();
@@ -75,7 +74,7 @@ const VideoReview = ({ videoSrcID, videoTitle }) => {
   return (
     <div
       ref={container}
-      className={isPlaing ? s.videoBlockNoBefore : s.videoBlock}
+      className={isPlaying ? s.videoBlockNoBefore : s.videoBlock}
     >
       {videoSrcID && showVideo ? (
         <YouTube
@@ -91,7 +90,7 @@ const VideoReview = ({ videoSrcID, videoTitle }) => {
       <button
         type="button"
         onClick={handleClick}
-        className={isPlaing ? `${s.playBtn} ${s.hidePlayBtn}` : s.playBtn}
+        className={isPlaying ? `${s.playBtn} ${s.hidePlayBtn}` : s.playBtn}
       ></button>
     </div>
   );
