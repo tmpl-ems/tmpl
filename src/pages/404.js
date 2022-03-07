@@ -12,12 +12,12 @@ const NotFoundPage = () => {
   const { language, t } = useI18next();
 
   const handleClick = () => {
-    navigate(`/${language}`, { replace: true });
+    navigate(`/${language}/`, { replace: true });
   };
 
   useEffect(() => {
     if (!timeToRedirect) return;
-    navigate(`/${language}`, { replace: true });
+    navigate(`/${language}/`, { replace: true });
   }, [language, timeToRedirect]);
 
   const data = t('notFoundPage', { returnObjects: true });
