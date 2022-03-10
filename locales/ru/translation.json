@@ -253,7 +253,8 @@
   "aria": {
     "openBtn": "кнопка открытия мобильного меню",
     "closeBtn": "кнопка закрития мобильного меню",
-    "closeModalBtn": "кнопка закрытия модального окна"
+    "closeModalBtn": "кнопка закрытия модального окна",
+    "playBtn": "Кнопка воспроизведения видео"
   },
   "reviews": {
     "head": "Отзывы",
@@ -273,6 +274,10 @@
       "name": "Катя",
       "feedback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis varius eros ac rhoncus. Phasellus volutpat sem leo, sed pulvinar lacus gravida."
     }
+  },
+  "videos": {
+    "title1": "Название видеообзора",
+    "title2": "video1"
   },
   "notFoundPage": {
     "title": "Страница не была найдена (404)",

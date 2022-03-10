@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useI18next } from 'gatsby-plugin-react-i18next';
 import YouTube from 'react-youtube';
 import * as s from './videoReview.module.scss';
 
@@ -8,6 +9,7 @@ const VideoReview = ({ videoSrcID, videoTitle }) => {
   const container = useRef();
   const videoPlayer = useRef(null);
   const observer = useRef();
+  const { t } = useI18next();
 
   const onVideoIntersection = entries => {
     if (!entries || entries.length <= 0) {
@@ -71,6 +73,8 @@ const VideoReview = ({ videoSrcID, videoTitle }) => {
     }
   };
 
+  const data = t('aria', { returnObjects: true });
+
   return (
     <div
       ref={container}
@@ -91,6 +95,7 @@ const VideoReview = ({ videoSrcID, videoTitle }) => {
         type="button"
         onClick={handleClick}
         className={isPlaying ? `${s.playBtn} ${s.hidePlayBtn}` : s.playBtn}
+        aria-label={data.playBtn}
       ></button>
     </div>
   );

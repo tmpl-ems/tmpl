@@ -1,6 +1,7 @@
 @import 'styles/vars';
 
 .sliderWrapper {
+  height: 100%;
   padding: 0 28px 5px;
 
   @media screen and (min-width: 400px) and (max-width: 500px) {
@@ -13,6 +14,10 @@
 }
 
 .slider {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
   padding: 16px;
   border: 2px solid $secondary-brand-color;
   border-radius: 8px;
@@ -50,6 +55,7 @@
   list-style: none;
   display: flex;
   justify-content: space-around;
+  margin-bottom: auto;
 }
 
 .imageItem p {
