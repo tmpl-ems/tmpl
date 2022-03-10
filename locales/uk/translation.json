@@ -254,7 +254,8 @@
   "aria": {
     "openBtn": "кнопка відкриття мобільного меню",
     "closeBtn": "кнопка закриття мобільного меню",
-    "closeModalBtn": "кнопка закриття модального вікна"
+    "closeModalBtn": "кнопка закриття модального вікна",
+    "playBtn": "Кнопка відтворення відео"
   },
   "reviews": {
     "head": "Відгуки",
@@ -274,6 +275,10 @@
       "name": "Катерина",
       "feedback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis varius eros ac rhoncus. Phasellus volutpat sem leo, sed pulvinar lacus gravida."
     }
+  },
+  "videos": {
+    "title1": "Назва відеоогляду",
+    "title2": "video1"
   },
   "notFoundPage": {
     "title": "Сторінка не була знайдена (404)",

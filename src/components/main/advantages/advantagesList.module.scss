@@ -7,9 +7,19 @@
 }
 
 .item {
+  position: relative;
   margin-bottom: 12px;
+  padding-left: 20px;
 }
 
 .item::before {
   content: '\2014';
+  // width: 16px;
+  // height: 24px;
+  display: block;
+  position: absolute;
+  left: 0;
+  // background-position: 0 0;
+  // background-size: 24px 24px;
+  // background-repeat: no-repeat;
 }

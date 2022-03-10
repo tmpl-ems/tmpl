@@ -18,7 +18,7 @@ export default function Advantages({ id }) {
         <div className={s.container}>
           <div className={s.head}>
             <p className={s.info}>{data.suptitle}</p>
-            <h3 className={s.mainTitle}>{data.title}</h3>
+            <p className={s.mainTitle}>{data.title}</p>
           </div>
           <ul className={`${s.mainList} list`}>
             <li className={s.mainItem}>
