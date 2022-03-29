@@ -18,6 +18,7 @@ export default function IndexPage() {
     setShowSingUpModal(showModal => !showModal);
   };
   const { changeLanguage, language, path, defaultLanguage } = useI18next();
+  const [elToScroll, setElToScroll] = useState(null);
 
   useEffect(() => {
     const lsLang = window.localStorage.getItem('gatsby-i18next-language');
@@ -33,11 +34,15 @@ export default function IndexPage() {
     }
   }, [changeLanguage, defaultLanguage, language, path]);
 
+  // const getElToScroll = ref => {
+  //   setElToScroll(ref);
+  // };
+
   return (
     <Layout>
-      <Header />
+      <Header getElToScroll={setElToScroll} />
       <Main onSingUpModalOpen={toggleSingUpModal} />
-      <Footer />
+      <Footer elToScroll={elToScroll} />
       {showSingUpModal && (
         <Modal closeModal={toggleSingUpModal}>
           <SingUpForm closeModal={toggleSingUpModal} />

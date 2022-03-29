@@ -45,7 +45,14 @@ const Video = ({
   }, [container]);
 
   return (
-    <div ref={container}>
+    <div
+      ref={container}
+      style={{
+        width: `${width}px`,
+        height: `${height}px`,
+        margin: '0 auto',
+      }}
+    >
       {videoSrcURL && showVideo ? (
         <iframe
           width={width}
