@@ -12,7 +12,14 @@ import CopyRightBlock from './footer-components/copyRight';
 import * as s from './footer.module.scss';
 import Container from 'components/common/container/container';
 
-const Footer = () => {
+const Footer = ({ elToScroll }) => {
+  const scrollToTop = () => {
+    elToScroll?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
+
   return (
     <footer className={s.footer}>
       <Container>
@@ -20,7 +27,7 @@ const Footer = () => {
           <MapGoogle />
           {/* <MapBackground /> */}
           <div>
-            <Logo className={`${s.logo}`} />
+            <Logo className={`${s.logo}`} onClick={scrollToTop} />
             {/* Contacts list */}
             <Contacts />
             {/* Social networks links */}

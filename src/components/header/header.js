@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useRef, useEffect } from 'react';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 import { Link } from 'gatsby';
 import { duration } from 'styles/jsVars';
@@ -14,11 +14,12 @@ import NavBlock from './navBlock/navBlock';
 import LanguagesBlock from './languagesBlock/languagesBlock';
 import * as s from './header.module.scss';
 
-export default function Header() {
+export default function Header({ getElToScroll }) {
   const pageFormat = useContext(PageFormatContext);
   const isDesktop = pageFormat === format.desktop;
   const [isShow, setIsShow] = useState(false);
   const [showDropNav, setShowDropNav] = useState(false);
+  const elToScroll = useRef(null);
   const { t } = useI18next();
 
   const data = t('aria', { returnObjects: true });
@@ -44,8 +45,12 @@ export default function Header() {
     }, duration);
   };
 
+  useEffect(() => {
+    getElToScroll(elToScroll.current);
+  }, [getElToScroll]);
+
   return (
-    <header className={s.header} id="header">
+    <header className={s.header} id="header" ref={elToScroll}>
       <Container addClass={s.headerContainer}>
         {/* //----logo------ */}
         <Link to="/" className={s.logoLink}>
