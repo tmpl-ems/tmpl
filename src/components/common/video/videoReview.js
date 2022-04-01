@@ -46,10 +46,10 @@ const VideoReview = ({ videoSrcID, videoTitle }) => {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 0,
       color: 'white',
-      fs: 0,
-      //   controls: 0,
+      iv_load_policy: 3,
       showinfo: 0,
       rel: 0,
+      origin: 'https://www.youtube.com',
     },
   };
 
