@@ -49,6 +49,7 @@ const VideoReview = ({ videoSrcID, videoTitle }) => {
       iv_load_policy: 3,
       showinfo: 0,
       rel: 0,
+      origin: 'https://www.youtube.com',
     },
   };
 

@@ -1,58 +1,15 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React from 'react';
 import Section from 'components/common/section/section';
-import Video from 'components/common/video/video';
-import { PageFormatContext, format } from 'context/pageFormatContext';
 import { useI18next } from 'gatsby-plugin-react-i18next';
-
 import * as s from './how.module.scss';
-
 import VideoReview from 'components/common/video/videoReview';
-
-const videoStyles = {
-  common: {
-    border: 'double 2px transparent',
-    borderRadius: '16px',
-    backgroundImage: ' linear-gradient(180deg, #20c5a0 0%, #0a866a 100%)',
-    backgroundOrigin: 'border-box',
-    backgroundClip: 'content-box border-box',
-  },
-  mobile: { display: 'block', marginLeft: 'auto', marginRight: 'auto' },
-  tablet: { display: 'block' },
-};
 
 const How = ({ id }) => {
   // const videoUrl = 'https://www.youtube.com/embed/HUZLr7XmdmU';
   const videoId = 'HUZLr7XmdmU';
-  const videoTitle = 'YouTube video player';
 
   const { t } = useI18next();
   const data = t('how', { returnObjects: true });
-
-  const pageFormat = useContext(PageFormatContext);
-
-  const [videoSizes, setVideoSizes] = useState({ width: 280, height: 266 });
-  const [videoStyle, setVideoStyle] = useState({
-    ...videoStyles.common,
-    ...videoStyles.mobile,
-  });
-
-  const isTablet = pageFormat === format.tablet;
-  const isDesktop = pageFormat === format.desktop;
-  const isMobile = pageFormat === format.mobile;
-
-  useEffect(() => {
-    if (isTablet) {
-      setVideoSizes({ width: 340, height: 266 });
-      setVideoStyle({ ...videoStyles.common, ...videoStyles.tablet });
-    }
-    if (isDesktop) {
-      setVideoSizes({ width: 608, height: 454 });
-    }
-    if (isMobile) {
-      setVideoSizes({ width: 280, height: 266 });
-      setVideoStyle({ ...videoStyles.common, ...videoStyles.mobile });
-    }
-  }, [isDesktop, isMobile, isTablet]);
 
   return (
     <div className={s.howBackgroundContainer}>
@@ -64,18 +21,9 @@ const How = ({ id }) => {
         id={id}
       >
         <p className={s.howTitle}>{data.suptitle}</p>
-        <div
-          className={isTablet || isDesktop ? `${s.howTabletFlexContainer}` : ''}
-        >
+        <div className={s.howTabletFlexContainer}>
           <div className={s.videoWpapper}>
-            <VideoReview videoSrcID={videoId} videoTitle={videoTitle} />
-            {/* <Video
-              videoSrcURL={videoUrl}
-              videoTitle={videoTitle}
-              width={videoSizes.width}
-              height={videoSizes.height}
-              style={videoStyle}
-            /> */}
+            <VideoReview videoSrcID={videoId} videoTitle={data.videoTitle} />
           </div>
 
           <div className={s.howTextContentContainer}>
