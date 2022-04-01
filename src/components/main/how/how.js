@@ -2,17 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import Section from 'components/common/section/section';
 import Video from 'components/common/video/video';
 import { PageFormatContext, format } from 'context/pageFormatContext';
-import { usePaddingsValues } from 'hooks/usePaddingsValues';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 
 import * as s from './how.module.scss';
 
-const styles = {
-  response: { pt: 40, pb: 40 },
-  mobile: { pt: 40, pb: 40 },
-  tablet: { pt: 60, pb: 84 },
-  desktop: { pt: 60, pb: 53 },
-};
+import VideoReview from 'components/common/video/videoReview';
 
 const videoStyles = {
   common: {
@@ -27,37 +21,38 @@ const videoStyles = {
 };
 
 const How = ({ id }) => {
-  const videoUrl = 'https://www.youtube.com/embed/HUZLr7XmdmU';
+  // const videoUrl = 'https://www.youtube.com/embed/HUZLr7XmdmU';
+  const videoId = 'HUZLr7XmdmU';
   const videoTitle = 'YouTube video player';
 
   const { t } = useI18next();
   const data = t('how', { returnObjects: true });
 
   const pageFormat = useContext(PageFormatContext);
+
   const [videoSizes, setVideoSizes] = useState({ width: 280, height: 266 });
   const [videoStyle, setVideoStyle] = useState({
     ...videoStyles.common,
     ...videoStyles.mobile,
   });
-  const isTablet = pageFormat === format.tablet;
 
+  const isTablet = pageFormat === format.tablet;
   const isDesktop = pageFormat === format.desktop;
+  const isMobile = pageFormat === format.mobile;
 
   useEffect(() => {
-    if (pageFormat === format.tablet) {
+    if (isTablet) {
       setVideoSizes({ width: 340, height: 266 });
       setVideoStyle({ ...videoStyles.common, ...videoStyles.tablet });
     }
-    if (pageFormat === format.desktop) {
+    if (isDesktop) {
       setVideoSizes({ width: 608, height: 454 });
     }
-    if (pageFormat === format.mobile) {
+    if (isMobile) {
       setVideoSizes({ width: 280, height: 266 });
       setVideoStyle({ ...videoStyles.common, ...videoStyles.mobile });
     }
-  }, [pageFormat]);
-
-  const paddings = usePaddingsValues(styles, pageFormat, format);
+  }, [isDesktop, isMobile, isTablet]);
 
   return (
     <div className={s.howBackgroundContainer}>
@@ -65,9 +60,7 @@ const How = ({ id }) => {
         head={data.title}
         titleHidden={true}
         titleLevel={'h3'}
-        style={{ backgroundColor: '#000000' }}
-        pt={paddings.pt}
-        pb={paddings.pb}
+        darkBackground={true}
         id={id}
       >
         <p className={s.howTitle}>{data.suptitle}</p>
@@ -75,13 +68,14 @@ const How = ({ id }) => {
           className={isTablet || isDesktop ? `${s.howTabletFlexContainer}` : ''}
         >
           <div className={s.videoWpapper}>
-            <Video
+            <VideoReview videoSrcID={videoId} videoTitle={videoTitle} />
+            {/* <Video
               videoSrcURL={videoUrl}
               videoTitle={videoTitle}
               width={videoSizes.width}
               height={videoSizes.height}
               style={videoStyle}
-            />
+            /> */}
           </div>
 
           <div className={s.howTextContentContainer}>
