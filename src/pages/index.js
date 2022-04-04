@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { graphql } from 'gatsby';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 ///
@@ -10,6 +10,7 @@ import Main from 'components/main/main';
 import Modal from 'components/common/Modal/Modal';
 import SingUpForm from 'components/common/SingUpForm';
 import Notification from 'components/common/notification/Notification';
+import { PageFormatContext } from 'context/pageFormatContext';
 
 ///
 
@@ -17,6 +18,7 @@ export default function IndexPage() {
   const [selectedProgram, setSelectedProgram] = useState(null);
   const [showSingUpModal, setShowSingUpModal] = useState(false);
   const [tgBotNotification, setTgBotNotification] = useState(false);
+  const pageFormat = useContext(PageFormatContext);
 
   const notification = () => {
     setTgBotNotification(true);
@@ -45,6 +47,8 @@ export default function IndexPage() {
       return;
     }
   }, [changeLanguage, defaultLanguage, language, path]);
+
+  console.log('pageFormat', pageFormat);
 
   return (
     <Layout>
