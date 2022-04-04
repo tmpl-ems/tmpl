@@ -26,6 +26,8 @@ export default function SingUpForm({
   const { t } = useI18next();
   const { singUpForm } = t('common', { returnObjects: true });
 
+  console.log('singUpForm', singUpForm);
+
   const getTextToSend = useCallback(() => {
     const order = `<b>${singUpForm.order.toUpperCase()}</b>`;
 
