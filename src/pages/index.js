@@ -69,7 +69,7 @@ export default function IndexPage() {
 
       {tgBotNotification && (
         <Modal closeModal={() => setTgBotNotification(false)}>
-          <Notification />
+          <Notification closeModal={() => setTgBotNotification(false)} />
         </Modal>
       )}
     </Layout>
