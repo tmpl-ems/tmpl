@@ -46,10 +46,6 @@ export default function IndexPage() {
     }
   }, [changeLanguage, defaultLanguage, language, path]);
 
-  // const getElToScroll = ref => {
-  //   setElToScroll(ref);
-  // };
-
   return (
     <Layout>
       <Header getElToScroll={setElToScroll} />
