@@ -16,7 +16,7 @@ import * as s from './header.module.scss';
 
 export default function Header({ getElToScroll }) {
   const pageFormat = useContext(PageFormatContext);
-  const isDesktop = pageFormat === format.desktop;
+  const isDesktop = pageFormat && pageFormat === format.desktop;
   const [isShow, setIsShow] = useState(false);
   const [showDropNav, setShowDropNav] = useState(false);
   const elToScroll = useRef(null);
