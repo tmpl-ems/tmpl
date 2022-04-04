@@ -1,10 +1,12 @@
-const TELEGRAMBOTAPI = '5103823488:AAFMxMt2EfYp-mbJjO4w4obS84-7QPW0SBE';
-const GROUPID = -649389448;
+const TELEGRAM_BOT_ID = process.env.GATSBY_TELEGRAM_BOT_ID;
+const TELEGRAM_GROUP_ID = process.env.GATSBY_TELEGRAM_GROUP_ID;
+const BASE_URL = 'https://api.telegram.org';
 
 const telegramBot = text => {
   fetch(
-    `https://api.telegram.org/bot${TELEGRAMBOTAPI}/sendMessage?chat_id=${GROUPID}&text=${text}`,
+    `${BASE_URL}/bot${TELEGRAM_BOT_ID}/sendMessage?chat_id=${TELEGRAM_GROUP_ID}&parse_mode=Markdown&text="${text}"`,
   );
+  // fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_ID}/getUpdates`);
 };
 
 export default telegramBot;

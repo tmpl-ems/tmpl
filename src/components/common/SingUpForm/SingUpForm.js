@@ -1,13 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useI18next } from 'gatsby-plugin-react-i18next';
+import telegramBot from 'services/telegramBot';
 
 import Button from 'components/common/button/button';
 import CloseIcon from 'images/svg/btn-close.inline.svg';
 import * as s from './SingUpForm.module.scss';
 
-import telegramBot from 'services/telegramBot';
-
-const initialNumberFormat = '+380';
+const numberStart = '+380';
 
 export default function SingUpForm({
   closeModal,
@@ -18,7 +17,9 @@ export default function SingUpForm({
   const inputRef = useRef(null);
 
   const [name, setName] = useState('');
-  const [number, setNumber] = useState(initialNumberFormat);
+  const [number, setNumber] = useState('');
+
+  console.log('name', number);
 
   useEffect(() => {
     inputRef.current.focus();
@@ -29,33 +30,28 @@ export default function SingUpForm({
 
   const handleSubmit = e => {
     e.preventDefault();
-    const text = `Имя: ${name}, Телефон: ${number}${
+    const text = `*Имя*: ${name}, *Телефон*: ${number}
+    ${
       selectedProgram
-        ? `, Программа: ${selectedProgram.item.title}`
+        ? `, *Программа*: ${selectedProgram.item.title}`
         : ', Без программы'
     }`;
+
     telegramBot(text);
     notification();
     setSelectedProgram(null);
     closeModal();
   };
 
-  const handleChange = e => {
-    const inputName = e.target.name;
-    const value = e.target.value;
+  const handleFocus = e => {
+    if (number !== '') return;
+    e.target.value = numberStart;
+  };
 
-    if (inputName === 'name') {
-      setName(value);
-    }
-    if (inputName === 'number') {
-      // if (
-      //   !value.includes(initialNumberFormat) ||
-      //   value[0] !== initialNumberFormat[0]
-      // )
-      //   return;
-
-      setNumber(value);
-    }
+  const handleBlur = e => {
+    if (e.target.value !== numberStart) return;
+    setNumber('');
+    e.target.value = '';
   };
 
   return (
@@ -77,7 +73,7 @@ export default function SingUpForm({
             e.target.setCustomValidity(data.singUpForm.nameValidation)
           }
           onInput={e => e.target.setCustomValidity('')}
-          onChange={handleChange}
+          onChange={e => setName(e.target.value)}
           required
           placeholder={data.singUpForm.namePlaceholder}
           autoComplete="off"
@@ -92,16 +88,9 @@ export default function SingUpForm({
             e.target.setCustomValidity(data.singUpForm.phoneValidation)
           }
           onInput={e => e.target.setCustomValidity('')}
-          onChange={handleChange}
-          onFocus={e => {
-            if (number !== '') return;
-            e.target.value = initialNumberFormat;
-          }}
-          onBlur={e => {
-            if (e.target.value !== initialNumberFormat) return;
-            setNumber('');
-            e.target.value = '';
-          }}
+          onChange={e => setNumber(e.target.value)}
+          onFocus={e => handleFocus(e)}
+          onBlur={e => handleBlur(e)}
           required
           placeholder={data.singUpForm.numberPlaceholder}
           autoComplete="off"
