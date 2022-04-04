@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 
 import Section from 'components/common/section/section';
@@ -25,14 +25,14 @@ const icons = [
   <ProgramIcon6 />,
 ];
 
-export default function PersonalProgram({ onSingUpModalOpen, id }) {
-  const [selectedProgram, setSelectedProgram] = useState(null);
+export default function PersonalProgram({
+  onSingUpModalOpen,
+  setSelectedProgram,
+  selectedProgram,
+  id,
+}) {
   const { t } = useI18next();
   const data = t('personalPrograms', { returnObjects: true });
-
-  const getSelectedProgram = program => {
-    setSelectedProgram(program);
-  };
 
   const closeInfoModal = () => {
     setSelectedProgram(null);
@@ -56,7 +56,7 @@ export default function PersonalProgram({ onSingUpModalOpen, id }) {
             <li key={item.id} className={s.buttonsItem}>
               <button
                 className={s.button}
-                onClick={() => getSelectedProgram({ item, index })}
+                onClick={() => setSelectedProgram({ item, index })}
               >
                 {icons[index]}
                 {item.title}

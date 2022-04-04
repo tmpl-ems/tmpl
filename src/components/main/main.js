@@ -11,7 +11,7 @@ import Goals from './goals/goals';
 import Hero from '../hero/hero';
 import AboutUsSection from './about/AboutUsSection';
 
-const Main = ({ onSingUpModalOpen }) => {
+const Main = ({ onSingUpModalOpen, setSelectedProgram, selectedProgram }) => {
   return (
     <main>
       <Hero onSingUpModalOpen={onSingUpModalOpen} />
@@ -24,7 +24,12 @@ const Main = ({ onSingUpModalOpen }) => {
 
       <Reviews id={'feedbacks'} />
 
-      <PersonalProgram onSingUpModalOpen={onSingUpModalOpen} id={'programs'} />
+      <PersonalProgram
+        onSingUpModalOpen={onSingUpModalOpen}
+        setSelectedProgram={setSelectedProgram}
+        selectedProgram={selectedProgram}
+        id={'programs'}
+      />
 
       <Enroll onSingUpModalOpen={onSingUpModalOpen} />
     </main>
