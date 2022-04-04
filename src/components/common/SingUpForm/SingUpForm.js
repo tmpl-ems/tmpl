@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 import telegramBot from 'services/telegramBot';
 
@@ -19,23 +19,44 @@ export default function SingUpForm({
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  console.log('name', number);
-
   useEffect(() => {
     inputRef.current.focus();
   }, []);
 
   const { t } = useI18next();
-  const data = t('common', { returnObjects: true });
+  const { singUpForm } = t('common', { returnObjects: true });
+
+  const getTextToSend = useCallback(() => {
+    const order = `<b>${singUpForm.order.toUpperCase()}</b>`;
+
+    const tag = '%0A%23tmplorder';
+
+    const lang = `%0A<b>${singUpForm.langOrderPlace}</b>: ${singUpForm.lang}`;
+
+    const clientInfo = `%0A%0A<b>${
+      singUpForm.namePlaceholder
+    }</b>: ${name} %0A<b>${singUpForm.phone}</b>: %2B${number.slice(1)}`;
+
+    const programInfo = selectedProgram
+      ? `%0A%0A<b>${singUpForm.program}</b>: ${selectedProgram.item.title}`
+      : `%0A<b>${singUpForm.withoutPropram}</b>`;
+    return order + tag + lang + clientInfo + programInfo;
+  }, [
+    name,
+    number,
+    selectedProgram,
+    singUpForm.lang,
+    singUpForm.langOrderPlace,
+    singUpForm.namePlaceholder,
+    singUpForm.order,
+    singUpForm.phone,
+    singUpForm.program,
+    singUpForm.withoutPropram,
+  ]);
 
   const handleSubmit = e => {
     e.preventDefault();
-    const text = `*Имя*: ${name}, *Телефон*: ${number}
-    ${
-      selectedProgram
-        ? `, *Программа*: ${selectedProgram.item.title}`
-        : ', Без программы'
-    }`;
+    const text = getTextToSend();
 
     telegramBot(text);
     notification();
@@ -60,7 +81,7 @@ export default function SingUpForm({
         <CloseIcon />
       </button>
 
-      <p className={s.text}>{data.singUpForm.text}</p>
+      <p className={s.text}>{singUpForm.text}</p>
 
       <form className={s.form} onSubmit={e => handleSubmit(e)}>
         <input
@@ -69,13 +90,11 @@ export default function SingUpForm({
           type="text"
           name="name"
           pattern="[A-Za-zА-Яа-яґҐЁёІіЇїЄє'’ʼ\s-]{2,20}"
-          onInvalid={e =>
-            e.target.setCustomValidity(data.singUpForm.nameValidation)
-          }
+          onInvalid={e => e.target.setCustomValidity(singUpForm.nameValidation)}
           onInput={e => e.target.setCustomValidity('')}
           onChange={e => setName(e.target.value)}
           required
-          placeholder={data.singUpForm.namePlaceholder}
+          placeholder={singUpForm.namePlaceholder}
           autoComplete="off"
           value={name}
         />
@@ -85,19 +104,19 @@ export default function SingUpForm({
           name="number"
           pattern="^(?:\+38)?(0\d{9})$"
           onInvalid={e =>
-            e.target.setCustomValidity(data.singUpForm.phoneValidation)
+            e.target.setCustomValidity(singUpForm.phoneValidation)
           }
           onInput={e => e.target.setCustomValidity('')}
           onChange={e => setNumber(e.target.value)}
           onFocus={e => handleFocus(e)}
           onBlur={e => handleBlur(e)}
           required
-          placeholder={data.singUpForm.numberPlaceholder}
+          placeholder={singUpForm.numberPlaceholder}
           autoComplete="off"
           value={number}
         />
 
-        <Button type="submit" classType={3} text={data.singUpForm.button} />
+        <Button type="submit" classType={3} text={singUpForm.button} />
       </form>
     </div>
   );
