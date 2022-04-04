@@ -18,10 +18,10 @@ const Content = ({ onSingUpModalOpen }) => {
       <h1 className={s.sectionTitle}>{data.title}</h1>
       <p className={s.text1}>{data.text1}</p>
       {(isDesktop || isTablet) && <List data={data.list} />}
-      {pageFormat && <Button
+      <Button
         classType={isDesktop || isTablet ? 1 : 4}
         onBtnClick={onSingUpModalOpen}
-      />}
+      />
 
       <div className={s.offerBlock}>
         <p className={s.text2}>
