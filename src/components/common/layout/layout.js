@@ -12,7 +12,7 @@ const breakPoints = {
 };
 
 const Layout = ({ children }) => {
-  const [pageFormat, setPageFormat] = useState(format.response);
+  const [pageFormat, setPageFormat] = useState(null);
   const { t } = useI18next();
 
   const data = t('seo', { returnObjects: true });
