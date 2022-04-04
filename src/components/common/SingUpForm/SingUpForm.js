@@ -5,9 +5,16 @@ import Button from 'components/common/button/button';
 import CloseIcon from 'images/svg/btn-close.inline.svg';
 import * as s from './SingUpForm.module.scss';
 
+import telegramBot from 'services/telegramBot';
+
 const initialNumberFormat = '+380';
 
-export default function SingUpForm({ closeModal }) {
+export default function SingUpForm({
+  closeModal,
+  setSelectedProgram,
+  selectedProgram,
+  notification,
+}) {
   const inputRef = useRef(null);
 
   const [name, setName] = useState('');
@@ -22,6 +29,14 @@ export default function SingUpForm({ closeModal }) {
 
   const handleSubmit = e => {
     e.preventDefault();
+    const text = `Имя: ${name}, Телефон: ${number}${
+      selectedProgram
+        ? `, Программа: ${selectedProgram.item.title}`
+        : ', Без программы'
+    }`;
+    telegramBot(text);
+    notification();
+    setSelectedProgram(null);
     closeModal();
   };
 
