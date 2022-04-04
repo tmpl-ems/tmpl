@@ -28,11 +28,6 @@ export default function PersonalProgramInfo({
   const { t } = useI18next();
   const data = t('aria', { returnObjects: true });
 
-  const singUpHandler = () => {
-    onSingUpModalOpen();
-    closeInfoModal();
-  };
-
   return (
     <div className={s.modalContent}>
       <button
@@ -49,7 +44,7 @@ export default function PersonalProgramInfo({
 
       <p className={s.text}>{selectedProgram.item.desc}</p>
 
-      <Button classType={3} onBtnClick={singUpHandler} />
+      <Button classType={3} onBtnClick={onSingUpModalOpen} />
     </div>
   );
 }

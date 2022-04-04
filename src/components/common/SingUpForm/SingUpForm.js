@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useI18next } from 'gatsby-plugin-react-i18next';
+import telegramBot from 'services/telegramBot';
 
 import Button from 'components/common/button/button';
 import CloseIcon from 'images/svg/btn-close.inline.svg';
@@ -7,11 +8,18 @@ import * as s from './SingUpForm.module.scss';
 
 const numberStart = '+380';
 
-export default function SingUpForm({ closeModal }) {
+export default function SingUpForm({
+  closeModal,
+  setSelectedProgram,
+  selectedProgram,
+  notification,
+}) {
   const inputRef = useRef(null);
 
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+
+  console.log('name', number);
 
   useEffect(() => {
     inputRef.current.focus();
@@ -22,6 +30,16 @@ export default function SingUpForm({ closeModal }) {
 
   const handleSubmit = e => {
     e.preventDefault();
+    const text = `*Имя*: ${name}, *Телефон*: ${number}
+    ${
+      selectedProgram
+        ? `, *Программа*: ${selectedProgram.item.title}`
+        : ', Без программы'
+    }`;
+
+    telegramBot(text);
+    notification();
+    setSelectedProgram(null);
     closeModal();
   };
 

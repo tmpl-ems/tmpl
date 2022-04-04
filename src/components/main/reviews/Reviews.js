@@ -40,7 +40,7 @@ const Reviews = ({ id }) => {
           />
         </SwiperSlide>
 
-        {/* videreview */}
+        {/* video review */}
         <SwiperSlide>
           <ReviewVideoCard />
         </SwiperSlide>
