@@ -40,7 +40,7 @@
   justify-content: center;
   background: transparent;
   color: $secondary-text-color;
-  cursor: pointer;
+  cursor: url('images/svg/cursor-pointer-black.svg'), pointer;
 
   &:hover,
   &:focus {
@@ -68,4 +68,5 @@
   margin: 0 auto;
   margin-bottom: 40px;
   outline: none;
+  cursor: url('images/svg/cursor-pointer-black.svg'), pointer;
 }

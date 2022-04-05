@@ -5,6 +5,10 @@
   @include flexBlock;
   flex-direction: column;
   align-items: flex-start;
+
+  & button {
+    cursor: url('images/svg/cursor-pointer-black.svg'), pointer;
+  }
 }
 .sectionTitle {
   width: 280px;

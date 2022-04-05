@@ -12,6 +12,7 @@
 }
 .logoLink {
   margin-right: auto;
+  cursor: url('images/svg/cursor-pointer-black.svg'), pointer;
   &:hover,
   &:focus {
     outline: none;
@@ -23,7 +24,7 @@
   margin-left: 24px;
   outline: none;
   border: none;
-  cursor: pointer;
+  cursor: url('images/svg/cursor-pointer-black.svg'), pointer;
   background: $background-color;
   stroke: transparent;
   fill: $secondary-text-color;
