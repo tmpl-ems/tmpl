@@ -59,7 +59,7 @@
   transform: translate(-50%, -50%);
   z-index: 10;
   opacity: 1;
-  cursor: pointer;
+  cursor: url('images/svg/cursor-pointer-black.svg'), pointer;
 
   @media (min-width: 1280px) {
     max-width: 100px;
