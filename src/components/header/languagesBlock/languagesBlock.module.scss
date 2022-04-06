@@ -24,6 +24,7 @@
   text-transform: uppercase;
   color: $inactive-color;
   transition: $default-transition;
+  cursor: url('images/svg/cursor-pointer-black.svg'), pointer;
   &:hover,
   &:focus {
     color: $main-brand-color;

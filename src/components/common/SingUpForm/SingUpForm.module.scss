@@ -22,6 +22,10 @@
     padding: 40px 125px;
     width: 822px;
   }
+
+  & button {
+    cursor: url('images/svg/cursor-pointer-white.svg'), pointer;
+  }
 }
 
 .closeBtn {
@@ -32,7 +36,7 @@
   padding: 0;
   border: none;
   background-color: transparent;
-  cursor: pointer;
+  cursor: url('images/svg/cursor-pointer-white.svg'), pointer;
 
   & svg {
     width: 14px;
@@ -93,7 +97,7 @@
 
   border: 1px solid $placeholder-color;
   border-radius: 8px;
-  cursor: pointer;
+  cursor: url('images/svg/cursor-pointer-white.svg'), pointer;
   outline: none;
 
   &::placeholder {

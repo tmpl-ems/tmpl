@@ -32,7 +32,7 @@
   padding: 0;
   border: none;
   background-color: transparent;
-  cursor: pointer;
+  cursor: url('images/svg/cursor-pointer-white.svg'), pointer;
 
   & svg {
     width: 14px;

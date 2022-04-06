@@ -105,7 +105,7 @@
   box-shadow: 2px -2px 8px rgba(159, 159, 159, 0.1),
     -4px 4px 8px rgba(159, 159, 159, 0.25);
   border-radius: 8px;
-  cursor: pointer;
+  cursor: url('images/svg/cursor-pointer-white.svg'), pointer;
   transition: $default-transition;
 
   @media screen and (min-width: 768px) {
