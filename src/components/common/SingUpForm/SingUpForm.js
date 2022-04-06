@@ -12,6 +12,11 @@ const validNumberLength = 12;
 const validNameLength = 2;
 const hashTag = 'tmplorder';
 const isNumberRegex = new RegExp('[0-9]');
+const normalizePhoneValue = phoneValue =>
+  phoneValue
+    .split('')
+    .filter(item => isNumberRegex.test(item))
+    .join('');
 
 const getTextToSend = ({
   orderMsg,
@@ -82,12 +87,8 @@ export default function SingUpForm({
   };
 
   const handleNumberChange = e => {
-    const normalizedNumber = e.target.value
-      .split('')
-      .filter(item => isNumberRegex.test(item))
-      .join('');
-
-    setNumber(normalizedNumber);
+    const normalizedPhoneValue = normalizePhoneValue(e.target.value);
+    setNumber(normalizedPhoneValue);
   };
 
   const isDisabled =
@@ -123,6 +124,7 @@ export default function SingUpForm({
           placeholder={singUpForm.numberPlaceholder}
           onChange={e => handleNumberChange(e)}
           type="tel"
+          autoComplete="on"
         />
 
         <Button
