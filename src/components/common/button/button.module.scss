@@ -77,3 +77,14 @@
 .notFound {
   margin-bottom: 20px;
 }
+
+.heroBtn {
+  @media screen and (max-width: 479px) {
+    padding: 8px 20px;
+    height: 32px;
+    border-radius: 8px;
+    @include textStyleHeader;
+    line-height: 13px;
+    text-align: center;
+  }
+}

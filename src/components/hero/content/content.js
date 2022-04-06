@@ -4,6 +4,7 @@ import { useI18next } from 'gatsby-plugin-react-i18next';
 import Button from 'components/common/button/button';
 import List from './list/list';
 import * as s from './content.module.scss';
+import { heroBtn } from 'components/common/button/button.module.scss';
 
 const Content = ({ onSingUpModalOpen }) => {
   const { t } = useI18next();
@@ -18,10 +19,7 @@ const Content = ({ onSingUpModalOpen }) => {
       <h1 className={s.sectionTitle}>{data.title}</h1>
       <p className={s.text1}>{data.text1}</p>
       {(isDesktop || isTablet) && <List data={data.list} />}
-      <Button
-        classType={isDesktop || isTablet ? 1 : 4}
-        onBtnClick={onSingUpModalOpen}
-      />
+      <Button addClass={heroBtn} onBtnClick={onSingUpModalOpen} />
 
       <div className={s.offerBlock}>
         <p className={s.text2}>
