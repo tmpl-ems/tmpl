@@ -122,6 +122,7 @@ export default function SingUpForm({
           className={s.input}
           placeholder={singUpForm.numberPlaceholder}
           onChange={e => handleNumberChange(e)}
+          type="tel"
         />
 
         <Button
