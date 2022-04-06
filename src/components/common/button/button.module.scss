@@ -18,6 +18,12 @@
   &:focus {
     outline: none;
   }
+
+  &:disabled,
+  &:hover:disabled,
+  &:focus:disabled {
+    background-color: #b3b3b3;
+  }
 }
 
 .btn1 {
