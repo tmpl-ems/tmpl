@@ -25,7 +25,6 @@ const getTextToSend = ({
   programTitle,
   program,
   programDefault,
-  selectedProgram = null,
 }) => {
   const order = `<b>${orderMsg.toUpperCase()}</b>`;
 
@@ -36,7 +35,7 @@ const getTextToSend = ({
   const clientInfo = `%0A%0A<b>${nameTitle}</b>: ${name} %0A<b>${phoneTitle}</b>: %2B${number}`;
 
   const programInfo = `%0A%0A<b>${programTitle}</b>: ${
-    selectedProgram ? program : programDefault
+    program ? program : programDefault
   }`;
 
   return order + tag + lang + clientInfo + programInfo;
@@ -62,7 +61,6 @@ export default function SingUpForm({
 
   const handleSubmit = e => {
     e.preventDefault();
-
     const text = getTextToSend({
       orderMsg: singUpForm.order,
       orderPlace: singUpForm.langOrderPlace,
@@ -73,9 +71,8 @@ export default function SingUpForm({
       phoneTitle: singUpForm.phone,
       number,
       programTitle: singUpForm.program,
-      program: selectedProgram.item.title,
+      program: selectedProgram?.item.title,
       programDefault: singUpForm.withoutPropram,
-      selectedProgram,
     });
 
     telegramBot(text);
