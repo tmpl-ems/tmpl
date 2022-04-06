@@ -114,7 +114,7 @@ export default function SingUpForm({
           onChange={e => setName(e.target.value)}
           required
           placeholder={singUpForm.namePlaceholder}
-          autoComplete="off"
+          autoComplete="on"
           value={name}
         />
 
