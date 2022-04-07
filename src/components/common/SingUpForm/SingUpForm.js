@@ -7,6 +7,8 @@ import Button from 'components/common/button/button';
 import CloseIcon from 'images/svg/btn-close.inline.svg';
 import * as s from './SingUpForm.module.scss';
 
+// const numberStart = '+380';
+
 const initialNumberValue = '';
 const validNumberLength = 12;
 const validNameLength = 2;
@@ -56,6 +58,8 @@ export default function SingUpForm({
 
   const [name, setName] = useState('');
   const [number, setNumber] = useState(initialNumberValue);
+  // const [numberClear, setNumberClear] = useState(initialNumberValue);
+  const [maskTemplate, setMaskTemplate] = useState(null);
 
   useEffect(() => {
     inputRef.current.focus();
@@ -86,8 +90,45 @@ export default function SingUpForm({
     closeModal();
   };
 
+  // const handleFocus = e => {
+  //   if (numberClear !== '') return;
+  //   e.target.value = numberStart;
+  // };
+
+  // const handleBlur = e => {
+  //   if (e.target.value !== numberStart) return;
+  //   setNumberClear('');
+  //   e.target.value = '';
+  // };
+
   const handleNumberChange = e => {
     const normalizedPhoneValue = normalizePhoneValue(e.target.value);
+    setNumber(normalizedPhoneValue);
+  };
+
+  const handleClearNumberChange = e => {
+    const value = e.target.value;
+
+    if (!maskTemplate) {
+      switch (true) {
+        case value.startsWith('+') && value.length > 2:
+          setMaskTemplate('+38 (999) 999-99-99');
+          break;
+        case value.startsWith('38') && value.length > 1:
+          setMaskTemplate('+38 (999) 999-99-99');
+          break;
+        case value.startsWith('0') && value.length > 1:
+          setMaskTemplate('+38 (099) 999-99-99');
+          break;
+        case value.length > 2:
+          setMaskTemplate('+38 (044) 999-99-99');
+          break;
+        default:
+          break;
+      }
+    }
+
+    const normalizedPhoneValue = normalizePhoneValue(value);
     setNumber(normalizedPhoneValue);
   };
 
@@ -126,6 +167,33 @@ export default function SingUpForm({
           type="tel"
           autoComplete="on"
         />
+
+        <InputMask
+          mask={maskTemplate}
+          className={s.input}
+          placeholder={singUpForm.numberPlaceholder}
+          onChange={e => handleClearNumberChange(e)}
+          type="tel"
+          autoComplete="on"
+        />
+
+        {/* <input
+          className={s.input}
+          type="tel"
+          name="numberClear"
+          pattern="^(?:\+38)?(0\d{9})$"
+          onInvalid={e =>
+            e.target.setCustomValidity(singUpForm.phoneValidation)
+          }
+          onInput={e => e.target.setCustomValidity('')}
+          onChange={e => setNumberClear(e.target.value)}
+          onFocus={e => handleFocus(e)}
+          onBlur={e => handleBlur(e)}
+          required
+          placeholder={singUpForm.numberPlaceholder}
+          autoComplete="on"
+          value={numberClear}
+        /> */}
 
         <Button
           disabled={isDisabled}
