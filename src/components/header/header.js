@@ -2,6 +2,7 @@ import React, { useContext, useState, useRef, useEffect } from 'react';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 import { Link } from 'gatsby';
 import { duration } from 'styles/jsVars';
+import AnimatedWrapper from 'components/common/animatedWrapper/AnimatedWrapper';
 
 // Если в нашем компоненте нужно выполнить или нет рендеринг в зависимости от ширины экрана, берём испортируем контекст и формат. А такэе useContext
 import { PageFormatContext, format } from 'context/pageFormatContext';
@@ -57,7 +58,7 @@ export default function Header({ getElToScroll }) {
           <LogoIcon width="74" height="66" />
         </Link>
         {pageFormat && (
-          <>
+          <AnimatedWrapper>
             {isDesktop && <NavBlock onMenuClose={closeDropNav} />}
             <LanguagesBlock />
             {/* //---BurgerBtn--- */}
@@ -71,7 +72,7 @@ export default function Header({ getElToScroll }) {
                 <BurgerIcon width="30" height="16" />
               </button>
             )}
-          </>
+          </AnimatedWrapper>
         )}
         {/* </div> */}
       </Container>
