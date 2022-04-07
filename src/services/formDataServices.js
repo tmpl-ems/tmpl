@@ -4,26 +4,6 @@ export const isValidNameInputRegex = new RegExp(
   "[A-Za-zА-Яа-яґҐЁёІіЇїЄє'’ʼ\\s-]",
 );
 
-// export const normalizeValue = (value, regexp) => {
-//   let checkedValue = null;
-
-//   switch (true) {
-//     case value.length === 10 && value.startsWith('0'):
-//       checkedValue = '38' + value;
-//       break;
-//     case value.length === 7 && !value.startsWith('380'):
-//       checkedValue = '38044' + value;
-//       break;
-//     default:
-//       checkedValue = value;
-//   }
-
-//   return checkedValue
-//     .split('')
-//     .filter(item => regexp.test(item))
-//     .join('');
-// };
-
 export const normalizeValue = (value, regexp) => {
   const formattedValue = value
     .split('')
