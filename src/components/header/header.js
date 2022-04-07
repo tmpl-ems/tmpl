@@ -16,7 +16,7 @@ import * as s from './header.module.scss';
 
 export default function Header({ getElToScroll }) {
   const pageFormat = useContext(PageFormatContext);
-  const isDesktop = pageFormat && pageFormat === format.desktop;
+  const isDesktop = pageFormat === format.desktop;
   const [isShow, setIsShow] = useState(false);
   const [showDropNav, setShowDropNav] = useState(false);
   const elToScroll = useRef(null);
@@ -56,19 +56,22 @@ export default function Header({ getElToScroll }) {
         <Link to="/" className={s.logoLink}>
           <LogoIcon width="74" height="66" />
         </Link>
-        {isDesktop && <NavBlock onMenuClose={closeDropNav} />}
-        {/* <div className={navMobileBlock}> */}
-        <LanguagesBlock />
-        {/* //---BurgerBtn--- */}
-        {!isDesktop && (
-          <button
-            className={s.burgerOpenBtn}
-            type="button"
-            onClick={openDropNav}
-            aria-label={data.openBtn}
-          >
-            <BurgerIcon width="30" height="16" />
-          </button>
+        {pageFormat && (
+          <>
+            {isDesktop && <NavBlock onMenuClose={closeDropNav} />}
+            <LanguagesBlock />
+            {/* //---BurgerBtn--- */}
+            {!isDesktop && (
+              <button
+                className={s.burgerOpenBtn}
+                type="button"
+                onClick={openDropNav}
+                aria-label={data.openBtn}
+              >
+                <BurgerIcon width="30" height="16" />
+              </button>
+            )}
+          </>
         )}
         {/* </div> */}
       </Container>
