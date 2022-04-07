@@ -6,9 +6,10 @@ import {
   initialNumberValue,
   isValidNumberInputRegex,
   isValidNameInputRegex,
-  normalizeValue,
+  normalizeNameValue,
+  normalizeNumberValue,
   CheckisValidFormData,
-  getInputMask,
+  getInputMaskTemplate,
 } from 'services/formDataServices';
 
 import Button from 'components/common/button/button';
@@ -36,6 +37,33 @@ export default function SingUpForm({
     returnObjects: true,
   });
 
+  const handleNameChange = e => {
+    const normalizedValue = normalizeNameValue(
+      e.target.value,
+      isValidNameInputRegex,
+    );
+    setName(normalizedValue);
+  };
+
+  const handleNumberChange = e => {
+    const value = e.target.value;
+    if (value.length > maskTemplate?.length) return;
+    if (!maskTemplate) {
+      const mask = getInputMaskTemplate(value);
+      if (mask) {
+        setMaskTemplate(mask);
+      }
+    }
+
+    const normalizedPhoneValue = normalizeNumberValue(
+      value,
+      isValidNumberInputRegex,
+    );
+    setNumber(normalizedPhoneValue);
+  };
+
+  const isValidFormData = CheckisValidFormData(name, number);
+
   const handleSubmit = e => {
     e.preventDefault();
     const text = getTelegramMessage({
@@ -51,6 +79,8 @@ export default function SingUpForm({
       programDefault: singUpForm.withoutPropram,
     });
 
+    if (!isValidFormData) return;
+
     sendMessage(text)
       .then(() => {
         notification(content.title, content.text, true);
@@ -63,31 +93,6 @@ export default function SingUpForm({
         closeModal();
       });
   };
-
-  const handleNameChange = e => {
-    const normalizedValue = normalizeValue(
-      e.target.value,
-      isValidNameInputRegex,
-    );
-    setName(normalizedValue);
-  };
-
-  const handleNumberChange = e => {
-    const value = e.target.value;
-    if (value.length > maskTemplate?.length) return;
-
-    if (!maskTemplate) {
-      const mask = getInputMask(value);
-      if (mask) {
-        setMaskTemplate(mask);
-      }
-    }
-
-    const normalizedPhoneValue = normalizeValue(value, isValidNumberInputRegex);
-    setNumber(normalizedPhoneValue);
-  };
-
-  const isBtnDisabled = !CheckisValidFormData(name, number);
 
   return (
     <div className={s.modalContent}>
@@ -128,7 +133,7 @@ export default function SingUpForm({
         />
 
         <Button
-          disabled={isBtnDisabled}
+          disabled={!isValidFormData}
           type="submit"
           classType={3}
           text={singUpForm.button}

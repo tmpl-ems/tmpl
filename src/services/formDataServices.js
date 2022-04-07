@@ -1,23 +1,33 @@
 export const initialNumberValue = '';
-export const isValidNumberInputRegex = new RegExp('^\\+{1}|[0-9]');
+export const isValidNumberInputRegex = new RegExp('[0-9]');
+// export const isValidNumberInputRegex = new RegExp('^\\+{1}|[0-9]');
 export const isValidNameInputRegex = new RegExp(
   "[A-Za-zА-Яа-яґҐЁёІіЇїЄє'’ʼ\\s-]",
 );
 
-export const normalizeValue = (value, regexp) => {
-  const formattedValue = value
+export const normalizeNameValue = (value, regexp) => {
+  return value
     .split('')
     .filter(item => regexp.test(item))
     .join('');
+};
+
+export const normalizeNumberValue = (value, regexp) => {
+  let preCheckValue = null;
 
   switch (true) {
-    case formattedValue.length === 10 && formattedValue.startsWith('0'):
-      return '38' + formattedValue;
-    case formattedValue.length === 7 && !formattedValue.startsWith('380'):
-      return '38044' + formattedValue;
+    case value.length === 10 && value.startsWith('0'):
+      console.log('1', 1);
+      preCheckValue = '38' + value;
+      break;
     default:
-      return formattedValue;
+      preCheckValue = value;
   }
+
+  return preCheckValue
+    .split('')
+    .filter(item => regexp.test(item))
+    .join('');
 };
 
 export const CheckisValidFormData = (name, phoneNumber) => {
@@ -32,18 +42,19 @@ export const CheckisValidFormData = (name, phoneNumber) => {
   return isValidData;
 };
 
-export const getInputMask = inputValue => {
+export const getInputMaskTemplate = inputValue => {
+  const mask = '+38 (999) 999-99-99';
   switch (true) {
-    case inputValue.startsWith('+') && inputValue.length > 1:
-      return '+38 (999) 999-99-99';
-    case inputValue.startsWith('38') && inputValue.length > 1:
-      return '+38 (999) 999-99-99';
+    case inputValue.startsWith('+'):
+      return mask;
+    case inputValue.startsWith('3') && inputValue.length > 1:
+      return mask;
     case inputValue.startsWith('0') && inputValue.length > 2:
-      return '+38 (099) 999-99-99';
+      return mask;
     case inputValue.startsWith('('):
-      return '+38 (099) 999-99-99';
+      return mask;
     case inputValue.length > 2:
-      return '+38 (044) 999-99-99';
+      return mask;
     default:
       return null;
   }
