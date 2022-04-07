@@ -18,11 +18,21 @@ export default function IndexPage() {
   const [showSingUpModal, setShowSingUpModal] = useState(false);
   const [tgBotNotification, setTgBotNotification] = useState(false);
 
-  const notification = () => {
+  const [notificationTitle, setNotificationTitle] = useState('');
+  const [notificationDescription, setNotificationDescription] = useState('');
+  const [accept, setAccept] = useState(true);
+
+  const notification = (title, description, accept) => {
     setTgBotNotification(true);
-    setTimeout(() => {
-      setTgBotNotification(false);
-    }, 5000);
+    setNotificationTitle(title);
+    setAccept(accept);
+    setNotificationDescription(description);
+    setTimeout(
+      () => {
+        setTgBotNotification(false);
+      },
+      accept ? 5000 : 7000,
+    );
   };
 
   const toggleSingUpModal = () => {
@@ -69,7 +79,14 @@ export default function IndexPage() {
 
       {tgBotNotification && (
         <Modal closeModal={() => setTgBotNotification(false)}>
-          <Notification closeModal={() => setTgBotNotification(false)} />
+          <Notification
+            closeModal={() => setTgBotNotification(false)}
+            content={{
+              title: notificationTitle,
+              description: notificationDescription,
+            }}
+            accept={accept}
+          />
         </Modal>
       )}
     </Layout>

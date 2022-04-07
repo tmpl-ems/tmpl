@@ -10,6 +10,7 @@
     "preload-fonts": "gatsby-preload-fonts",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "gatsby develop",
+    "dev-m": "gatsby develop -H 192.168.0.100 -p 8000",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
