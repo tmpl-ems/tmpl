@@ -18,21 +18,16 @@ const Content = ({ onSingUpModalOpen }) => {
     <div className={s.contentBlock}>
       <h1 className={s.sectionTitle}>{data.title}</h1>
       <p className={s.text1}>{data.text1}</p>
-      {pageFormat && (
-        <>
-          {(isDesktop || isTablet) && <List data={data.list} />}
-          <Button addClass={heroBtn} onBtnClick={onSingUpModalOpen} />
-
-          <div className={s.offerBlock}>
-            <p className={s.text2}>
-              {data.text2}
-              <span className={s.text2_span}>750 грн.</span>
-            </p>
-            <p className={s.price}>350 грн.</p>
-          </div>
-
-          {!isDesktop && !isTablet && <List data={data.list} />}
-        </>
+      {(isDesktop || isTablet) && <List data={data.list} />}
+      <Button addClass={heroBtn} onBtnClick={onSingUpModalOpen} />
+      <div className={s.offerBlock}>
+        <p className={s.text2}>
+          {data.text2}
+          <span className={s.text2_span}>750 грн.</span>
+        </p>
+        <p className={s.price}>350 грн.</p>
+      </div>
+      {!isDesktop && !isTablet && <List data={data.list} />}
       )}
     </div>
   );
