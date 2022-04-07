@@ -62,7 +62,7 @@ export default function SingUpForm({
     setNumber(normalizedPhoneValue);
   };
 
-  const isBtnDisabled = !CheckisValidFormData(name, number);
+  const isValidFormData = CheckisValidFormData(name, number);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -78,8 +78,6 @@ export default function SingUpForm({
       program: selectedProgram?.item.title,
       programDefault: singUpForm.withoutPropram,
     });
-
-    const isValidFormData = !CheckisValidFormData(name, number);
 
     if (!isValidFormData) return;
 
@@ -135,7 +133,7 @@ export default function SingUpForm({
         />
 
         <Button
-          disabled={isBtnDisabled}
+          disabled={!isValidFormData}
           type="submit"
           classType={3}
           text={singUpForm.button}
