@@ -6,6 +6,7 @@
 .contentBgImg {
   margin: 0 auto;
   min-width: 320px;
+  min-height: 610px;
   background-image: url('images/header/header-img-mobile.png');
 
   background-repeat: no-repeat;
@@ -25,6 +26,7 @@
   //----------------768px---------------
   @media screen and (min-width: 768px) {
     width: $tablet;
+    min-height: 710px;
     background-image: url('images/header/header-img-tablet.png');
     background-size: contain;
     background-position: bottom 0px right 0px;
@@ -39,6 +41,7 @@
   //----------------------1280px-------------------------
   @media screen and (min-width: 1280px) {
     width: $desktop;
+    min-height: 725px;
     background-image: url('images/header/header-img-desktop.png'),
       url('images/svg/header-triangle-mid-up.svg'),
       url('images/svg/header-triangle-mid-low.svg'),

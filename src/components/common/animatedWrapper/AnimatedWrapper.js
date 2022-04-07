@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import * as s from './AnimatedWrapper.module.scss';
 
-const AnimatedWrapper = ({ children }) => {
+const AnimatedWrapper = ({ children, addStyle }) => {
   const [show, setShow] = useState(false);
   useEffect(() => {
     if (!show) {
@@ -12,7 +12,9 @@ const AnimatedWrapper = ({ children }) => {
   }, [show]);
 
   return (
-    <div className={`${s.container} ${show ? s.show : ''}`}>{children}</div>
+    <div className={`${s.container} ${show ? s.show : ''}`} style={addStyle}>
+      {children}
+    </div>
   );
 };
 
