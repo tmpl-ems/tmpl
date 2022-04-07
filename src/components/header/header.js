@@ -58,21 +58,23 @@ export default function Header({ getElToScroll }) {
           <LogoIcon width="74" height="66" />
         </Link>
         {pageFormat && (
-          <AnimatedWrapper>
-            {isDesktop && <NavBlock onMenuClose={closeDropNav} />}
-            <LanguagesBlock />
-            {/* //---BurgerBtn--- */}
-            {!isDesktop && (
-              <button
-                className={s.burgerOpenBtn}
-                type="button"
-                onClick={openDropNav}
-                aria-label={data.openBtn}
-              >
-                <BurgerIcon width="30" height="16" />
-              </button>
-            )}
-          </AnimatedWrapper>
+          <>
+            <AnimatedWrapper addStyle={{ display: 'flex' }}>
+              {isDesktop && <NavBlock onMenuClose={closeDropNav} />}
+              <LanguagesBlock />
+              {/* //---BurgerBtn--- */}
+              {!isDesktop && (
+                <button
+                  className={s.burgerOpenBtn}
+                  type="button"
+                  onClick={openDropNav}
+                  aria-label={data.openBtn}
+                >
+                  <BurgerIcon width="30" height="16" />
+                </button>
+              )}
+            </AnimatedWrapper>
+          </>
         )}
         {/* </div> */}
       </Container>
