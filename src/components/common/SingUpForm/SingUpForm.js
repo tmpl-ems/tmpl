@@ -1,52 +1,19 @@
 import React, { useRef, useEffect, useState } from 'react';
 import InputMask from 'react-input-mask';
 import { useI18next } from 'gatsby-plugin-react-i18next';
-import telegramBot from 'services/telegramBot';
+import { sendMessage, getTelegramMessage } from 'services/telegramBot';
+import {
+  initialNumberValue,
+  isValidNumberInputRegex,
+  isValidNameInputRegex,
+  normalizeValue,
+  CheckisValidFormData,
+  getInputMask,
+} from 'services/formDataServices';
 
 import Button from 'components/common/button/button';
 import CloseIcon from 'images/svg/btn-close.inline.svg';
 import * as s from './SingUpForm.module.scss';
-
-// const numberStart = '+380';
-
-const initialNumberValue = '';
-const validNumberLength = 12;
-const validNameLength = 2;
-const hashTag = 'tmplorder';
-const isNumberRegex = new RegExp('[0-9]');
-const normalizePhoneValue = phoneValue =>
-  phoneValue
-    .split('')
-    .filter(item => isNumberRegex.test(item))
-    .join('');
-
-const getTextToSend = ({
-  orderMsg,
-  orderPlace,
-  language,
-  hashTag,
-  nameTitle,
-  name,
-  phoneTitle,
-  number,
-  programTitle,
-  program,
-  programDefault,
-}) => {
-  const order = `<b>${orderMsg.toUpperCase()}</b>`;
-
-  const tag = `%0A%23${hashTag}`;
-
-  const lang = `%0A<b>${orderPlace}</b>: ${language}`;
-
-  const clientInfo = `%0A%0A<b>${nameTitle}</b>: ${name} %0A<b>${phoneTitle}</b>: %2B${number}`;
-
-  const programInfo = `%0A%0A<b>${programTitle}</b>: ${
-    program ? program : programDefault
-  }`;
-
-  return order + tag + lang + clientInfo + programInfo;
-};
 
 export default function SingUpForm({
   closeModal,
@@ -58,7 +25,6 @@ export default function SingUpForm({
 
   const [name, setName] = useState('');
   const [number, setNumber] = useState(initialNumberValue);
-  // const [numberClear, setNumberClear] = useState(initialNumberValue);
   const [maskTemplate, setMaskTemplate] = useState(null);
 
   useEffect(() => {
@@ -66,15 +32,16 @@ export default function SingUpForm({
   }, []);
 
   const { t } = useI18next();
-  const { singUpForm } = t('common', { returnObjects: true });
+  const { singUpForm, notification: content } = t('common', {
+    returnObjects: true,
+  });
 
   const handleSubmit = e => {
     e.preventDefault();
-    const text = getTextToSend({
+    const text = getTelegramMessage({
       orderMsg: singUpForm.order,
       orderPlace: singUpForm.langOrderPlace,
       language: singUpForm.lang,
-      hashTag,
       nameTitle: singUpForm.namePlaceholder,
       name,
       phoneTitle: singUpForm.phone,
@@ -84,56 +51,46 @@ export default function SingUpForm({
       programDefault: singUpForm.withoutPropram,
     });
 
-    telegramBot(text);
-    notification();
-    setSelectedProgram(null);
-    closeModal();
+    sendMessage(text)
+      .then(() => {
+        notification(content.title, content.text, true);
+      })
+      .catch(() => {
+        notification(content.titleError, content.textError, false);
+      })
+      .finally(() => {
+        setSelectedProgram(null);
+        // closeModal();
+      });
   };
 
-  // const handleFocus = e => {
-  //   if (numberClear !== '') return;
-  //   e.target.value = numberStart;
-  // };
+  const handleNameChange = e => {
+    const normalizedValue = normalizeValue(
+      e.target.value,
+      isValidNameInputRegex,
+    );
+    setName(normalizedValue);
+  };
 
-  // const handleBlur = e => {
-  //   if (e.target.value !== numberStart) return;
-  //   setNumberClear('');
-  //   e.target.value = '';
-  // };
+  console.log('number', number);
 
   const handleNumberChange = e => {
-    const normalizedPhoneValue = normalizePhoneValue(e.target.value);
-    setNumber(normalizedPhoneValue);
-  };
-
-  const handleClearNumberChange = e => {
     const value = e.target.value;
+    console.log('value', value);
+    if (value.length > maskTemplate?.length) return;
 
     if (!maskTemplate) {
-      switch (true) {
-        case value.startsWith('+') && value.length > 2:
-          setMaskTemplate('+38 (999) 999-99-99');
-          break;
-        case value.startsWith('38') && value.length > 1:
-          setMaskTemplate('+38 (999) 999-99-99');
-          break;
-        case value.startsWith('0') && value.length > 1:
-          setMaskTemplate('+38 (099) 999-99-99');
-          break;
-        case value.length > 2:
-          setMaskTemplate('+38 (044) 999-99-99');
-          break;
-        default:
-          break;
+      const mask = getInputMask(value);
+      if (mask) {
+        setMaskTemplate(mask);
       }
     }
 
-    const normalizedPhoneValue = normalizePhoneValue(value);
+    const normalizedPhoneValue = normalizeValue(value, isValidNumberInputRegex);
     setNumber(normalizedPhoneValue);
   };
 
-  const isDisabled =
-    !(name.length >= validNameLength) || !(number.length === validNumberLength);
+  const isBtnDisabled = !CheckisValidFormData(name, number);
 
   return (
     <div className={s.modalContent}>
@@ -144,59 +101,37 @@ export default function SingUpForm({
       <p className={s.text}>{singUpForm.text}</p>
 
       <form className={s.form} onSubmit={e => handleSubmit(e)}>
-        <input
-          ref={inputRef}
-          className={s.input}
-          type="text"
-          name="name"
-          pattern="[A-Za-zА-Яа-яґҐЁёІіЇїЄє'’ʼ\s-]{2,30}"
-          onInvalid={e => e.target.setCustomValidity(singUpForm.nameValidation)}
-          onInput={e => e.target.setCustomValidity('')}
-          onChange={e => setName(e.target.value)}
-          required
-          placeholder={singUpForm.namePlaceholder}
-          autoComplete="off"
-          value={name}
-        />
-
         <InputMask
-          mask="+38 (099) 999-99-99"
+          ref={inputRef}
+          mask={null}
+          id="input-name"
+          name="name"
+          type="text"
+          // maskChar={null}
+          placeholder={singUpForm.namePlaceholder}
+          required
+          value={name}
+          onChange={e => e.preventDefault()}
+          onInput={handleNameChange}
           className={s.input}
-          placeholder={singUpForm.numberPlaceholder}
-          onChange={e => handleNumberChange(e)}
-          type="tel"
-          autoComplete="on"
+          autoComplete="off"
         />
 
         <InputMask
           mask={maskTemplate}
+          name="phone"
+          id="input-phone"
           className={s.input}
           placeholder={singUpForm.numberPlaceholder}
-          onChange={e => handleClearNumberChange(e)}
+          // onChange={e => e.preventDefault()}
+          onChange={e => handleNumberChange(e)}
           type="tel"
           autoComplete="on"
+          value={number}
         />
 
-        {/* <input
-          className={s.input}
-          type="tel"
-          name="numberClear"
-          pattern="^(?:\+38)?(0\d{9})$"
-          onInvalid={e =>
-            e.target.setCustomValidity(singUpForm.phoneValidation)
-          }
-          onInput={e => e.target.setCustomValidity('')}
-          onChange={e => setNumberClear(e.target.value)}
-          onFocus={e => handleFocus(e)}
-          onBlur={e => handleBlur(e)}
-          required
-          placeholder={singUpForm.numberPlaceholder}
-          autoComplete="on"
-          value={numberClear}
-        /> */}
-
         <Button
-          disabled={isDisabled}
+          disabled={isBtnDisabled}
           type="submit"
           classType={3}
           text={singUpForm.button}
