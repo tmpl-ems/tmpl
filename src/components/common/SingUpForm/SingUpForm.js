@@ -72,11 +72,8 @@ export default function SingUpForm({
     setName(normalizedValue);
   };
 
-  console.log('number', number);
-
   const handleNumberChange = e => {
     const value = e.target.value;
-    console.log('value', value);
     if (value.length > maskTemplate?.length) return;
 
     if (!maskTemplate) {
