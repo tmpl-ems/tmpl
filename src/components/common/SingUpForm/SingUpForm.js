@@ -60,7 +60,7 @@ export default function SingUpForm({
       })
       .finally(() => {
         setSelectedProgram(null);
-        // closeModal();
+        closeModal();
       });
   };
 
