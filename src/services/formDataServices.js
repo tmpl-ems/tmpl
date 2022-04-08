@@ -1,4 +1,6 @@
 const mask = '+38 (999) 999-99-99';
+const validNameLength = { start: 2, end: 30 };
+const validNumberLength = 12;
 export const visibleMask = '+38 (___) ___-__-__';
 
 export const initialNumberValue = '';
@@ -33,9 +35,6 @@ export const normalizeNumberValue = (value, regexp) => {
 };
 
 export const CheckisValidFormData = (name, phoneNumber) => {
-  const validNumberLength = 12;
-  const validNameLength = { start: 2, end: 30 };
-
   const isValidData =
     name.length >= validNameLength.start &&
     name.length <= validNameLength.end &&
@@ -43,6 +42,9 @@ export const CheckisValidFormData = (name, phoneNumber) => {
 
   return isValidData;
 };
+
+export const CheckisValidPhoneNumber = phoneNumber =>
+  phoneNumber.length === validNumberLength;
 
 export const getInputMaskTemplate = inputValue => {
   switch (true) {

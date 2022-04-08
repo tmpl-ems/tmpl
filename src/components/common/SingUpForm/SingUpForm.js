@@ -10,6 +10,7 @@ import {
   normalizeNameValue,
   normalizeNumberValue,
   CheckisValidFormData,
+  CheckisValidPhoneNumber,
   getInputMaskTemplate,
 } from 'services/formDataServices';
 
@@ -23,20 +24,21 @@ export default function SingUpForm({
   selectedProgram,
   notification,
 }) {
-  const inputRef = useRef(null);
+  const nameInputRef = useRef(null);
+  const phoneInputRef = useRef(null);
 
   const [name, setName] = useState('');
   const [number, setNumber] = useState(initialNumberValue);
   const [maskTemplate, setMaskTemplate] = useState(null);
 
   useEffect(() => {
-    inputRef.current.focus();
+    nameInputRef.current.focus();
   }, []);
 
-  const { t } = useI18next();
-  const { singUpForm, notification: content } = t('common', {
-    returnObjects: true,
-  });
+  useEffect(() => {
+    if (!CheckisValidPhoneNumber(number)) return;
+    phoneInputRef.current.blur();
+  }, [name, number]);
 
   const handleNameChange = e => {
     const normalizedValue = normalizeNameValue(
@@ -48,6 +50,7 @@ export default function SingUpForm({
 
   const handleNumberChange = e => {
     const value = e.target.value;
+
     if (value.length > maskTemplate?.length) return;
     if (!maskTemplate) {
       const mask = getInputMaskTemplate(value);
@@ -63,10 +66,8 @@ export default function SingUpForm({
     setNumber(normalizedPhoneValue);
   };
 
-  const isValidFormData = CheckisValidFormData(name, number);
-
   const handleKeyDown = e => {
-    if (!(e.code === 'Backspace' || e.code === 'Delete')) return;
+    if (!(e.key === 'Backspace' || e.key === 'Delete')) return;
     if (e.target.value !== visibleMask) return;
     setMaskTemplate(null);
     setNumber(initialNumberValue);
@@ -102,6 +103,12 @@ export default function SingUpForm({
       });
   };
 
+  const isValidFormData = CheckisValidFormData(name, number);
+  const { t } = useI18next();
+  const { singUpForm, notification: content } = t('common', {
+    returnObjects: true,
+  });
+
   return (
     <div className={s.modalContent}>
       <button className={s.closeBtn} type="button" onClick={() => closeModal()}>
@@ -112,28 +119,26 @@ export default function SingUpForm({
 
       <form className={s.form} onSubmit={e => handleSubmit(e)}>
         <InputMask
-          ref={inputRef}
+          ref={nameInputRef}
           mask={null}
           id="input-name"
           name="name"
           type="text"
-          // maskChar={null}
           placeholder={singUpForm.namePlaceholder}
           required
           value={name}
-          onChange={e => e.preventDefault()}
-          onInput={handleNameChange}
+          onChange={handleNameChange}
           className={s.input}
           autoComplete="off"
         />
 
         <InputMask
+          ref={phoneInputRef}
           mask={maskTemplate}
           name="phone"
           id="input-phone"
           className={s.input}
           placeholder={singUpForm.numberPlaceholder}
-          // onChange={e => e.preventDefault()}
           onChange={e => handleNumberChange(e)}
           type="tel"
           autoComplete="on"
