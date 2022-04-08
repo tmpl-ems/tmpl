@@ -5,7 +5,7 @@ const BASE_URL = 'https://api.telegram.org';
 
 const sendMessage = async text => {
   const res = await fetch(
-    `${BASE_URL}/bot${TELEGRAM_BOT_ID}/sendMessage?chat_coffe_id=${TELEGRAM_GROUP_ID}&parse_mode=HTML&text=${text}`,
+    `${BASE_URL}/bot${TELEGRAM_BOT_ID}/sendMessage?chat_id=${TELEGRAM_GROUP_ID}&parse_mode=HTML&text=${text}`,
   );
   return res.ok ? res.json() : Promise.reject(new Error());
   // fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_ID}/getUpdates`);
