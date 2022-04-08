@@ -10,7 +10,6 @@ import {
   normalizeNameValue,
   normalizeNumberValue,
   CheckisValidFormData,
-  CheckisValidPhoneNumber,
   getInputMaskTemplate,
 } from 'services/formDataServices';
 
@@ -26,7 +25,6 @@ export default function SingUpForm({
   notification,
 }) {
   const nameInputRef = useRef(null);
-  const phoneInputRef = useRef(null);
 
   const [name, setName] = useState('');
   const [number, setNumber] = useState(initialNumberValue);
@@ -36,11 +34,6 @@ export default function SingUpForm({
   useEffect(() => {
     nameInputRef.current.focus();
   }, []);
-
-  useEffect(() => {
-    if (!CheckisValidPhoneNumber(number)) return;
-    phoneInputRef.current.blur();
-  }, [name, number]);
 
   const handleNameChange = e => {
     const normalizedValue = normalizeNameValue(
@@ -136,7 +129,6 @@ export default function SingUpForm({
         />
 
         <InputMask
-          ref={phoneInputRef}
           mask={maskTemplate}
           name="phone"
           id="input-phone"
