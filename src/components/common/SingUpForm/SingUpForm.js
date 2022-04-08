@@ -3,6 +3,7 @@ import InputMask from 'react-input-mask';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 import { sendMessage, getTelegramMessage } from 'services/telegramBot';
 import {
+  visibleMask,
   initialNumberValue,
   isValidNumberInputRegex,
   isValidNameInputRegex,
@@ -63,6 +64,13 @@ export default function SingUpForm({
   };
 
   const isValidFormData = CheckisValidFormData(name, number);
+
+  const handleKeyDown = e => {
+    if (!(e.code === 'Backspace' || e.code === 'Delete')) return;
+    if (e.target.value !== visibleMask) return;
+    setMaskTemplate(null);
+    setNumber(initialNumberValue);
+  };
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -130,6 +138,7 @@ export default function SingUpForm({
           type="tel"
           autoComplete="on"
           value={number}
+          onKeyDown={handleKeyDown}
         />
 
         <Button

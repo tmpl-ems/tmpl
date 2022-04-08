@@ -1,3 +1,6 @@
+const mask = '+38 (999) 999-99-99';
+export const visibleMask = '+38 (___) ___-__-__';
+
 export const initialNumberValue = '';
 export const isValidNumberInputRegex = new RegExp('[0-9]');
 // export const isValidNumberInputRegex = new RegExp('^\\+{1}|[0-9]');
@@ -17,7 +20,6 @@ export const normalizeNumberValue = (value, regexp) => {
 
   switch (true) {
     case value.length === 10 && value.startsWith('0'):
-      console.log('1', 1);
       preCheckValue = '38' + value;
       break;
     default:
@@ -43,7 +45,6 @@ export const CheckisValidFormData = (name, phoneNumber) => {
 };
 
 export const getInputMaskTemplate = inputValue => {
-  const mask = '+38 (999) 999-99-99';
   switch (true) {
     case inputValue.startsWith('+'):
       return mask;
