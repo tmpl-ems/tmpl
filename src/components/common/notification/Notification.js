@@ -1,7 +1,8 @@
 import React from 'react';
 
 import CloseIcon from 'images/svg/btn-close.inline.svg';
-import notificationIcon from 'images/icon/notification-icon.jpg';
+import AcceptIcon from 'images/svg/accept.inline.svg';
+import ErrortIcon from 'images/svg/error.inline.svg';
 import * as s from './Notification.module.scss';
 
 export default function Notification({ closeModal, content, accept }) {
@@ -13,20 +14,15 @@ export default function Notification({ closeModal, content, accept }) {
 
       <p className={s.title}>{content.title}</p>
 
-      <p className={s.text} style={!accept ? { marginBottom: '0' } : null}>
-        {content.description}
-      </p>
+      <p className={s.text}>{content.description}</p>
 
-      {accept && (
-        <div className={s.image}>
-          <img
-            className={s.icon}
-            src={notificationIcon}
-            alt="success"
-            onClick={() => closeModal()}
-          />
-        </div>
-      )}
+      <div className={s.image}>
+        {accept ? (
+          <AcceptIcon className={s.icon} />
+        ) : (
+          <ErrortIcon className={s.icon} />
+        )}
+      </div>
     </div>
   );
 }

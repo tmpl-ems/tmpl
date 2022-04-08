@@ -17,6 +17,7 @@ import {
 import Button from 'components/common/button/button';
 import CloseIcon from 'images/svg/btn-close.inline.svg';
 import * as s from './SingUpForm.module.scss';
+import DotsLoader from '../animatedWrapper/dotsLoader/DotsLoader';
 
 export default function SingUpForm({
   closeModal,
@@ -30,6 +31,7 @@ export default function SingUpForm({
   const [name, setName] = useState('');
   const [number, setNumber] = useState(initialNumberValue);
   const [maskTemplate, setMaskTemplate] = useState(null);
+  const [isSending, setIsSending] = useState(false);
 
   useEffect(() => {
     nameInputRef.current.focus();
@@ -89,7 +91,7 @@ export default function SingUpForm({
     });
 
     if (!isValidFormData) return;
-
+    setIsSending(true);
     sendMessage(text)
       .then(() => {
         notification(content.title, content.text, true);
@@ -100,6 +102,7 @@ export default function SingUpForm({
       .finally(() => {
         setSelectedProgram(null);
         closeModal();
+        setIsSending(false);
       });
   };
 
@@ -150,7 +153,8 @@ export default function SingUpForm({
           disabled={!isValidFormData}
           type="submit"
           classType={3}
-          text={singUpForm.button}
+          text={isSending ? singUpForm.buttonLoading : singUpForm.button}
+          loader={isSending && <DotsLoader />}
         />
       </form>
     </div>

@@ -2,7 +2,7 @@ import React, { useContext, useState, useRef, useEffect } from 'react';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 import { Link } from 'gatsby';
 import { duration } from 'styles/jsVars';
-import AnimatedWrapper from 'components/common/animatedWrapper/AnimatedWrapper';
+// import AnimatedWrapper from 'components/common/animatedWrapper/AnimatedWrapper';
 
 // Если в нашем компоненте нужно выполнить или нет рендеринг в зависимости от ширины экрана, берём испортируем контекст и формат. А такэе useContext
 import { PageFormatContext, format } from 'context/pageFormatContext';
@@ -59,21 +59,21 @@ export default function Header({ getElToScroll }) {
         </Link>
         {pageFormat && (
           <>
-            <AnimatedWrapper addStyle={{ display: 'flex' }}>
-              {isDesktop && <NavBlock onMenuClose={closeDropNav} />}
-              <LanguagesBlock />
-              {/* //---BurgerBtn--- */}
-              {!isDesktop && (
-                <button
-                  className={s.burgerOpenBtn}
-                  type="button"
-                  onClick={openDropNav}
-                  aria-label={data.openBtn}
-                >
-                  <BurgerIcon width="30" height="16" />
-                </button>
-              )}
-            </AnimatedWrapper>
+            {/* <AnimatedWrapper addStyle={{ display: 'flex' }}> */}
+            {isDesktop && <NavBlock onMenuClose={closeDropNav} />}
+            <LanguagesBlock />
+            {/* //---BurgerBtn--- */}
+            {!isDesktop && (
+              <button
+                className={s.burgerOpenBtn}
+                type="button"
+                onClick={openDropNav}
+                aria-label={data.openBtn}
+              >
+                <BurgerIcon width="30" height="16" />
+              </button>
+            )}
+            {/* </AnimatedWrapper> */}
           </>
         )}
         {/* </div> */}

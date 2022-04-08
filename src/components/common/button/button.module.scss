@@ -22,7 +22,7 @@
   &:disabled,
   &:hover:disabled,
   &:focus:disabled {
-    background-color: #b3b3b3;
+    background-color: $disabled;
   }
 }
 

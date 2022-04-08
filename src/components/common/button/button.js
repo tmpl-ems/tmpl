@@ -10,6 +10,7 @@ const Button = ({
   addClass,
   onBtnClick,
   disabled = false,
+  loader,
   ...props
 }) => {
   const [nameOfClass, setNameOfClass] = useState(s.btn1);
@@ -34,6 +35,7 @@ const Button = ({
       disabled={disabled}
     >
       {text ? text : data.button}
+      {loader}
     </button>
   );
 };
@@ -43,6 +45,7 @@ Button.propTypes = {
   classType: PropTypes.number,
   text: PropTypes.string,
   disabled: PropTypes.bool,
+  loader: PropTypes.object,
 };
 
 export default Button;
