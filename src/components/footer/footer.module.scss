@@ -129,16 +129,20 @@
     @include fontProperties(18, 1.22);
   }
 }
-.mediaWrapper {
-  width: 173px;
-  margin-left: auto;
-  @media screen and (min-width: 768px) {
-    margin-bottom: 0;
+
+.mediaList {
+  display: flex;
+}
+
+.item {
+  &:first-child {
+    margin-left: auto;
+  }
+  &:not(:last-child) {
+    margin-right: 24px;
   }
 }
-.mediaList {
-  @include flexBlockSpaceBetween;
-}
+
 .mediaItem {
   color: $secondary-text-color;
   transition: $default-transition;
