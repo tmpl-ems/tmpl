@@ -6,6 +6,7 @@ const ReviewCard = ({
   foto_1x,
   foto_2x,
   girlName = 'Default name',
+  date,
 }) => {
   return (
     <div className={s.slider}>
@@ -20,7 +21,7 @@ const ReviewCard = ({
 
       <div className={s.contentWrapper}>
         <p className={s.cardContent}>{text}</p>
-        <p className={`${s.card} ${s.date}`}>14.10.2021</p>
+        <p className={`${s.card} ${s.date}`}>{date}</p>
       </div>
     </div>
   );

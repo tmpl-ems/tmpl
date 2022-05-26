@@ -14,7 +14,6 @@ const Button = ({
   ...props
 }) => {
   const [nameOfClass, setNameOfClass] = useState(s.btn1);
-
   const { t } = useI18next();
   const data = t('common', { returnObjects: true });
 

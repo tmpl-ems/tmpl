@@ -146,7 +146,7 @@ export default function SingUpForm({
           type="submit"
           classType={3}
           text={isSending ? singUpForm.buttonLoading : singUpForm.button}
-          loader={isSending && <DotsLoader />}
+          loader={isSending ? <DotsLoader /> : null}
         />
       </form>
     </div>
