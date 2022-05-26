@@ -16,13 +16,7 @@ export default function Notification({ closeModal, content, accept }) {
 
       <p className={s.text}>{content.description}</p>
 
-      <div className={s.image}>
-        {accept ? (
-          <AcceptIcon className={s.icon} />
-        ) : (
-          <ErrortIcon className={s.icon} />
-        )}
-      </div>
+      <div className={s.image}>{accept ? <AcceptIcon /> : <ErrortIcon />}</div>
     </div>
   );
 }
