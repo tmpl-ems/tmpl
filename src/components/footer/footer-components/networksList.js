@@ -24,7 +24,7 @@ const Networks = () => {
     // },
     {
       id: 'Instagram',
-      href: 'https://www.instagram.com/benefit_ems/',
+      href: 'https://www.instagram.com/tmpl_ems/',
       svg: <Instagram />,
     },
   ];
